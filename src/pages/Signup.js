@@ -13,10 +13,12 @@ const inputLastName = document.getElementById("input-last-name");
 const inputEmail = document.getElementById("signup-input-email");
 const inputPassword = document.getElementById("signup-input-password1");
 const inputRePassword = document.getElementById("signup-input-password2");
-const inputStrings = document.querySelector(".inp-string");
+const inputStrings = document.getElementsByClassName("inp-string");
 const inputNanbers = document.querySelector(".number");
 const btnRegister = document.querySelector("#signup-btn-signup");
 
+console.log(inputStrings);
+console.log(1);
 let nameOk = false;
 let lastNameOk = false;
 let emailOk = false;
@@ -41,9 +43,13 @@ window.addEventListener("load", () => {
   if (inputRePassword.value !== "") {
     checkRePasswordInput();
   }
-  if (inputStrings.value !== "") {
-    checkStringInput();
+  if (inputStrings.length !== 0) {
+    checkStringInput(inputStrings);
   }
+  /* 
+    if (inputStrings[i].value !== "") {
+    checkStringInput();
+  } */
 });
 
 inputName.addEventListener("input", () => {
@@ -64,9 +70,31 @@ inputPassword.addEventListener("input", () => {
 inputRePassword.addEventListener("input", () => {
   checkRePasswordInput();
 });
+/* 
+function checkStrings(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    console.log("in");
+    console.log("element", i, elements[i]);
+    elements[i].addEventListener("input", () => {
+      checkStringInput();
+    });
+  } 
+}*/
+/* 
 inputStrings.addEventListener("input", () => {
-  checkStringInput();
-});
+  for (var i = 0; i < inputStrings.length; i++) {
+    alert("in");
+    alert(inputStrings[i]);
+    inputStrings[i].addEventListener("input", () => {
+      checkStringInput();
+    });
+  }
+}); */
+for (var i = 0; i < inputStrings.length; i++) {
+  inputStrings[i].addEventListener("input", () => {
+    checkStringInput();
+  });
+}
 
 const checkNameInput = () => {
   let errorArr = validateName(inputName.value);
@@ -167,20 +195,34 @@ const checkRePasswordInput = () => {
 };
 
 const checkStringInput = () => {
-  let errorArr = validateString(inputStrings.value);
-  //   console.log(reg.test(inputName.value));
-  if (errorArr.length === 0 || inputStrings.value === "") {
-    //the text is ok
-    inputStrings.classList.remove("is-invalid");
-    document.querySelector(".sign-alert-str").classList.add("d-none");
-    //choosefieldOK = true;
-  } else {
-    //the text is not ok
-    inputStrings.classList.add("is-invalid");
-    document.querySelector(".sign-alert-str").classList.remove("d-none");
-    // document.querySelector(".sign-alert-str").innerHTML +=
-    // errorArr.join("<br>");
-    //lastNameOk = false;
+  let errorInputRules = false;
+  console.log("inside string");
+  for (i = 0; i < inputStrings.length; i++) {
+    console.log("place", i, "string - ", inputStrings[i].value);
+    let errorArr = validateString(inputStrings[i].value);
+    //   console.log(reg.test(inputName.value));
+    if (errorArr.length === 0 || inputStrings[i].value === "") {
+      //the text is ok
+      inputStrings[i].classList.remove("is-invalid");
+      /*  document.getElementsByClassName("sign-alert-str").classList.add("d-none"); */
+      //choosefieldOK = true;
+    } else {
+      errorInputRules = true;
+      //the text is not ok
+      inputStrings[i].classList.add("is-invalid"); /* 
+      document
+        .getElementsByClassName("sign-alert-str")
+        .classList.remove("d-none"); */
+      // document.querySelector(".sign-alert-str").innerHTML +=
+      // errorArr.join("<br>");
+      //lastNameOk = false;
+    }
+  }  
+    if (errorInputRules === true) {
+      document.getElementById("input-rules").classList.add("d-block");
+    } else {
+      document.getElementById("input-rules").classList.remove("d-block");
+    }
   }
   checkIfCanEnableBtn();
 };
