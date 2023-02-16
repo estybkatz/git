@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="./assets/imgs/camera.PNG" />
+  <link rel="stylesheet" href="./index.css">
+  <title>pic-Up</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="nav-home-link"><img src="./assets/imgs/logo.PNG"
+              alt="our logo-camera picture" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="nav-aboutus-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="nav-addpic-link">Add Pic</a>
+              </li>
+            </ul>
+            <form class="d-flex responsive-nav-flex" role="search" id="navBeforeLogin">
+              <a class="nav-link me-3" href="#" id="nav-signup-page">Signup</a>
+              <a class="nav-link responsive-mt" href="#" id="nav-login-page">Login</a>
+            </form>
+            <form class="d-flex responsive-nav-flex d-none" role="search" id="navAfterLogin">
+              <a class="nav-link me-3" href="#" id="nav-edit-profile-page">Name</a>
+              <a class="nav-link responsive-mt" href="#" id="nav-logout">Logout</a>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home page -->
+      <div id="home-page" class="d-none">
+        <h1 class=>Pic-Up</h1>
+        <h4>The popular site for selling your photos. Simple registration to the website, and you are welcome to upload
+          photos for sale</h4>
+      </div>
+      <!--About-->
+      <div id="about-us" class="d-none">
+        <p>about us</p>
+      </div>
+      <!--Add pic-->
+      <div id="add-pic" class="d-none">
+        <p>addpic</p>
+      </div>
+      <!--Signup-->
+      <div id="signup-page" class="d-block">
+        <h3 style="text-align: center;">Sign up</h3>
+
+        <form class="row g-3" onsubmit="event.preventDefault()">
+          <h6>name</h6>
+          <div class="col-md-6">
+            <label for="form-label" class="form-label red-asterik">Name</label>
+            <input type="text" class="form-control" id="signup-input-name">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="signup-alert-name">
+            The name must start with a capital letter
+            This field can only be used with letters and numbers,
+          </div>
+          <div class="col-md-6">
+            <label for="input-last-name" class="form-label red-asterik">Last Name</label>
+            <input type="text" class="form-control" id="input-last-name">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="signup-alert-last-name">
+            The name must start with a capital letter
+            This field can only be used with letters and numbers,
+          </div>can 
+          <h6>Adress</h6>
+          <div class="col-md-4">
+            <label for="input-state" class="form-label">State</label>
+            <input type="text" class="form-control inp-string" id="input-state">
+          </div>
+           <div class="alert alert-danger d-none sign-alert-str" role="alert">
+            Only letters and numbers should be entered in this field
+          </div>
+          <div class="col-md-4">
+            <label for="input-country" class="form-label">Country</label>
+            <input type="text" class="form-control inp-string" id="input-country">
+             
+          </div>
+         <div class="alert alert-danger d-none sign-alert-str" role="alert">
+            Only letters and numbers should be entered in this field
+          </div>
+          <div class="col-md-4">
+            <label for="input-city" class="form-label">City</label>
+            <input type="text" class="form-control" id="input-city">
+          </div>
+          <div class="col-md-4">
+            <label for="input-street" class="form-label">Street</label>
+            <input type="text" class="form-control" id="input-street">
+          </div>
+          <div class="col-md-4">
+            <label for="input-house-number" class="form-label">House Number</label>
+            <input type="number" class="form-control" id="input-house-number">
+          </div>
+          <div class="col-md-4">
+            <label for="input-zip-code" class="form-label">Zip Code</label>
+            <input type="number" class="form-control" id="input-zip-code">
+          </div>
+          <h6>Means of contact</h6>
+          <div class="col-md-6">
+            <label for="input-email" class="form-label red-asterik">Email</label>
+            <input type="email" class="form-control" id="signup-input-email">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="signup-alert-email">
+            You have to put your email
+          </div>
+          <div class="col-md-6">
+            <label for="input-phone" class="form-label">Phone</label>
+            <input type="number" class="form-control" id="input-phone">
+          </div>
+          <h6>Security</h6>
+          <div class="col-md-6">
+            <label for="inputPassword1" class="form-label red-asterik">Password</label>
+            <input type="text" class="form-control" id="signup-input-password1">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="signup-alert-password1">
+            You must use uppercase letter, lowercase letter, numbers, special sign
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword2" class="form-label red-asterik">Re-Enter Password</label>
+            <input type="text" class="form-control" id="signup-input-password2">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="signup-alert-repassword2">
+            You must use uppercase letter, lowercase letter, numbers, special sign
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="business-client">
+              <label class="form-check-label" for="gridCheck">
+                Business Client
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" disabled="true" id="signup-btn-signup">Sign in</button>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-danger">Cancel</button>
+          </div>
+        </form>
+
+      </div>
+      <!-- login page -->
+      <div id="login-page" class="d-none">
+        <h1>Login page</h1>
+        <form onsubmit="event.preventDefault()">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="login-input-email" placeholder="name@example.com" />
+            <label for="login-input-email">Email address</label>
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
+            Email rules
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="login-input-password" placeholder="Password" />
+            <label for="login-input-password">Password</label>
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="login-alert-password">
+            Password rules
+          </div>
+
+          <button class="btn btn-primary" id="login-btn">Submit</button>
+        </form>
+      </div>
+
+    </main>
+
+    <footer class="border-top pt-3 d-flex justify-content-center">
+      <p>© Create by Ester Rosenfeld</p>
+    </footer>
+  </div>
+  <script src="../src/app.js" type="module"></script>
+</body>
+
+</html>
