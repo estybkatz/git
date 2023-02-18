@@ -6,7 +6,7 @@ import validateName from "../validation/validateName.js";
 import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
 import User from "../models/User.js";
-//import showToast from "../utils/Toast.js";
+import showToast from "../utils/Toast.js";
 
 const inputName = document.getElementById("signup-input-name");
 const inputLastName = document.getElementById("input-last-name");
@@ -16,6 +16,14 @@ const inputRePassword = document.getElementById("signup-input-password2");
 const inputStrings = document.getElementsByClassName("inp-string");
 const inputPhoneNumber = document.getElementById("input-phone");
 const btnRegister = document.querySelector("#signup-btn-signup");
+const inputState = document.getElementById("signup-page-input-state");
+const inputCountry = document.getElementById("signup-page-input-country");
+const inputCity = document.getElementById("signup-page-input-city");
+const inputStreet = document.getElementById("signup-page-input-street");
+const inputHouseNumber = document.getElementById(
+  "signup-page-input-house-number"
+);
+const inputZipCode = document.getElementById("signup-page-input-zip");
 
 /*
 Initializing the boolean variables, which are required for the successful input.
@@ -28,6 +36,26 @@ let passwordOk = false;
 let rePasswordOk = false;
 let chooseFieldOK = true;
 let phoneOk = true;
+let checkPasswordSame = false;
+
+const checkIfPasswordIsSame = () => {
+  if (inputPassword.value === inputRePassword.value) {
+    checkPasswordSame = true;
+    document.getElementById("none-same-password").classList.add("d-none");
+    document.getElementById("none-same-password").classList.remove("d-block");
+  } else {
+    document.getElementById("none-same-password").classList.remove("d-none");
+    // console.log("inside check");
+    // console.log(inputPassword.value);
+    // console.log("after first");
+    // console.log(inputRePassword.value);
+    document.getElementById("none-same-password").classList.add("d-block");
+    checkPasswordSame = false;
+  }
+  console.log(checkPasswordSame);
+}; /* 
+checkIfPasswordIsSame(); */
+
 window.addEventListener("load", () => {
   //when page loaded
   if (inputName.value !== "") {
@@ -44,6 +72,9 @@ window.addEventListener("load", () => {
   }
   if (inputRePassword.value !== "") {
     checkRePasswordInput();
+  }
+  if (inputPassword.value !== "" && inputRePassword.value !== "") {
+    checkIfPasswordIsSame();
   }
   if (inputStrings.length !== 0) {
     checkStringInput(inputStrings);
@@ -69,10 +100,12 @@ inputEmail.addEventListener("input", () => {
   checkEmailInput();
 });
 inputPassword.addEventListener("input", () => {
+  checkIfPasswordIsSame();
   checkPasswordInput();
 });
 
 inputRePassword.addEventListener("input", () => {
+  checkIfPasswordIsSame();
   checkRePasswordInput();
 });
 inputPhoneNumber.addEventListener("input", () => {
@@ -206,7 +239,7 @@ const checkStringInput = () => {
   let errorInputRules = false;
   console.log("inside string");
   for (i = 0; i < inputStrings.length; i++) {
-    console.log("place", i, "string - ", inputStrings[i].value);
+    /*  console.log("place", i, "string - ", inputStrings[i].value); */
     let errorArr = validateString(inputStrings[i].value);
     //   console.log(reg.test(inputName.value));
     if (errorArr.length === 0 || inputStrings[i].value === "") {
@@ -255,16 +288,19 @@ const checkPhoneNumber = () => {
   }
   checkIfCanEnableBtn();
 };
-const checkIfCanEnableBtn = () =>
-  (btnRegister.disabled = !(
+
+const checkIfCanEnableBtn = () => {
+  btnRegister.disabled = !(
     nameOk &&
     emailOk &&
     passwordOk &&
     lastNameOk &&
     rePasswordOk &&
     phoneOk &&
-    chooseFieldOK
-  ));
+    chooseFieldOK &&
+    checkPasswordSame
+  );
+};
 
 btnRegister.addEventListener("click", () => {
   if (
@@ -275,7 +311,8 @@ btnRegister.addEventListener("click", () => {
       lastNameOk &&
       rePasswordOk &&
       phoneOk &&
-      chooseFieldOK
+      chooseFieldOK &&
+      checkPasswordSame
     )
   ) {
     //if someone changed the html from dev tools
@@ -287,8 +324,16 @@ btnRegister.addEventListener("click", () => {
   let newUser = new User(
     nextUserId++,
     inputName.value,
+    inputLastName.value,
     inputEmail.value,
-    inputPassword.value
+    inputState.value,
+    inputCountry.value,
+    inputCity.value,
+    inputStreet.value,
+    inpuHouseNumber.value,
+    inputZipCode.value,
+    inputPassword.value,
+    inputPhoneNumber.value
   );
   localStorage.setItem("nextUserId", nextUserId + "");
   if (!users) {
@@ -320,6 +365,3 @@ btnRegister.addEventListener("click", () => {
   }
   handlePageChange(PAGES.LOGIN);
 });
-const checkIfPasswordIsSame = () => {
-  return getElementById("inputPassword1") === getElementById("inputPassword2");
-};
