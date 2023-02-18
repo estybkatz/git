@@ -86,38 +86,34 @@
             The name must start with a capital letter
             This field can only be used with letters and numbers,
           </div>can 
-          <h6>Adress</h6>
+          <h6>Address</h6>
            <div class="col-md-4">
             <label for="input-state" class="form-label">State</label>
             <input type="text" class="form-control inp-string" id="input-state">
-          </div>
-           <div class="alert alert-danger d-none sign-alert-str" role="alert">
-            Only letters and numbers should be entered in this field
           </div>
           <div class="col-md-4">
             <label for="input-country" class="form-label">Country</label>
             <input type="text" class="form-control inp-string" id="input-country">
              
           </div>
-         <div class="alert alert-danger d-none sign-alert-str" role="alert">
-            Only letters and numbers should be entered in this field
-          </div>
+         
           <div class="col-md-4">
             <label for="input-city" class="form-label">City</label>
-            <input type="text" class="form-control" id="input-city">
+            <input type="text" class="form-control inp-string" id="input-city">
           </div>
           <div class="col-md-4">
             <label for="input-street" class="form-label">Street</label>
-            <input type="text" class="form-control" id="input-street">
+            <input type="text" class="form-control inp-string" id="input-street">
           </div>
           <div class="col-md-4">
             <label for="input-house-number" class="form-label">House Number</label>
-            <input type="number" class="form-control" id="input-house-number">
+            <input type="text" class="form-control inp-string" id="input-house-number">
           </div>
           <div class="col-md-4">
-            <label for="input-zip-code" class="form-label">Zip Code</label>
-            <input type="number" class="form-control" id="input-zip-code">
+            <label for="input-zip-code" class="form-label ">Zip Code</label>
+            <input type="text" class="form-control inp-string" id="input-zip-code">
           </div>
+          <div class="alert alert-danger d-none" role="alert" id="input-rules">Address details should contain at least 2 characters, letters and numbers only</div>
           <h6>Means of contact</h6>
           <div class="col-md-6">
             <label for="input-email" class="form-label red-asterik">Email</label>
@@ -128,7 +124,10 @@
           </div>
           <div class="col-md-6">
             <label for="input-phone" class="form-label">Phone</label>
-            <input type="number" class="form-control" id="input-phone">
+            <input type="text" class="form-control" id="input-phone">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="signup-alert-phone">
+            Your phone number must contain only digits.
           </div>
           <h6>Security</h6>
           <div class="col-md-6">

@@ -14,18 +14,20 @@ const inputEmail = document.getElementById("signup-input-email");
 const inputPassword = document.getElementById("signup-input-password1");
 const inputRePassword = document.getElementById("signup-input-password2");
 const inputStrings = document.getElementsByClassName("inp-string");
-const inputNanbers = document.querySelector(".number");
+const inputPhoneNumber = document.getElementById("input-phone");
 const btnRegister = document.querySelector("#signup-btn-signup");
 
-console.log(inputStrings);
-console.log(1);
+/*
+Initializing the boolean variables, which are required for the successful input.
+The fields which must be filled are set in default as false, and the fields which can stay empty are set as true.
+*/
 let nameOk = false;
 let lastNameOk = false;
 let emailOk = false;
 let passwordOk = false;
 let rePasswordOk = false;
-let choosefieldOK = false;
-
+let chooseFieldOK = true;
+let phoneOk = true;
 window.addEventListener("load", () => {
   //when page loaded
   if (inputName.value !== "") {
@@ -45,6 +47,9 @@ window.addEventListener("load", () => {
   }
   if (inputStrings.length !== 0) {
     checkStringInput(inputStrings);
+  }
+  if (inputPhoneNumber.value !== 0) {
+    checkPhoneNumber();
   }
   /* 
     if (inputStrings[i].value !== "") {
@@ -69,6 +74,9 @@ inputPassword.addEventListener("input", () => {
 
 inputRePassword.addEventListener("input", () => {
   checkRePasswordInput();
+});
+inputPhoneNumber.addEventListener("input", () => {
+  checkPhoneNumber();
 });
 /* 
 function checkStrings(elements) {
@@ -209,7 +217,8 @@ const checkStringInput = () => {
     } else {
       errorInputRules = true;
       //the text is not ok
-      inputStrings[i].classList.add("is-invalid"); /* 
+      inputStrings[i].classList.add("is-invalid");
+      /* 
       document
         .getElementsByClassName("sign-alert-str")
         .classList.remove("d-none"); */
@@ -217,23 +226,44 @@ const checkStringInput = () => {
       // errorArr.join("<br>");
       //lastNameOk = false;
     }
-  }  
-    if (errorInputRules === true) {
-      document.getElementById("input-rules").classList.add("d-block");
-    } else {
-      document.getElementById("input-rules").classList.remove("d-block");
-    }
+  }
+  if (errorInputRules === true) {
+    chooseFieldOK = false;
+    document.getElementById("input-rules").classList.remove("d-none");
+    document.getElementById("input-rules").classList.add("d-block");
+  } else {
+    chooseFieldOK = true;
+    document.getElementById("input-rules").classList.remove("d-block");
+
+    document.getElementById("input-rules").classList.add("d-none");
   }
   checkIfCanEnableBtn();
 };
-
+const checkPhoneNumber = () => {
+  let errorArr = validateNumber(inputPhoneNumber.value);
+  if (errorArr.length === 0 || inputPhoneNumber === "") {
+    inputPhoneNumber.classList.remove("is-invalid");
+    document.getElementById("signup-alert-phone").classList.add("d-none");
+    phoneOk = true;
+  } else {
+    //the text is not ok
+    inputPhoneNumber.classList.add("is-invalid");
+    document.getElementById("signup-alert-phone").classList.remove("d-none");
+    // document.getElementById("signup-alert-email").innerHTML +=
+    // errorArr.join("<br>");
+    phoneOk = false;
+  }
+  checkIfCanEnableBtn();
+};
 const checkIfCanEnableBtn = () =>
   (btnRegister.disabled = !(
     nameOk &&
     emailOk &&
     passwordOk &&
     lastNameOk &&
-    rePasswordOk
+    rePasswordOk &&
+    phoneOk &&
+    choosefieldOK
   ));
 
 btnRegister.addEventListener("click", () => {
