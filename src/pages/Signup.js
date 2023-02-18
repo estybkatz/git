@@ -48,7 +48,7 @@ window.addEventListener("load", () => {
   if (inputStrings.length !== 0) {
     checkStringInput(inputStrings);
   }
-  if (inputPhoneNumber.value !== 0) {
+  if (inputPhoneNumber.value !== "") {
     checkPhoneNumber();
   }
   /* 
@@ -263,11 +263,21 @@ const checkIfCanEnableBtn = () =>
     lastNameOk &&
     rePasswordOk &&
     phoneOk &&
-    choosefieldOK
+    chooseFieldOK
   ));
 
 btnRegister.addEventListener("click", () => {
-  if (!(nameOk && emailOk && passwordOk && lastNameOk && rePasswordOk)) {
+  if (
+    !(
+      nameOk &&
+      emailOk &&
+      passwordOk &&
+      lastNameOk &&
+      rePasswordOk &&
+      phoneOk &&
+      chooseFieldOK
+    )
+  ) {
     //if someone changed the html from dev tools
     return;
   }
