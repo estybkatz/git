@@ -11,7 +11,7 @@ class User {
   phone;
   email;
   password;
-  bussinessClient;
+  businessClient;
   constructor(
     id,
     name,
@@ -21,11 +21,12 @@ class User {
     city,
     street,
     houseNumber,
-    zipcode,
+    zipCode,
     phone,
     email,
     password
   ) {
+    this.id = id;
     this.name = name;
     this.lastName = lastName;
     this.state = state;
@@ -33,12 +34,11 @@ class User {
     this.city = city;
     this.street = street;
     this.houseNumber = houseNumber;
-    this.zipcode = zipcode;
-    this.phone = phone;
+    this.zipCode = zipCode;
     this.email = email;
+    this.phone = phone;
     this.password = password;
-    this.bussinessClient = false;
-    this.id = id;
+    this.businessClient = false;
   }
 }
 export default User;

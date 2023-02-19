@@ -16,14 +16,12 @@ const inputRePassword = document.getElementById("signup-input-password2");
 const inputStrings = document.getElementsByClassName("inp-string");
 const inputPhoneNumber = document.getElementById("input-phone");
 const btnRegister = document.querySelector("#signup-btn-signup");
-const inputState = document.getElementById("signup-page-input-state");
-const inputCountry = document.getElementById("signup-page-input-country");
-const inputCity = document.getElementById("signup-page-input-city");
-const inputStreet = document.getElementById("signup-page-input-street");
-const inputHouseNumber = document.getElementById(
-  "signup-page-input-house-number"
-);
-const inputZipCode = document.getElementById("signup-page-input-zip");
+const inputState = document.getElementById("signup-input-state");
+const inputCountry = document.getElementById("signup-input-country");
+const inputCity = document.getElementById("signup-input-city");
+const inputStreet = document.getElementById("signup-input-street");
+const inputHouseNumber = document.getElementById("signup-input-house-number");
+const inputZipCode = document.getElementById("signup-input-zip");
 
 /*
 Initializing the boolean variables, which are required for the successful input.
@@ -325,15 +323,15 @@ btnRegister.addEventListener("click", () => {
     nextUserId++,
     inputName.value,
     inputLastName.value,
-    inputEmail.value,
     inputState.value,
     inputCountry.value,
     inputCity.value,
     inputStreet.value,
-    inpuHouseNumber.value,
+    inputHouseNumber.value,
     inputZipCode.value,
-    inputPassword.value,
-    inputPhoneNumber.value
+    inputPhoneNumber.value,
+    inputEmail.value,
+    inputPassword.value
   );
   localStorage.setItem("nextUserId", nextUserId + "");
   if (!users) {
