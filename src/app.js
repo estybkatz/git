@@ -2,6 +2,7 @@ import PAGES from "./models/pageModel.js";
 import handlePageChange from "./routes/router.js";
 //import "./initialData/initialData.js";
 import "./pages/Signup.js";
+import "./pages/Login.js";
 // import "./pages/LoginPage.js";
 // import "./pages/ProfilePage.js";
 // import { showNewPopup } from "./pages/HomePage.js";

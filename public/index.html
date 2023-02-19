@@ -51,7 +51,7 @@
 
     <main>
       <!-- Home page -->
-      <div id="home-page" class="d-none">
+      <div id="home-page" class="d-block">
         <h1 class=>Pic-Up</h1>
         <h4>The popular site for selling your photos. Simple registration to the website, and you are welcome to upload
           photos for sale</h4>
@@ -65,7 +65,7 @@
         <p>addpic</p>
       </div>
       <!--Signup-->
-      <div id="signup-page" class="d-block">
+      <div id="signup-page" class="d-none">
         <h3 style="text-align: center;">Sign up</h3>
 
         <form class="row g-3" onsubmit="event.preventDefault()">
@@ -173,17 +173,19 @@
             <input type="email" class="form-control" id="login-input-email" placeholder="name@example.com" />
             <label for="login-input-email">Email address</label>
           </div>
-          <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
-            Email rules
+         <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
+            You have to put your email
           </div>
           <div class="form-floating">
             <input type="password" class="form-control" id="login-input-password" placeholder="Password" />
             <label for="login-input-password">Password</label>
           </div>
           <div class="alert alert-danger d-none" role="alert" id="login-alert-password">
-            Password rules
+            You must use uppercase letter, lowercase letter, numbers, special sign
           </div>
-
+          <div>Not registered yet?</div>
+          <div id="click-here-login"><a href="#">
+            Click here...</a></div>
           <button class="btn btn-primary" id="login-btn">Submit</button>
         </form>
       </div>
