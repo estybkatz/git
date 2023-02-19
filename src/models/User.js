@@ -7,11 +7,12 @@ class User {
   city;
   street;
   houseNumber;
-  zipcode;
+  zipCode;
   phone;
   email;
   password;
-  businessClient;
+  btnBusinessClient;
+
   constructor(
     id,
     name,
@@ -24,7 +25,8 @@ class User {
     zipCode,
     phone,
     email,
-    password
+    password,
+    btnBusinessClient
   ) {
     this.id = id;
     this.name = name;
@@ -38,7 +40,17 @@ class User {
     this.email = email;
     this.phone = phone;
     this.password = password;
-    this.businessClient = false;
+    this.btnBusinessClient = btnBusinessClient;
   }
+  // checkBusinessClient = () => {
+  //   debugger;
+  //   let btnBusinessClient;
+  //   if (btnBusinessClient.checked) {
+  //     return (this.btnBusinessClient = true);
+  //   } else {
+  //     return (this.btnBusinessClient = false);
+  //   }
+  // };
 }
+
 export default User;
