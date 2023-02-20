@@ -5,11 +5,14 @@ let selectedProperty, editProperty;
 const editPropertiesPopupImgDisplay = document.getElementById(
   "editPropertiesPopupImgDisplay"
 );
-const editPropertiesPopupName = document.getElementById(
-  "editPropertiesPopupName"
+const editPropertiesPopupUrl = document.getElementById(
+  "editPropertiesPopupUrl"
 );
-const editPropertiesPopupDescription = document.getElementById(
-  "editPropertiesPopupDescription"
+const editPropertiesPopupAlt = document.getElementById(
+  "editPropertiesPopupAlt"
+);
+const editPropertiesPopupCredit = document.getElementById(
+  "editPropertiesPopupCredit"
 );
 const editPropertiesPopupPrice = document.getElementById(
   "editPropertiesPopupPrice"
@@ -26,14 +29,14 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   if (selectedPropertyFromHomePage) {
     selectedProperty = selectedPropertyFromHomePage;
   } else {
-    selectedProperty = new Property(getNextId(), "", 0, "", "");
+    selectedProperty = new Property(getNextId(), "", "", "", "", "");
   }
   editProperty = editPropertyFromHomePage;
   editPropertiesPopupImgDisplay.src = selectedProperty.imgUrl;
-  editPropertiesPopupName.value = selectedProperty.name;
-  editPropertiesPopupDescription.value = selectedProperty.description;
+  editPropertiesPopupUrl.value = selectedProperty.imgUrl;
+  editPropertiesPopupAlt.value = selectedProperty.title;
+  editPropertiesPopupCredit.value = selectedProperty.credit;
   editPropertiesPopupPrice.value = selectedProperty.price;
-  editPropertiesPopupImg.value = selectedProperty.imgUrl;
   showPopup();
 };
 
@@ -59,10 +62,11 @@ window.addEventListener("load", () => {
   document
     .getElementById("editPropertiesPopupSaveBtn")
     .addEventListener("click", () => {
-      selectedProperty.name = editPropertiesPopupName.value;
-      selectedProperty.description = editPropertiesPopupDescription.value;
+      selectedProperty.imgUrl = editPropertiesPopupUrl.value;
+      selectedProperty.title = editPropertiesPopupAlt.value;
       selectedProperty.price = editPropertiesPopupPrice.value;
-      selectedProperty.imgUrl = editPropertiesPopupImg.value;
+      selectedProperty.credit = editPropertiesPopupCredit.value;
+      selectedProperty.img = editPropertiesPopupImg.value;
       editProperty(selectedProperty);
       hidePopup();
     });

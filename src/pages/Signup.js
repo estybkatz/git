@@ -288,7 +288,7 @@ const checkPhoneNumber = () => {
 };
 
 const checkIfCanEnableBtn = () => {
-  isAdmin.disabled = !(
+  btnRegister.disabled = !(
     nameOk &&
     emailOk &&
     passwordOk &&

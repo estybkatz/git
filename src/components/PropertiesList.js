@@ -1,17 +1,17 @@
 let propertiesArr;
 let listDiv;
-let isBusiness;
+let isAdmin;
 let deleteProperty;
 let showPopup;
 //this function will transfer data from homepage to this page
 const initialPropertiesList = (
   propertiesArrFromHomePage,
-  isBusinessParam,
+  isAdminParam,
   deletePropertyFromHomePage,
   showPopupFromHomePage
 ) => {
   listDiv = document.getElementById("home-page-properties-list");
-  isBusiness = isBusinessParam;
+  isAdmin = isAdminParam;
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;
   updatePropertiesList(propertiesArrFromHomePage);
@@ -40,7 +40,7 @@ const createItem = (id, imgUrl, title, credit, img) => {
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${img}" class="img-fluid" alt="${title}" />
+        <img src="${imgUrl}" class="img-fluid" alt="${title}" />
         </div>
         <div class="col-md-8">
         <div class="card-body">
@@ -57,7 +57,7 @@ const createItem = (id, imgUrl, title, credit, img) => {
         <button type="button" class="btn btn-success w-100">
           <i class="bi bi-currency-dollar"></i> Buy now
         </button>
-        ${isBusiness ? adminBtns : ""}
+        ${isAdmin ? adminBtns : ""}
         </div>
     </div>
     </li>

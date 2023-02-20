@@ -7,7 +7,8 @@ const loginEmailInput = document.getElementById("login-input-email");
 const loginPasswordInput = document.getElementById("login-input-password");
 const loginBtn = document.getElementById("login-btn");
 const clickHereLogin = document.getElementById("click-here-login");
-
+let passwordOk = false;
+let emailOk = false;
 clickHereLogin.addEventListener("click", () => {
   handlePageChange(PAGES.SIGNUP);
 });

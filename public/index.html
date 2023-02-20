@@ -70,8 +70,11 @@
             class="popup-wrapper d-flex justify-content-center align-items-center d-none"
             id="editPropertiesPopup"
           >
+          
             <div class="popup-div" id="editPropertiesPopupChild">
               <div class="card">
+                <h4>create pictures form</h4>
+          <p>here you can add a new picture</p>
                 <img
                   src=""
                   class="card-img-top"
@@ -84,26 +87,37 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="editPropertiesPopupName"
-                        placeholder="Name"
+                        id="editPropertiesPopupUrl"
+                        placeholder="Url"
                       />
-                      <label for="editPropertiesPopupName">Name</label>
+                      <label for="editPropertiesPopupUrl">url</label>
                     </div>
                   </h5>
                   <div class="card-text">
                     <div class="form-floating">
                       <textarea
                         class="form-control"
-                        placeholder="description"
-                        id="editPropertiesPopupDescription"
+                        placeholder="alt"
+                        id="editPropertiesPopupAlt"
                       ></textarea>
-                      <label for="editPropertiesPopupDescription"
-                        >Description</label
+                      <label for="editPropertiesAlt"
+                        >alt</label
                       >
                     </div>
                   </div>
                 </div>
                 <ul class="list-group list-group-flush">
+                   <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupCredit"
+                        placeholder="Credit"
+                      />
+                      <label for="editPropertiesPopupCredit">Credit</label>
+                    </div>
+                  </li>
                   <li class="list-group-item">
                     <div class="form-floating mb-3">
                       <input
@@ -114,7 +128,8 @@
                       />
                       <label for="editPropertiesPopupPrice">Price</label>
                     </div>
-                  </li>
+                  </li>                 
+                  
                   <li class="list-group-item">
                     <div class="form-floating mb-3">
                       <input

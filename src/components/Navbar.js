@@ -3,7 +3,7 @@ import checkIfConnected from "../utils/checkIfConnected.js";
 import getNextId from "../utils/getNextId.js";
 
 let nextId;
-let isBusiness;
+let isAdmin;
 let isConnected;
 let showPopup;
 
