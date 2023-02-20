@@ -5,7 +5,7 @@ import "./pages/Signup.js";
 import "./pages/Login.js";
 // import "./pages/LoginPage.js";
 // import "./pages/ProfilePage.js";
-// import { showNewPopup } from "./pages/HomePage.js";
+import { showNewPopup } from "./pages/Homepage.js";
 // import initializeNavbar from "./components/Navbar.js";
 // import checkIfConnected from "./utils/checkIfConnected.js";
 

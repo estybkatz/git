@@ -10,8 +10,8 @@ import {
   initialPropertiesCarousel,
   updatePropertiesCarousel,
 } from "../components/PropertiesCarousel.js";
-//import { initPopup } from "../components/Popup.js";
-// import checkIfAdmin from "../utils/checkIfAdmin.js";
+import { initPopup } from "../components/Popup.js";
+import checkIfAdmin from "../utils/checkIfAdmin.js";
 
 let propertiesArr, originalPropertiesArr;
 let displayNow; // display that we can see now
@@ -29,7 +29,7 @@ let isAdmin;
 
 window.addEventListener("load", () => {
   propertiesArr = localStorage.getItem("props");
-  console.log(propertiesArr);
+  //console.log(propertiesArr);
   if (!propertiesArr) {
     return;
   }
