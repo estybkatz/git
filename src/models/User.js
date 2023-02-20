@@ -11,7 +11,7 @@ class User {
   phone;
   email;
   password;
-  btnBusinessClient;
+  isAdmin;
 
   constructor(
     id,
@@ -26,7 +26,7 @@ class User {
     phone,
     email,
     password,
-    btnBusinessClient
+    isAdmin
   ) {
     this.id = id;
     this.name = name;
@@ -40,7 +40,7 @@ class User {
     this.email = email;
     this.phone = phone;
     this.password = password;
-    this.btnBusinessClient = btnBusinessClient;
+    this.isAdmin = isAdmin;
   }
   // checkBusinessClient = () => {
   //   debugger;

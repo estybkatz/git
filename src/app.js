@@ -6,8 +6,8 @@ import "./pages/Login.js";
 // import "./pages/LoginPage.js";
 // import "./pages/ProfilePage.js";
 import { showNewPopup } from "./pages/Homepage.js";
-// import initializeNavbar from "./components/Navbar.js";
-// import checkIfConnected from "./utils/checkIfConnected.js";
+import initializeNavbar from "./components/Navbar.js";
+import checkIfConnected from "./utils/checkIfConnected.js";
 
 const navHomeLink = document.getElementById("nav-home-link");
 const navAboutusLink = document.getElementById("nav-aboutus-link");
@@ -17,14 +17,14 @@ const navLoginPageLink = document.getElementById("nav-login-page");
 const navEditProfilePage = document.getElementById("nav-edit-profile-page");
 const navLogout = document.getElementById("nav-logout");
 
-// window.addEventListener("load", () => {
-//   initializeNavbar(showNewPopup);
-//   if (checkIfConnected()) {
-//     let user = localStorage.getItem("token");
-//     user = JSON.parse(user);
-//     navEditProfilePage.innerText = user.name;
-//   }
-// });
+window.addEventListener("load", () => {
+  initializeNavbar(showNewPopup);
+  if (checkIfConnected()) {
+    let user = localStorage.getItem("token");
+    user = JSON.parse(user);
+    navEditProfilePage.innerText = user.name;
+  }
+});
 
 navHomeLink.addEventListener("click", function () {
   handlePageChange(PAGES.HOME);

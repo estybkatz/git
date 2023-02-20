@@ -76,7 +76,7 @@ loginBtn.addEventListener("click", () => {
       id: user.id,
       name: user.name,
       email: user.email,
-      isAdmin: user.btnBusinessClient,
+      isAdmin: user.isAdmin,
     })
   );
   // handlePageChange(PAGES.HOME);

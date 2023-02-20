@@ -4,7 +4,7 @@ const checkIfAdmin = () => {
     return false;
   }
   token = JSON.parse(token);
-  return token.btnBusinessClient;
+  return token.isAdmin;
 };
 
 export default checkIfAdmin;

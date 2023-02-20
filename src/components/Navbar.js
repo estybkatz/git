@@ -1,20 +1,19 @@
-import checkIfAdmin from "../utils/checkIfAdmin.js";
+import checkIfBusiness from "../utils/checkIfAdmin.js";
 import checkIfConnected from "../utils/checkIfConnected.js";
 import getNextId from "../utils/getNextId.js";
 
 let nextId;
-let isAdmin;
+let isBusiness;
 let isConnected;
 let showPopup;
 
 let navAddNewPropertyLink;
-
 const navBeforeLogin = document.getElementById("navBeforeLogin");
 const navAfterLogin = document.getElementById("navAfterLogin");
 
 const initializeNavbar = (showPopupFromApp) => {
   nextId = getNextId();
-  isAdmin = checkIfAdmin();
+  isAdmin = checkIfBusiness();
   isConnected = checkIfConnected();
   if (isConnected) {
     navBeforeLogin.classList.add("d-none");

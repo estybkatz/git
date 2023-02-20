@@ -65,3 +65,7 @@
   content: "*";
   color: red;
 }
+
+/* li :after {
+  content: counter-increment;
+} */

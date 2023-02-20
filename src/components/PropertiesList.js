@@ -1,17 +1,17 @@
 let propertiesArr;
 let listDiv;
-let isAdmin;
+let isBusiness;
 let deleteProperty;
 let showPopup;
 //this function will transfer data from homepage to this page
 const initialPropertiesList = (
   propertiesArrFromHomePage,
-  isAdminParam,
+  isBusinessParam,
   deletePropertyFromHomePage,
   showPopupFromHomePage
 ) => {
   listDiv = document.getElementById("home-page-properties-list");
-  isAdmin = isAdminParam;
+  isBusiness = isBusinessParam;
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;
   updatePropertiesList(propertiesArrFromHomePage);
@@ -27,7 +27,7 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
   createList();
 };
 
-const createItem = (name, description, price, img, id) => {
+const createItem = (id, imgUrl, title, credit, img) => {
   const adminBtns = `
   <button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
     <i class="bi bi-pen-fill"></i> Edit
@@ -40,16 +40,16 @@ const createItem = (name, description, price, img, id) => {
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${img}" class="img-fluid" alt="${name}" />
+        <img src="${img}" class="img-fluid" alt="${title}" />
         </div>
         <div class="col-md-8">
         <div class="card-body">
-            <h5 class="card-title">${name}</h5>
+            <h5 class="card-title">${credit}</h5>
             <h6 class="card-subtitle mb-2 text-muted">
-            ${price}
+            ${title}
             </h6>
             <p class="card-text">
-            ${description}
+            ${imgUrl}
             </p>
         </div>
         </div>
@@ -57,7 +57,7 @@ const createItem = (name, description, price, img, id) => {
         <button type="button" class="btn btn-success w-100">
           <i class="bi bi-currency-dollar"></i> Buy now
         </button>
-        ${isAdmin ? adminBtns : ""}
+        ${isBusiness ? adminBtns : ""}
         </div>
     </div>
     </li>
@@ -103,11 +103,12 @@ const createList = () => {
   //create new elements and remove old ones
   for (let property of propertiesArr) {
     innerStr += createItem(
-      property.name,
-      property.description,
-      property.price,
+      property.img,
       property.imgUrl,
-      property.id
+      property.title,
+      property.credit
+      //property.price
+      // property.id
     );
   }
   listDiv.innerHTML = innerStr;
