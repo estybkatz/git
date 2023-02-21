@@ -1,4 +1,5 @@
-import checkIfBusiness from "../utils/checkIfAdmin.js";
+import checkIfAdmin from "../utils/checkIfAdmin.js";
+//import checkIfBusiness from "../utils/checkIfAdmin.js";
 import checkIfConnected from "../utils/checkIfConnected.js";
 import getNextId from "../utils/getNextId.js";
 
@@ -13,7 +14,7 @@ const navAfterLogin = document.getElementById("navAfterLogin");
 
 const initializeNavbar = (showPopupFromApp) => {
   nextId = getNextId();
-  isAdmin = checkIfBusiness();
+  isAdmin = checkIfAdmin();
   isConnected = checkIfConnected();
   if (isConnected) {
     navBeforeLogin.classList.add("d-none");
@@ -22,7 +23,7 @@ const initializeNavbar = (showPopupFromApp) => {
   showPopup = showPopupFromApp;
   /* nav */
   navAddNewPropertyLink = document.getElementById("nav-add-new-property-link");
-  if (!isAdmin) {
+  if (!isConnected) {
     navAddNewPropertyLink.classList.add("d-none");
   }
   navAddNewPropertyLink.addEventListener("click", () => {

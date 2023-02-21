@@ -36,12 +36,12 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#" id="nav-aboutus-link">About</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#" id="nav-addpic-link">Add Pic</a>
-              </li>
+              </li> -->
                <li class="nav-item">
                 <a class="nav-link" href="#" id="nav-add-new-property-link"
-                  >Add new property</a
+                  >Add pic</a
                 >
               </li>
             </ul>
@@ -64,107 +64,8 @@
         <h1 class=>Pic-Up</h1>
         <h4>The popular site for selling your photos. Simple registration to the website, and you are welcome to upload
           photos for sale</h4>
-            <div id="home-page" class="d-block">
+            
           <h1>Home page</h1>
-          <div
-            class="popup-wrapper d-flex justify-content-center align-items-center d-none"
-            id="editPropertiesPopup"
-          >
-          
-            <div class="popup-div" id="editPropertiesPopupChild">
-              <div class="card">
-                <h4>create pictures form</h4>
-          <p>here you can add a new picture</p>
-                <img
-                  src=""
-                  class="card-img-top"
-                  alt=""
-                  id="editPropertiesPopupImgDisplay"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupUrl"
-                        placeholder="Url"
-                      />
-                      <label for="editPropertiesPopupUrl">url</label>
-                    </div>
-                  </h5>
-                  <div class="card-text">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="alt"
-                        id="editPropertiesPopupAlt"
-                      ></textarea>
-                      <label for="editPropertiesAlt"
-                        >alt</label
-                      >
-                    </div>
-                  </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                   <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupCredit"
-                        placeholder="Credit"
-                      />
-                      <label for="editPropertiesPopupCredit">Credit</label>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupPrice"
-                        placeholder="Price"
-                      />
-                      <label for="editPropertiesPopupPrice">Price</label>
-                    </div>
-                  </li>                 
-                  
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupImg"
-                        placeholder="Img"
-                      />
-                      <label for="editPropertiesPopupImg">Img</label>
-                    </div>
-                  </li>
-                </ul>
-                <div class="card-body">
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="editPropertiesPopupSaveBtn"
-                  >
-                    <i class="bi bi-check-circle-fill"></i> Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    id="editPropertiesPopupCancelBtn"
-                  >
-                    <i
-                      class="bi bi-x-circle-fill"
-                      id="editPropertiesPopupCancelBtnIcon"
-                    ></i>
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="d-flex justify-content-between mb-2">
             <div>
               <button type="button" class="btn btn-info" id="homeDisplayList">
@@ -234,7 +135,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
       <!--About-->
       <div id="about-us" class="d-none">
         <p>about us</p>
@@ -368,7 +269,207 @@
           <button class="btn btn-primary" id="login-btn">Submit</button>
         </form>
       </div>
-
+ <!-- Profile Page -->
+        <div id="profile-page" class="d-none">
+          <h1>Profile page</h1>
+          <form onsubmit="event.preventDefault()">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="profile-input-name"
+                placeholder="Your name"
+              />
+              <label for="profile-input-name">Name</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="profile-alert-name"
+            >
+              Name rules
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="profile-input-email"
+                placeholder="name@example.com"
+              />
+              <label for="profile-input-email">Email address</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="profile-alert-email"
+            >
+              Email rules
+            </div>
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="profile-input-password"
+                placeholder="Password"
+              />
+              <label for="profile-input-password">Password</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="profile-alert-password"
+            >
+              Name rules
+            </div>
+            <button class="btn btn-danger" disabled="true" id="profile-btn">
+              Update
+            </button>
+          </form>
+        </div>
+<!-- popup  -->
+         <div
+            class="popup-wrapper d-flex justify-content-center align-items-center d-none"
+            id="editPropertiesPopup"
+          >
+          
+            <div class="popup-div" id="editPropertiesPopupChild">
+              <div class="card">
+                <h4>create pictures form</h4>
+          <p>here you can add a new picture</p>
+                <img
+                  src=""
+                  class="card-img-top"
+                  alt=""
+                  id="editPropertiesPopupImgDisplay"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupUrl"
+                        placeholder="Url"
+                      />
+                      <label for="editPropertiesPopupUrl">url</label>
+                    </div>
+                  </h5>
+                  <div class="card-text">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="alt"
+                        id="editPropertiesPopupAlt"
+                      ></textarea>
+                      <label for="editPropertiesAlt"
+                        >alt</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                   <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupCredit"
+                        placeholder="Credit"
+                      />
+                      <label for="editPropertiesPopupCredit">Credit</label>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupPrice"
+                        placeholder="Price"
+                      />
+                      <label for="editPropertiesPopupPrice">Price</label>
+                    </div>
+                  </li>                 
+                  
+                  <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupImg"
+                        placeholder="Img"
+                      />
+                      <label for="editPropertiesPopupImg">Img</label>
+                    </div>
+                  </li>
+                   <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupCreatedAT"
+                        placeholder="createdAT"
+                      />
+                      <label for="editPropertiesPopupCreatedAT">createdAT</label>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupDescription"
+                        placeholder="Description"
+                      />
+                      <label for="editPropertiesPopupDescription">Description</label>
+                    </div>
+                  </li>
+                   <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupTitle"
+                        placeholder="Title"
+                      />
+                      <label for="editPropertiesPopupTitle">Title</label>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupSubTitle"
+                        placeholder="SubTitle"
+                      />
+                      <label for="editPropertiesSubTitle">SubTitle</label>
+                    </div>
+                  </li>
+                </ul>
+                <div class="card-body">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="editPropertiesPopupSaveBtn"
+                  >
+                    <i class="bi bi-check-circle-fill"></i> Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="editPropertiesPopupCancelBtn"
+                  >
+                    <i
+                      class="bi bi-x-circle-fill"
+                      id="editPropertiesPopupCancelBtnIcon"
+                    ></i>
+                    Cancel
+                  </button>
+                </div>
+              </div>
+        <!-- 404 Page not found Page -->
+        <div id="page-not-found-page" class="d-none"></div>
     </main>
 
     <footer class="border-top pt-3 d-flex justify-content-center">

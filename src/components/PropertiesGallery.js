@@ -35,10 +35,10 @@ const createCard = (name, description, price, img) => {
         <li class="list-group-item">${price}</li>
       </ul>
       <div class="card-body">
-        <button type=
-        </button>
         <button type="button" class="btn btn-success">
-          Success"button" class="btn btn-warning">
+          Success
+        </button>
+        <button type="button" class="btn btn-warning">
           Warning
         </button>
         <button type="button" class="btn btn-danger">Danger</button>

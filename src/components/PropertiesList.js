@@ -27,7 +27,7 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
   createList();
 };
 
-const createItem = (id, imgUrl, title, credit, img) => {
+const createItem = (name, description, price, img, id) => {
   const adminBtns = `
   <button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
     <i class="bi bi-pen-fill"></i> Edit
@@ -40,16 +40,16 @@ const createItem = (id, imgUrl, title, credit, img) => {
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${imgUrl}" class="img-fluid" alt="${title}" />
+        <img src="${img}" class="img-fluid" alt="${name}" />
         </div>
         <div class="col-md-8">
         <div class="card-body">
-            <h5 class="card-title">${credit}</h5>
+            <h5 class="card-title">${name}</h5>
             <h6 class="card-subtitle mb-2 text-muted">
-            ${title}
+            ${price}
             </h6>
             <p class="card-text">
-            ${imgUrl}
+            ${description}
             </p>
         </div>
         </div>
@@ -103,12 +103,11 @@ const createList = () => {
   //create new elements and remove old ones
   for (let property of propertiesArr) {
     innerStr += createItem(
-      property.img,
+      property.name,
+      property.description,
+      property.price,
       property.imgUrl,
-      property.title,
-      property.credit
-      //property.price
-      // property.id
+      property.id
     );
   }
   listDiv.innerHTML = innerStr;
