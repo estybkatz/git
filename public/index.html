@@ -12,10 +12,7 @@
     crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="./assets/imgs/camera.PNG" />
   <link rel="stylesheet" href="./index.css">
-   <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   <title>pic-Up</title>
 </head>
 
@@ -39,10 +36,8 @@
               <!-- <li class="nav-item">
                 <a class="nav-link" href="#" id="nav-addpic-link">Add Pic</a>
               </li> -->
-               <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-add-new-property-link"
-                  >Add pic</a
-                >
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="nav-add-new-property-link">Add pic</a>
               </li>
             </ul>
             <form class="d-flex responsive-nav-flex" role="search" id="navBeforeLogin">
@@ -64,86 +59,58 @@
         <h1 class=>Pic-Up</h1>
         <h4>The popular site for selling your photos. Simple registration to the website, and you are welcome to upload
           photos for sale</h4>
-            
-          <h1>Home page</h1>
-          <div class="d-flex justify-content-between mb-2">
-            <div>
-              <button type="button" class="btn btn-info" id="homeDisplayList">
-                <i class="bi bi-card-list"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-info"
-                id="homeDisplayGallery"
-              >
-                <i class="bi bi-microsoft"></i>
-              </button>
-              <button type="button" class="btn btn-info" id="homeDisplayCousel">
-                <i class="bi bi-file-earmark-slides"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-info"
-                id="homeDisplaySortASC"
-              >
-                <i class="bi bi-sort-alpha-down"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-info"
-                id="homeDisplaySortDESC"
-              >
-                <i class="bi bi-sort-alpha-up"></i>
-              </button>
-            </div>
-            <form class="d-flex align-self-end" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                id="homeDisplaySearch"
-              />
-            </form>
+
+        <h1>Home page</h1>
+        <div class="d-flex justify-content-between mb-2">
+          <div>
+            <button type="button" class="btn btn-info" id="homeDisplayList">
+              <i class="bi bi-card-list"></i>
+            </button>
+            <button type="button" class="btn btn-info" id="homeDisplayGallery">
+              <i class="bi bi-microsoft"></i>
+            </button>
+            <button type="button" class="btn btn-info" id="homeDisplayCousel">
+              <i class="bi bi-file-earmark-slides"></i>
+            </button>
+            <button type="button" class="btn btn-info" id="homeDisplaySortASC">
+              <i class="bi bi-sort-alpha-down"></i>
+            </button>
+            <button type="button" class="btn btn-info" id="homeDisplaySortDESC">
+              <i class="bi bi-sort-alpha-up"></i>
+            </button>
           </div>
-          <div id="propertiesGallery" class="d-none">
-            <div
-              class="row row-cols-1 row-cols-md-3 g-4"
-              id="home-page-properties-gallery"
-            ></div>
-          </div>
-          <div id="propertiesList" class="d-none">
-            <ol class="list-group list-group-numbered" id="home-page-properties-list"></ol>
-          </div>
-          <div class="carusel d-none" id="propertiesCarusel">
-            <div class="img-container" id="home-page-properties-carousel"></div>
-            <div class="d-flex justify-content-around">
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="back-carusel-btn"
-              >
-                <i class="bi bi-arrow-left"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="next-carusel-btn"
-              >
-                <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
+          <form class="d-flex align-self-end" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+              id="homeDisplaySearch" />
+          </form>
+        </div>
+        <div id="propertiesGallery" class="d-none">
+          <div class="row row-cols-1 row-cols-md-3 g-4" id="home-page-properties-gallery"></div>
+        </div>
+        <div id="propertiesList" class="d-none">
+          <ol class="list-group list-group-numbered" id="home-page-properties-list"></ol>
+        </div>
+        <div class="carusel d-none" id="propertiesCarusel">
+          <div class="img-container" id="home-page-properties-carousel"></div>
+          <div class="d-flex justify-content-around">
+            <button type="button" class="btn btn-primary" id="back-carusel-btn">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button type="button" class="btn btn-primary" id="next-carusel-btn">
+              <i class="bi bi-arrow-right"></i>
+            </button>
           </div>
         </div>
-      
+      </div>
+
       <!--About-->
       <div id="about-us" class="d-none">
         <p>about us</p>
       </div>
-      <!--Add pic-->
+      <!-- Add pic
       <div id="add-pic" class="d-none">
         <p>addpic</p>
-      </div>
+      </div> -->
       <!--Signup-->
       <div id="signup-page" class="d-none">
         <h3 style="text-align: center;">Sign up</h3>
@@ -165,18 +132,18 @@
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-last-name">
             The name must start with a capital letter
             This field can only be used with letters and numbers,
-          </div>can 
+          </div>can
           <h6>Address</h6>
-           <div class="col-md-4">
+          <div class="col-md-4">
             <label for="input-state" class="form-label">State</label>
             <input type="text" class="form-control inp-string" id="signup-input-state">
           </div>
           <div class="col-md-4">
             <label for="input-country" class="form-label">Country</label>
             <input type="text" class="form-control inp-string" id="signup-input-country">
-             
+
           </div>
-         
+
           <div class="col-md-4">
             <label for="input-city" class="form-label">City</label>
             <input type="text" class="form-control inp-string" id="signup-input-city">
@@ -193,7 +160,8 @@
             <label for="input-zip-code" class="form-label ">Zip Code</label>
             <input type="text" class="form-control inp-string" id="signup-input-zip">
           </div>
-          <div class="alert alert-danger d-none" role="alert" id="input-rules">Address details should contain at least 2 characters, letters and numbers only</div>
+          <div class="alert alert-danger d-none" role="alert" id="input-rules">Address details should contain at least 2
+            characters, letters and numbers only</div>
           <h6>Means of contact</h6>
           <div class="col-md-6">
             <label for="input-email" class="form-label red-asterik">Email</label>
@@ -225,9 +193,9 @@
             You must use uppercase letter, lowercase letter, numbers, special sign
           </div>
           <div class="alert alert-danger d-none" role="alert" id="none-same-password">
-           Your password is not same
+            Your password is not same
           </div>
-         
+
           <div class="col-12">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="business-client" value="false">
@@ -240,10 +208,10 @@
             <button type="submit" class="btn btn-primary" disabled="true" id="signup-btn-signup">Sign in</button>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-danger">Cancel</button>
+            <button type="submit" class="btn btn-danger" id="signupCancelBtn">Cancel</button>
           </div>
         </form>
-<div id="toast"></div>
+        <div id="toast"></div>
       </div>
       <!-- login page -->
       <div id="login-page" class="d-none">
@@ -253,7 +221,7 @@
             <input type="email" class="form-control" id="login-input-email" placeholder="name@example.com" />
             <label for="login-input-email">Email address</label>
           </div>
-         <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
+          <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
             You have to put your email
           </div>
           <div class="form-floating">
@@ -265,211 +233,257 @@
           </div>
           <div>Not registered yet?</div>
           <div id="click-here-login"><a href="#">
-            Click here...</a></div>
+              Click here...</a></div>
           <button class="btn btn-primary" id="login-btn">Submit</button>
         </form>
       </div>
- <!-- Profile Page -->
-        <div id="profile-page" class="d-none">
-          <h1>Profile page</h1>
-          <form onsubmit="event.preventDefault()">
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="profile-input-name"
-                placeholder="Your name"
-              />
-              <label for="profile-input-name">Name</label>
+      <!-- Profile Page -->
+      
+        <!-- <form onsubmit="event.preventDefault()">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="profile-input-name" placeholder="Your name" />
+            <label for="profile-input-name">Name</label>
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-name">
+            Name rules
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="profile-input-email" placeholder="name@example.com" />
+            <label for="profile-input-email">Email address</label>
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-email">
+            Email rules
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="profile-input-password" placeholder="Password" />
+            <label for="profile-input-password">Password</label>
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-password">
+            Name rules
+          </div>
+          <button class="btn btn-danger" disabled="true" id="profile-btn">
+            Update
+          </button>
+        </form>
+      </div> -->
+       <div id="profile-page" class="d-none">
+        <h3 style="text-align: center;">Profile Page</h3>
+
+        <form class="row g-3" onsubmit="event.preventDefault()">
+          <h6>name</h6>
+          <div class="col-md-6">
+            <label for="form-label" class="form-label red-asterik">Name</label>
+            <input type="text" class="form-control" id="profile-input-name">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-name">
+            The name must start with a capital letter
+            This field can only be used with letters and numbers,
+          </div>
+          <div class="col-md-6">
+            <label for="input-last-name" class="form-label red-asterik">Last Name</label>
+            <input type="text" class="form-control" id="profile-input-last-name">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-last-name">
+            The name must start with a capital letter
+            This field can only be used with letters and numbers,
+          </div>
+          <h6>Address</h6>
+          <div class="col-md-4">
+            <label for="input-state" class="form-label">State</label>
+            <input type="text" class="form-control inp-string" id="profile-input-state">
+          </div>
+          <div class="col-md-4">
+            <label for="input-country" class="form-label">Country</label>
+            <input type="text" class="form-control inp-string" id="profile-input-country">
+
+          </div>
+
+          <div class="col-md-4">
+            <label for="input-city" class="form-label">City</label>
+            <input type="text" class="form-control inp-string" id="profile-input-city">
+          </div>
+          <div class="col-md-4">
+            <label for="input-street" class="form-label">Street</label>
+            <input type="text" class="form-control inp-string" id="profile-input-street">
+          </div>
+          <div class="col-md-4">
+            <label for="input-house-number" class="form-label">House Number</label>
+            <input type="text" class="form-control inp-string" id="profile-input-house-number">
+          </div>
+          <div class="col-md-4">
+            <label for="input-zip-code" class="form-label ">Zip Code</label>
+            <input type="text" class="form-control inp-string" id="profile-input-zip">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-input-rules">Address details should contain at least 2
+            characters, letters and numbers only</div>
+          <h6>Means of contact</h6>
+          <div class="col-md-6">
+            <label for="input-email" class="form-label red-asterik">Email</label>
+            <input type="email" class="form-control" id="profile-input-email">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-email">
+            You have to put your email
+          </div>
+          <div class="col-md-6">
+            <label for="input-phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="profile-input-phone">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-phone">
+            Your phone number must contain only digits.
+          </div>
+          <h6>Security</h6>
+          <div class="col-md-6">
+            <label for="inputPassword1" class="form-label red-asterik">Password</label>
+            <input type="text" class="form-control" id="profile-input-password1">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-password1">
+            You must use uppercase letter, lowercase letter, numbers, special sign
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword2" class="form-label red-asterik">Re-Enter Password</label>
+            <input type="text" class="form-control" id="profile-input-password2">
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-repassword2">
+            You must use uppercase letter, lowercase letter, numbers, special sign
+          </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-none-same-password">
+            Your password is not same
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="profile-business-client" value="false">
+              <label class="form-check-label" for="gridCheck">
+                Business Client
+              </label>
             </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="profile-alert-name"
-            >
-              Name rules
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="profile-input-email"
-                placeholder="name@example.com"
-              />
-              <label for="profile-input-email">Email address</label>
-            </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="profile-alert-email"
-            >
-              Email rules
-            </div>
-            <div class="form-floating">
-              <input
-                type="password"
-                class="form-control"
-                id="profile-input-password"
-                placeholder="Password"
-              />
-              <label for="profile-input-password">Password</label>
-            </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="profile-alert-password"
-            >
-              Name rules
-            </div>
-            <button class="btn btn-danger" disabled="true" id="profile-btn">
-              Update
-            </button>
-          </form>
-        </div>
-<!-- popup  -->
-         <div
-            class="popup-wrapper d-flex justify-content-center align-items-center d-none"
-            id="editPropertiesPopup"
-          >
-          
-            <div class="popup-div" id="editPropertiesPopupChild">
-              <div class="card">
-                <h4>create pictures form</h4>
-          <p>here you can add a new picture</p>
-                <img
-                  src=""
-                  class="card-img-top"
-                  alt=""
-                  id="editPropertiesPopupImgDisplay"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupUrl"
-                        placeholder="Url"
-                      />
-                      <label for="editPropertiesPopupUrl">url</label>
-                    </div>
-                  </h5>
-                  <div class="card-text">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="alt"
-                        id="editPropertiesPopupAlt"
-                      ></textarea>
-                      <label for="editPropertiesAlt"
-                        >alt</label
-                      >
-                    </div>
-                  </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" disabled="true" id="profile-btn">Sign in</button>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-danger" id="profileCancelBtn">Cancel</button>
+          </div>
+        </form>
+        <!-- <div id="toast"></div> -->
+      </div>
+      <!-- popup  -->
+      <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="editPropertiesPopup">
+
+        <div class="popup-div" id="editPropertiesPopupChild">
+          <div class="card">
+            <h4>create pictures form</h4>
+            <p>here you can add a new picture</p>
+
+             <img src="" class="card-img-top" alt="" id="editPropertiesPopupImgDisplay" />
+            <div class="card-body">
+              <!-- <h5 class="card-title">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="editPropertiesPopupUrl" placeholder="Url" />
+                  <label for="editPropertiesPopupUrl">img</label>
                 </div>
-                <ul class="list-group list-group-flush">
-                   <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupCredit"
-                        placeholder="Credit"
-                      />
-                      <label for="editPropertiesPopupCredit">Credit</label>
+              </h5> -->
+
+             <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="editPropertiesPopupImg"
+                        placeholder="Img" />
+                  <label for="editPropertiesPopupImg" editPropertiesPopupImg" ">url</label>
                     </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupPrice"
-                        placeholder="Price"
-                      />
-                      <label for="editPropertiesPopupPrice">Price</label>
-                    </div>
-                  </li>                 
-                  
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupImg"
-                        placeholder="Img"
-                      />
-                      <label for="editPropertiesPopupImg">Img</label>
-                    </div>
-                  </li>
-                   <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupCreatedAT"
-                        placeholder="createdAT"
-                      />
-                      <label for="editPropertiesPopupCreatedAT">createdAT</label>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupDescription"
-                        placeholder="Description"
-                      />
-                      <label for="editPropertiesPopupDescription">Description</label>
-                    </div>
-                  </li>
-                   <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupTitle"
-                        placeholder="Title"
-                      />
-                      <label for="editPropertiesPopupTitle">Title</label>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupSubTitle"
-                        placeholder="SubTitle"
-                      />
-                      <label for="editPropertiesSubTitle">SubTitle</label>
-                    </div>
-                  </li>
-                </ul>
-                <div class="card-body">
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="editPropertiesPopupSaveBtn"
-                  >
-                    <i class="bi bi-check-circle-fill"></i> Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    id="editPropertiesPopupCancelBtn"
-                  >
-                    <i
-                      class="bi bi-x-circle-fill"
-                      id="editPropertiesPopupCancelBtnIcon"
-                    ></i>
-                    Cancel
-                  </button>
+                  </li> 
+           <div class="alert alert-danger d-none" role="alert" id="popup-alert-url">
+            A valid url must be entered
+          </div>
+              <div class="card-text">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="alt" id="editPropertiesPopupAlt"></textarea>
+                  <label for="editPropertiesAlt">alt</label>
                 </div>
               </div>
-        <!-- 404 Page not found Page -->
-        <div id="page-not-found-page" class="d-none"></div>
+               <div class="alert alert-danger d-none" role="alert" id="popup-alert-alt">
+            you have to put only letters and numbers
+          </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="editPropertiesPopupTitle" placeholder="Title" />
+                  <label for="editPropertiesPopupTitle">Title</label>
+                  <div class="alert alert-danger d-none" role="alert" id="popup-alert-title">
+            you have to put only letters and numbers
+          </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="editPropertiesPopupCredit" placeholder="Credit"/>
+                  <label for="editPropertiesPopupCredit">Credit</label>
+                  <div class="alert alert-danger d-none" role="alert" id="popup-alert-credit">
+            The name must start with a capital letter
+            This field can only be used with letters and numbers
+          </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="editPropertiesPopupPrice" placeholder="Price"/>
+                  <label for="editPropertiesPopupPrice">Price</label>
+                  <div class="alert alert-danger d-none" role="alert" id="popup-alert-price">
+           You have to put numbers only and one point
+          </div>
+                </div>
+              </li>
+
+              <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="editPropertiesPopupCreatedAT" placeholder="CreatedAT"/>
+                  <label for="editPropertiesPopupCreatedAT">CreatedAT</label>
+                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-createdAT">
+            you have to put only Date
+          </div>
+                </div>
+              </li>
+             
+                  <li class=" list-group-item">
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="editPropertiesPopupDescription"
+                        placeholder="Description" />
+                      <label for="editPropertiesPopupDescription">Description</label>
+                      <div class="alert alert-danger d-none" role="alert" id="popup-alert-description">
+            you have to put only letters and numbers
+          </div>
+                    </div>
+              </li>
+             
+              <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="editPropertiesPopupSubTitle" placeholder="SubTitle" />
+                  <label for="editPropertiesSubTitle">SubTitle</label>
+                  <div class="alert alert-danger d-none" role="alert" id="popup-alert-subtitle">
+            you have to put only letters and numbers
+          </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-body">
+              <button type="submit" class="btn btn-success" id="editPropertiesPopupSaveBtn" disabled="true">
+                <i class="bi bi-check-circle-fill"></i> Save
+              </button>
+              <button type="button" class="btn btn-danger" id="editPropertiesPopupCancelBtn">
+                <i class="bi bi-x-circle-fill" id="editPropertiesPopupCancelBtnIcon"></i>
+                Cancel
+              </button>
+            </div>
+          </div>
+          <!-- 404 Page not found Page -->
+          <div id="page-not-found-page" class="d-none">
+            <p>This page does not exist</p>
+            <a href="#" id="
+            
+            
+            
+            ">To return to the home page click here</a>
+          </div>
     </main>
 
     <footer class="border-top pt-3 d-flex justify-content-center">

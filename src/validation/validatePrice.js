@@ -5,3 +5,6 @@ const validatePrice = (value) => {
 };
 
 export default validatePrice;
+
+//(d+.*d{1,2})
+//^$?d+(,d{3})*(.d{2})?$

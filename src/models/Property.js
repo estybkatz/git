@@ -2,6 +2,7 @@ class Property {
   id;
   img;
   imgUrl;
+  alt;
   title;
   credit;
   price;
@@ -12,6 +13,7 @@ class Property {
     id,
     img,
     imgUrl,
+    alt,
     title,
     credit,
     price,
@@ -22,8 +24,9 @@ class Property {
     this.id = id;
     this.img = img;
     this.imgUrl = imgUrl;
-    this.credit = credit;
+    this.alt = alt;
     this.title = title;
+    this.credit = credit;
     this.price = price;
     this.createdAT = createdAT;
     this.description = description;

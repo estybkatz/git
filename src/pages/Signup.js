@@ -22,7 +22,8 @@ const inputCity = document.getElementById("signup-input-city");
 const inputStreet = document.getElementById("signup-input-street");
 const inputHouseNumber = document.getElementById("signup-input-house-number");
 const inputZipCode = document.getElementById("signup-input-zip");
-const isAdmin = document.getElementById("-client");
+const isAdmin = document.getElementById("business-client");
+const cancelBtn = document.getElementById("signupCancelBtn");
 /*
 Initializing the boolean variables, which are required for the successful input.
 The fields which must be filled are set in default as false, and the fields which can stay empty are set as true.
@@ -363,4 +364,7 @@ btnRegister.addEventListener("click", () => {
     localStorage.setItem("users", JSON.stringify(users));
   }
   handlePageChange(PAGES.LOGIN);
+});
+cancelBtn.addEventListener("click", () => {
+  handlePageChange(PAGES.HOME);
 });
