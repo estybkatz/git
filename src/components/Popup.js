@@ -271,7 +271,7 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   editPropertiesPopupAlt.value = selectedProperty.title;
   editPropertiesPopupCredit.value = selectedProperty.credit;
   editPropertiesPopupPrice.value = selectedProperty.price;
-  editPropertiesPopupCreatedAT.value = selectedProperty.createAT;
+  editPropertiesPopupCreatedAT.value = selectedProperty.createdAT;
   editPropertiesPopupDescription.value = selectedProperty.description;
   editPropertiesPopupTitle.value = selectedProperty.title;
   editPropertiesPopupSubTitle.value = selectedProperty.subtitle;

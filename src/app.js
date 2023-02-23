@@ -8,6 +8,7 @@ import "./pages/ProfilePage.js";
 import { showNewPopup } from "./pages/Homepage.js";
 import initializeNavbar from "./components/Navbar.js";
 import checkIfConnected from "./utils/checkIfConnected.js";
+//import "./pages/Page404.js";
 
 const navHomeLink = document.getElementById("nav-home-link");
 const navAboutusLink = document.getElementById("nav-aboutus-link");
