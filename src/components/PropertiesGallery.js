@@ -16,34 +16,26 @@ const updatePropertiesGallery = (propertiesArrFromHomePage) => {
   createGallery();
 };
 
-const createCard = (name, description, price, img) => {
+const createCard = (imgUrl, title, credit, price) => {
   return `
   <div class="col">
     <div class="card">
       <img
-        src="${img}"
+        src="${imgUrl}"
         class="card-img-top"
-        alt="${name}"
+        alt="${title}"
       />
       <div class="card-body">
-        <h5 class="card-title">${name}</h5>
-        <p class="card-text">
-          ${description}
+        <h5 class="card-title">${title}</h5>
+        <p class="card-text">Credit:
+          ${credit}
         </p>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">${price}</li>
-      </ul>
-      <div class="card-body">
-        <button type="button" class="btn btn-success">
-          Success
-        </button>
-        <button type="button" class="btn btn-warning">
-          Warning
-        </button>
-        <button type="button" class="btn btn-danger">Danger</button>
-      </div>
-    </div>
+      <ul class="list-group list-group-flush" id=cartcontainer>
+        <li class="list-group-item">Price: ${price}<i class="bi bi-cart" id=cart></i></li>
+     
+    </ul>
+  </div>
   </div>
   `;
 };
@@ -52,13 +44,23 @@ const createGallery = () => {
   let innerStr = "";
   for (let property of propertiesArr) {
     innerStr += createCard(
-      property.name,
-      property.description,
-      property.price,
-      property.imgUrl
+      property.imgUrl,
+      property.title,
+      property.credit,
+      property.price
     );
   }
   galleryDiv.innerHTML = innerStr;
 };
 
 export { initialPropertiesGallery, updatePropertiesGallery };
+
+/* <div class="card-body">
+      <button type="button" class="btn btn-success">
+          Success
+       </button>
+        <button type="button" class="btn btn-warning">
+          edit
+        </button>
+        <button type="button" class="btn btn-danger">delete</button>
+      </div>*/

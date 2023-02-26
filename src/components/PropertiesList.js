@@ -1,3 +1,4 @@
+import checkIfConnected from "../utils/checkIfConnected.js";
 let propertiesArr;
 let listDiv;
 let isAdmin;
@@ -27,36 +28,30 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
   createList();
 };
 
-const createItem = (name, description, price, img, id) => {
+const createItem = (imgUrl, title, credit, id, alt) => {
   const adminBtns = `
-  <button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
-    <i class="bi bi-pen-fill"></i> Edit
-  </button>
-  <button type="button" class="btn btn-danger w-100" id="propertyListDeleteBtn-${id}">
-    <i class="bi bi-x-circle-fill"></i> Delete
-  </button>
+  <i class="bi bi-trash3-fill" id="propertyListDeleteBtn-${id}"></i>
+   <i class="bi bi-pencil-square" id="propertyListEditBtn-${id}"></i> 
   `;
   return `
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${img}" class="img-fluid" alt="${name}" />
+        <img src="${imgUrl}" class="img-fluid" alt="${alt}" />
         </div>
         <div class="col-md-8">
         <div class="card-body">
-            <h5 class="card-title">${name}</h5>
+            <h5 class="card-title">${title}</h5>
             <h6 class="card-subtitle mb-2 text-muted">
-            ${price}
+            ${imgUrl}
             </h6>
             <p class="card-text">
-            ${description}
+            ${credit}
             </p>
         </div>
         </div>
         <div class="col-md-2">
-        <button type="button" class="btn btn-success w-100">
-          <i class="bi bi-currency-dollar"></i> Buy now
-        </button>
+       
         ${isAdmin ? adminBtns : ""}
         </div>
     </div>
@@ -103,11 +98,12 @@ const createList = () => {
   //create new elements and remove old ones
   for (let property of propertiesArr) {
     innerStr += createItem(
-      property.name,
-      property.description,
-      property.price,
+      property.img,
       property.imgUrl,
-      property.id
+      property.title,
+      property.credit,
+      property.id,
+      property.alt
     );
   }
   listDiv.innerHTML = innerStr;
@@ -127,3 +123,7 @@ const createBtnEventListener = (idKeyword, handleFunction) => {
 };
 
 export { initialPropertiesList, updatePropertiesList };
+
+//  <button type="button" class="btn btn-success w-100">
+//    <i class="bi bi-currency-dollar"></i> Buy now
+//  </button>;

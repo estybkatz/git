@@ -10,24 +10,36 @@ const createData = () => {
       Property.img,
       "https://images.pexels.com/photos/15371312/pexels-photo-15371312.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
       "people",
+      "cctitle",
       "create by ester",
-      "8.5$"
+      350,
+      "createAT",
+      "description",
+      "subtitle"
     ),
     new Property(
       id++,
-      "Chocolate house",
-      20,
-      `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-        Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-      "./assets/imgs/cart.PNG"
+      Property.img,
+      "https://images.pexels.com/photos/15658380/pexels-photo-15658380.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "alt",
+      "bbtitle",
+      "credit",
+      600,
+      "createdat",
+      "description",
+      "subtitle"
     ),
     new Property(
       id++,
-      "Kenny's beach house",
-      25,
-      `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-        Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-      "./assets/imgs/logo.PNG"
+      Property.img,
+      "https://images.pexels.com/photos/2718416/pexels-photo-2718416.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "alt",
+      "aatitle",
+      "credit",
+      "700",
+      "createdAT",
+      "description",
+      "subtitle"
     ),
     // new Property(
     //   id++,
