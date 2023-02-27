@@ -75,6 +75,25 @@
   margin: auto;
 }
 
-.col .card img {
-  height: 25em;
+li > div > div > img {
+  margin-left: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  width: 8rem;
+  height: 5rem;
+}
+/* @media (max-width: 991px) {
+  #header-list {
+    display: none;
+  }
+} */
+.header-list-details {
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+
+@media (max-width: 991px) {
+  .header-list-details {
+    display: none;
+  }
 }

@@ -29,33 +29,37 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
 };
 
 const createItem = (imgUrl, title, credit, id, alt) => {
-  const adminBtns = `
-  <i class="bi bi-trash3-fill" id="propertyListDeleteBtn-${id}"></i>
-   <i class="bi bi-pencil-square" id="propertyListEditBtn-${id}"></i> 
+  const adminBtns = `<div class="col-md-1">
+  <button type="button" class="btn btn btn-light w-100" id="propertyListEditBtn-${id}">
+    <i class="bi bi-pencil-square col-md-1"></i>
+  </button>
+  </div>
+  <div class="col-md-1">
+  <button type="button" class="btn btn btn-light w-100" id="propertyListDeleteBtn-${id}">
+   <i class="bi bi-trash3-fill col-md-1"></i>
+  </button>
+  </div>
   `;
   return `
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${imgUrl}" class="img-fluid" alt="${alt}" />
+        <img src="${imgUrl}" class="img-fluid" alt="${alt}"/>
         </div>
-        <div class="col-md-8">
-        <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">
-            ${imgUrl}
-            </h6>
-            <p class="card-text">
-            ${credit}
-            </p>
+        <div class="col-md-6">
+        <div>${imgUrl}</div>
         </div>
+        <div class="col-md-1">
+        <h5 class="card-title">${title}</h5>
         </div>
-        <div class="col-md-2">
-       
+        <div class="col-md-1">
+        <h5 class="card-title">${credit}</h5>
+        </div>
         ${isAdmin ? adminBtns : ""}
-        </div>
     </div>
     </li>
+ 
+  
   `;
 };
 
@@ -98,8 +102,8 @@ const createList = () => {
   //create new elements and remove old ones
   for (let property of propertiesArr) {
     innerStr += createItem(
-      property.img,
       property.imgUrl,
+      //property.imgUrl,
       property.title,
       property.credit,
       property.id,
@@ -107,6 +111,7 @@ const createList = () => {
     );
   }
   listDiv.innerHTML = innerStr;
+
   // add event listeners for delete btns
   createBtnEventListener("propertyListDeleteBtn", handleDeleteBtnClick);
   // add event listeners for edit btns
@@ -127,3 +132,64 @@ export { initialPropertiesList, updatePropertiesList };
 //  <button type="button" class="btn btn-success w-100">
 //    <i class="bi bi-currency-dollar"></i> Buy now
 //  </button>;
+
+//  <li class="list-group-item">
+//    <div class="d-flex card-body">
+//      <div class="col-md-2">
+//        <img src="${imgUrl}" class="img-fluid" alt="${alt}" />
+//      </div>
+
+//      <h6 class="card-subtitle mb-5 text-muted">${imgUrl}</h6>
+//      <h5 class="card-title col-md-1">${title}</h5>
+
+//      <p class="card-text col-md-1">${credit}</p>
+
+//      <div class="col-md-2 d-flex">${isAdmin ? adminBtns : ""}</div>
+//    </div>
+//  </li>;
+
+// <li class="list-group-item">
+//     <div class="row card-body d-flex">
+
+//         <img src="${imgUrl}" class="img-fluid col-md-2" alt="${alt}" />
+//           <h6 class="card-subtitle mb-2 text-muted col-md-5">
+//             ${imgUrl}
+//             </h6>
+//             <h5 class="card-title col-md-1">${title}</h5>
+//             <h6 class="card-subtitle mb-1 text-muted col-md-2">
+//             ${credit}
+//             </h6>
+
+// const adminBtns = `
+//   <div class="col-md-1">
+//   <button type="button" class="btn btn btn-light w-100" id="propertyListEditBtn-${id}">
+//     <i class="bi bi-pen-fill"></i>
+//   </button>
+//   </div>
+//   <div class="col-md-1">
+//   <button type="button" class="btn btn btn-light w-100" id="propertyListDeleteBtn-${id}">
+//   <i class="bi bi-trash3-fill"></i>
+//   </button>
+//   </div>
+//   `;
+//   return `
+//   <li class="list-group-item">
+//     <div class="row">
+//         <div class="col-md-2">
+//         <img src="${imgUrl}" class="img-fluid" alt="${title}"style="margin: 1.5rem; width: 8rem;
+//         height: 8rem;"/>
+//         </div>
+//         <div class="col-md-6">
+//         <div>${imgUrl}</div>
+//         </div>
+//         <div class="col-md-1">
+//         <h5 class="card-title">${title}</h5>
+//         </div>
+//         <div class="col-md-1">
+//         <h5 class="card-title">${Credit}</h5>
+//         </div>
+//         ${isAdmin ? adminBtns : ""}
+//     </div>
+//     </li>
+//   `;
+// };
