@@ -82,7 +82,7 @@ const initializeBtns = () => {
     .addEventListener("input", (ev) => {
       let regex = new RegExp("^" + ev.target.value, "i");
       propertiesArr = originalPropertiesArr.filter((item) => {
-        let reg = regex.test(item.name);
+        let reg = regex.test(item.title);
         // console.log("item.name", item.name, " reg", reg);
         return reg;
       });
@@ -124,10 +124,10 @@ const deleteProperty = (id) => {
 const sortPropertys = (asc = true) => {
   if (asc) {
     // from a to z
-    propertiesArr.sort((a, b) => a.name.localeCompare(b.name));
+    propertiesArr.sort((a, b) => a.title.localeCompare(b.title));
   } else {
     // from z to a
-    propertiesArr.sort((a, b) => b.name.localeCompare(a.name));
+    propertiesArr.sort((a, b) => b.title.localeCompare(a.title));
   }
   updateDisplays();
 };
