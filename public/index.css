@@ -1,6 +1,7 @@
-/* .carusel {
+.carusel {
   width: 100%;
   height: 66.6vh;
+  margin-bottom: 2.5rem;
 }
 .img-container {
   position: relative;
@@ -29,7 +30,7 @@
     opacity: 1;
   }
 }
-*/ * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

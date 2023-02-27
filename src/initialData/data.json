@@ -1,0 +1,37 @@
+{
+  "imgs": [
+    {
+      "id": 1,
+      "imgUrl": "https://images.pexels.com/photos/15371312/pexels-photo-15371312.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "alt": "people",
+      "title": "cctitle",
+      "credit": "create by ester",
+      "price": 350,
+      "createdAT": "createAT",
+      "description": "description",
+      "subtitle": "subtitle"
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://images.pexels.com/photos/15658380/pexels-photo-15658380.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "alt": "alt",
+      "title": "bbtitle",
+      "credit": "credit",
+      "price": 600,
+      "createdAT": "createdat",
+      "description": "description",
+      "subtitle": "subtitle"
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://images.pexels.com/photos/2718416/pexels-photo-2718416.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "alt": "alt",
+      "title": "aatitle",
+      "credit": "credit",
+      "price": "700",
+      "createdAT": "createdAT",
+      "description": "description",
+      "subtitle": "subtitle"
+    }
+  ]
+}

@@ -4,6 +4,20 @@ let id = 1;
 let nextUserId = 1;
 
 const createData = () => {
+  // fetch("http://127.0.0.1:5500/src/initialData/data.json")
+  //   .then(function (response) {
+  //     console.log("err");
+  //     return response.json();
+  //   })
+  //   .then(function (data) {
+  //     for (let i = 0; i < data.length; i++) {
+  //       console.log(data[i]);
+  //     }
+  //   })
+  //   .catch(function (error) {
+  //     console.log("error = " + error);
+  //   });
+
   let propertiesArr = [
     new Property(
       id++,

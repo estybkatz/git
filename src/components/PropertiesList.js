@@ -4,17 +4,20 @@ let listDiv;
 let isAdmin;
 let deleteProperty;
 let showPopup;
+let showPopupImgDetails;
 //this function will transfer data from homepage to this page
 const initialPropertiesList = (
   propertiesArrFromHomePage,
   isAdminParam,
   deletePropertyFromHomePage,
-  showPopupFromHomePage
+  showPopupFromHomePage,
+  showPopupimgDetailsFromHomePage
 ) => {
   listDiv = document.getElementById("home-page-properties-list");
   isAdmin = isAdminParam;
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;
+  showPopupImgDetails = showPopupimgDetailsFromHomePage;
   updatePropertiesList(propertiesArrFromHomePage);
 };
 
@@ -44,7 +47,7 @@ const createItem = (imgUrl, title, credit, id, alt) => {
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${imgUrl}" class="img-fluid" alt="${alt}"/>
+        <img src="${imgUrl}" class="img-fluid" alt="${alt}" id="imgMoreDetails-${id}"/>
         </div>
         <div class="col-md-6">
         <div>${imgUrl}</div>
@@ -83,6 +86,11 @@ const handleEditBtnClick = (ev) => {
   showPopup(getIdFromClick(ev));
 };
 
+const handleImgDetailClick = (ev) => {
+  console.log("err");
+  showPopupImgDetails(getIdFromClick(ev));
+};
+
 const clearEventListeners = (idKeyword, handleFunction) => {
   //get all old btns
   let btnsBefore = document.querySelectorAll(`[id^='${idKeyword}-']`);
@@ -98,6 +106,7 @@ const createList = () => {
   clearEventListeners("propertyListDeleteBtn", handleDeleteBtnClick);
   //clear event listeners for edit btns
   clearEventListeners("propertyListEditBtn", handleEditBtnClick);
+  clearEventListeners("imgMoreDetails", handleImgDetailClick);
 
   //create new elements and remove old ones
   for (let property of propertiesArr) {
@@ -116,6 +125,8 @@ const createList = () => {
   createBtnEventListener("propertyListDeleteBtn", handleDeleteBtnClick);
   // add event listeners for edit btns
   createBtnEventListener("propertyListEditBtn", handleEditBtnClick);
+
+  createBtnEventListener("imgMoreDetails", handleImgDetailClick);
 };
 
 //Creates event listener for the delete buttons
