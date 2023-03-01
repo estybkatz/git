@@ -53,6 +53,8 @@ const initializeBtns = () => {
       () => {
         // imgToShow.classList.remove("opacity-0");
         imgToShow.classList.remove("fade-in");
+          let carouselCredit= document.getElementById("carousel-credit")
+    carouselCredit.innerHTML=imgToShow.classList.toString();
         animationStarted--;
       },
       { once: true }
@@ -61,6 +63,7 @@ const initializeBtns = () => {
     // if (showIdx >= propertiesArr.length) {
     //   showIdx = 0;
     // }
+  
     showIdx = prevIdx;
   });
   document.getElementById("next-carusel-btn").addEventListener("click", () => {
@@ -96,6 +99,8 @@ const initializeBtns = () => {
       () => {
         // imgToShow.classList.remove("opacity-0");
         imgToShow.classList.remove("fade-in");
+         let carouselCredit= document.getElementById("carousel-credit")
+    carouselCredit.innerHTML= imgToShow.classList.toString();
         animationStarted--;
       },
       { once: true }
@@ -104,27 +109,30 @@ const initializeBtns = () => {
     // if (showIdx >= propertiesArr.length) {
     //   showIdx = 0;
     // }
+   
     showIdx = nextIdx;
   });
 };
 
-const createItem = (imgUrl, alt) => {
+const createItem = (imgUrl, alt, credit) => {
   //opacity-0 hide image
   return `
-       <img src="${imgUrl}" alt="${alt}"  class="opacity-0" />  
+     <img src="${imgUrl}" alt="${alt}"  class="${credit} opacity-0"/> 
        `;
+
 };
 
 const createCarousel = () => {
   let innerStr = "";
   for (let property of propertiesArr) {
-    innerStr += createItem(property.imgUrl, property.alt);
+    innerStr += createItem(property.imgUrl, property.alt, property.credit);
   }
   carouselDiv.innerHTML = innerStr;
   //show the first img
-  document
-    .querySelector(".img-container > img:nth-child(1)")
-    .classList.remove("opacity-0");
+  let firstImg= document.querySelector(".img-container > img:nth-child(1)");
+   firstImg.classList.remove("opacity-0");
+     let carouselCredit= document.getElementById("carousel-credit");
+    carouselCredit.innerHTML= firstImg.classList.toString();
   // document
   //   .querySelector(".img-container > p:nth-child(1)")
   //   .classList.remove("opacity-0");
@@ -134,4 +142,4 @@ export { initialPropertiesCarousel, updatePropertiesCarousel };
 /* We need to a paragraph containing the credit, and give it opacity 0, and afterwards remove it.
 we need to add to the creator of item the credit, and print another paragraph after the picture.
 we need to understand how to change the opacity of the p in the creator and in the moving of the buttons.
-we need to change createItem's input to (inmUrl, alt, credit), and add the credit as a line under it. afterwards we need to chage it's opacity. we also need to change it the input, and in the buttons. */
+we need to change createItem's input to (inmUrl, alt, credit), and add the credit as a line under it. afterwards we need to chage it's opacity. we also need to change it the input, and in the buttons. */0

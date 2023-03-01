@@ -10,27 +10,26 @@ const imgDetailsPopupImgDisplay = document.getElementById(
 // const editPropertiesPopupAlt = document.getElementById(
 //   "editPropertiesPopupAlt"
 // );
-// const editPropertiesPopupTitle = document.getElementById(
-//   "editPropertiesPopupTitle"
-// );
+const imgDetailsPopupTitle = document.getElementById("imgDetailsPopupTitle");
 // const editPropertiesPopupCredit = document.getElementById(
 //   "editPropertiesPopupCredit"
 // );
 // const editPropertiesPopupPrice = document.getElementById(
 //   "editPropertiesPopupPrice"
 // );
-// const editPropertiesPopupCreatedAT = document.getElementById(
-//   "editPropertiesPopupCreatedAT"
-// );
-// const editPropertiesPopupDescription = document.getElementById(
-//   "editPropertiesPopupDescription"
-// );
-// const editPropertiesPopupSubTitle = document.getElementById(
-//   "editPropertiesPopupSubTitle"
-// );
+const imgDetailsPopupCreatedAT = document.getElementById(
+  "imgDetailsPopupCreatedAT"
+);
+const imgDetailsPopupDescription = document.getElementById(
+  "imgDetailsPopupDescription"
+);
+const imgDetailsPopupSubTitle = document.getElementById(
+  "imgDetailsPopupSubTitle"
+);
 // const editPropertiesPopupImg = document.getElementById(
 //   "editPropertiesPopupImg"
 // );
+const imgDetailsPopupID = document.getElementById("imgDetailsPopupID");
 
 const imgDetailsPopup = document.getElementById("imgDetailsPopup");
 
@@ -43,8 +42,13 @@ const initDetailsPopup = (selectedPropertyFromHomePage) => {
   } else {
     return;
   }
-  console.log(selectedProperty.imgUrl);
+
   imgDetailsPopupImgDisplay.src = selectedProperty.imgUrl;
+  imgDetailsPopupTitle.innerHTML = selectedProperty.title;
+  imgDetailsPopupCreatedAT.innerHTML = selectedProperty.createdAT;
+  imgDetailsPopupDescription.innerHTML = selectedProperty.description;
+  imgDetailsPopupSubTitle.innerHTML = selectedProperty.subtitle;
+  imgDetailsPopupID.innerHTML = selectedProperty.id;
 
   // editPropertiesPopupAlt.value = selectedProperty.title;
   // editPropertiesPopupCredit.value = selectedProperty.credit;

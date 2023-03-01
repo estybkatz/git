@@ -22,7 +22,10 @@ const validate = (regex, value, min, max) => {
     msgsArr = [...msgsArr, " too long"]; // msgsArr.push(" too long")
   }
   if (!regex.test(value)) {
+    console.log("change regex", value);
     msgsArr = [...msgsArr, " invalid"]; // msgsArr.push(" invalid")
+  } else {
+    console.log("regex succsses", value);
   }
   return msgsArr;
 };

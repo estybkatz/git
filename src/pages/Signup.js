@@ -273,7 +273,9 @@ const checkStringInput = () => {
 };
 const checkPhoneNumber = () => {
   let errorArr = validateNumber(inputPhoneNumber.value);
-  if (errorArr.length === 0 || inputPhoneNumber === "") {
+  // console.log(inputPhoneNumber.value);
+  // console.log(errorArr);
+  if (errorArr.length === 0 || inputPhoneNumber.value === "") {
     inputPhoneNumber.classList.remove("is-invalid");
     document.getElementById("signup-alert-phone").classList.add("d-none");
     phoneOk = true;

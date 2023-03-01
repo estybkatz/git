@@ -16,7 +16,7 @@ const updatePropertiesGallery = (propertiesArrFromHomePage) => {
   createGallery();
 };
 
-const createCard = (imgUrl, title, credit, price) => {
+const createCard = (imgUrl, title, credit, price, id) => {
   return `
   <div class="col">
     <div class="card">
@@ -24,6 +24,8 @@ const createCard = (imgUrl, title, credit, price) => {
         src="${imgUrl}"
         class="card-img-top"
         alt="${title}"
+        
+id="imgMoreDetails-${id}"
       />
       <div class="card-body">
         <h5 class="card-title">${title}</h5>
@@ -47,7 +49,8 @@ const createGallery = () => {
       property.imgUrl,
       property.title,
       property.credit,
-      property.price
+      property.price,
+      property.id
     );
   }
   galleryDiv.innerHTML = innerStr;

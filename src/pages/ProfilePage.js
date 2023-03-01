@@ -274,7 +274,7 @@ const checkStringInput = () => {
 };
 const checkPhoneNumber = () => {
   let errorArr = validateNumber(inputPhoneNumber.value);
-  if (errorArr.length === 0 || inputPhoneNumber === "") {
+  if (errorArr.length === 0 || inputPhoneNumber.value === "") {
     inputPhoneNumber.classList.remove("is-invalid");
     document.getElementById("profile-alert-phone").classList.add("d-none");
     phoneOk = true;
