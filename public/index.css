@@ -93,9 +93,21 @@ li > div > div > img {
   border-bottom: 1px solid #000;
 }
 
-@media (max-width: 991px) {
+.popup-div {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+}
+@media (max-width: 992px) {
   .header-list-details {
     display: none;
+  }
+  .popup-div {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
   }
 }
 .imgRorAboutUs1 {
@@ -115,11 +127,9 @@ li > div > div > img {
   height: 15em;
   margin: 5em;
 }
-.popup-div {
-  width: 70%;
-  height: 100%;
+.cartImg {
   position: absolute;
-  top: 0px;
+  left: 90%;
 }
 /* #editPropertiesPopup {
   width: 100vw;

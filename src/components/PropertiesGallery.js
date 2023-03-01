@@ -31,8 +31,8 @@ const createCard = (imgUrl, title, credit, price) => {
           ${credit}
         </p>
       </div>
-      <ul class="list-group list-group-flush" id=cartcontainer>
-        <li class="list-group-item">Price: ${price}<i class="bi bi-cart" id=cart></i></li>
+      <ul class="list-group list-group-flush cartcontainer" >
+        <li class="list-group-item">Price: ${price}<i class="bi bi-cart cartImg" ></i></li>
      
     </ul>
   </div>
