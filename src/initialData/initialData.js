@@ -22,10 +22,10 @@ const createData = () => {
     new Property(
       id++,
       Property.img,
-      "https://images.pexels.com/photos/15371312/pexels-photo-15371312.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "https://images.pexels.com/photos/5986440/pexels-photo-5986440.jpeg",
       "people",
       "cctitle",
-      "create by ester",
+      "created by cottonbro studio",
       350,
       "createAT",
       "description",

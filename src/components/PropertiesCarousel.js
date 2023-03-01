@@ -23,6 +23,7 @@ const updatePropertiesCarousel = (propertiesArrFromHomePage) => {
 
 const initializeBtns = () => {
   document.getElementById("back-carusel-btn").addEventListener("click", () => {
+    console.log("hello in back");
     if (animationStarted !== 0) {
       return;
     }
@@ -63,6 +64,7 @@ const initializeBtns = () => {
     showIdx = prevIdx;
   });
   document.getElementById("next-carusel-btn").addEventListener("click", () => {
+    console.log("hello in next");
     if (animationStarted !== 0) {
       return;
     }
@@ -106,24 +108,30 @@ const initializeBtns = () => {
   });
 };
 
-const createItem = (title, imgUrl, credit) => {
+const createItem = (imgUrl, alt) => {
   //opacity-0 hide image
   return `
-      <img src="${imgUrl}" alt="${title}" class="opacity-0" />
-      <p class="opacity-0"> created by :"${credit} "</p>
-  `;
+       <img src="${imgUrl}" alt="${alt}"  class="opacity-0" />  
+       `;
 };
 
 const createCarousel = () => {
   let innerStr = "";
   for (let property of propertiesArr) {
-    innerStr += createItem(property.title, property.imgUrl, property.credit);
+    innerStr += createItem(property.imgUrl, property.alt);
   }
   carouselDiv.innerHTML = innerStr;
   //show the first img
   document
     .querySelector(".img-container > img:nth-child(1)")
     .classList.remove("opacity-0");
+  // document
+  //   .querySelector(".img-container > p:nth-child(1)")
+  //   .classList.remove("opacity-0");
 };
 
 export { initialPropertiesCarousel, updatePropertiesCarousel };
+/* We need to a paragraph containing the credit, and give it opacity 0, and afterwards remove it.
+we need to add to the creator of item the credit, and print another paragraph after the picture.
+we need to understand how to change the opacity of the p in the creator and in the moving of the buttons.
+we need to change createItem's input to (inmUrl, alt, credit), and add the credit as a line under it. afterwards we need to chage it's opacity. we also need to change it the input, and in the buttons. */

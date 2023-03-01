@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="./assets/imgs/camera.PNG" />
+  <link rel="shortcut icon" href="./assets/imgs/camera.PNG" alt="logo camera" />
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   <title>pic-Up</title>
@@ -63,19 +63,19 @@
         <h1>Home page</h1>
         <div class="d-flex justify-content-between mb-2">
           <div>
-            <button type="button" class="btn btn-info" id="homeDisplayList">
-              <i class="bi bi-card-list"></i>
+            <button type="button" class="btn btn-secondary" id="homeDisplayList">
+              <i class="bi bi-list"></i>
             </button>
-            <button type="button" class="btn btn-info" id="homeDisplayGallery">
-              <i class="bi bi-microsoft"></i>
+            <button type="button" class="btn btn-secondary" id="homeDisplayGallery">
+              <i class="bi bi-grid-3x3-gap-fill"></i>
             </button>
-            <button type="button" class="btn btn-info" id="homeDisplayCousel">
-              <i class="bi bi-file-earmark-slides"></i>
+            <button type="button" class="btn btn-secondary" id="homeDisplayCousel">
+              <i class="bi bi-square-half"></i>
             </button>
-            <button type="button" class="btn btn-info" id="homeDisplaySortASC">
+            <button type="button" class="btn btn-secondary" id="homeDisplaySortASC">
               <i class="bi bi-sort-alpha-down"></i>
             </button>
-            <button type="button" class="btn btn-info" id="homeDisplaySortDESC">
+            <button type="button" class="btn btn-secondary" id="homeDisplaySortDESC">
               <i class="bi bi-sort-alpha-up"></i>
             </button>
           </div>
@@ -110,10 +110,10 @@
         <div class="carusel d-none" id="propertiesCarusel">
           <div class="img-container" id="home-page-properties-carousel"></div>
           <div class="d-flex justify-content-around">
-            <button type="button" class="btn btn-primary" id="back-carusel-btn">
+            <button type="button" class="btn btn-secondary" id="back-carusel-btn">
               <i class="bi bi-arrow-left"></i>
             </button>
-            <button type="button" class="btn btn-primary" id="next-carusel-btn">
+            <button type="button" class="btn btn-secondary" id="next-carusel-btn">
               <i class="bi bi-arrow-right"></i>
             </button>
           </div>
@@ -123,6 +123,14 @@
       <!-- About-->
       <div id="about-us" class="d-none">
         <p>about us</p>
+        <h1>The popular website for selling photos and buying photos</h1>
+        <p>To upload a photo for sale you must register on the registration page as a business customer,
+click the add pic button,
+and upload the photo you want to sell</p>
+<p>By clicking on the icons on the left side of the home page, you can view the images in addition to the carousel, in a gallery or list view</p>
+<img src="./assets/imgs/Cdisplay.PNG" alt="carouselDisplay" class="imgRorAboutUs1">
+<img src="./assets/imgs/CardDisplay.PNG" alt="cardDisplay" class="imgRorAboutUs2">
+<img src="./assets/imgs/Ldisplay.PNG" alt="listDisplay" class="imgRorAboutUs3">
       </div>
        
       <!--Signup-->
@@ -385,19 +393,19 @@
       <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="editPropertiesPopup">
 
         <div class="popup-div" id="editPropertiesPopupChild">
-          <div class="card">
-            <h4>create pictures form</h4>
-            <p>here you can add a new picture</p>
+          <div class="card popup-div">
+            <h4>create pictures form and edit</h4>
+            <p>here you can add a new picture and edit</p>
 
              <img src="" class="card-img-top" alt="" id="editPropertiesPopupImgDisplay" />
-            <div class="card-body">
+            <div class="card-text">
               <!-- <h5 class="card-title">
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="editPropertiesPopupUrl" placeholder="Url" />
                   <label for="editPropertiesPopupUrl">img</label>
                 </div>
               </h5> -->
-
+ <ul class="list-group list-group-flush"></ul>
              <li class="list-group-item">
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="editPropertiesPopupImg"
@@ -418,7 +426,7 @@
             you have to put only letters and numbers
           </div>
             </div>
-            <ul class="list-group list-group-flush">
+           
                 <li class="list-group-item">
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="editPropertiesPopupTitle" placeholder="Title" />

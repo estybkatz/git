@@ -2,10 +2,10 @@
   "imgs": [
     {
       "id": 1,
-      "imgUrl": "https://images.pexels.com/photos/15371312/pexels-photo-15371312.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "imgUrl": "https://images.pexels.com/photos/5986440/pexels-photo-5986440.jpeg",
       "alt": "people",
       "title": "cctitle",
-      "credit": "create by ester",
+      "credit": "create by cottonbro studio",
       "price": 350,
       "createdAT": "createAT",
       "description": "description",

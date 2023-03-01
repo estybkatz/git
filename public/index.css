@@ -48,19 +48,19 @@
 .popup-wrapper div div {
   width: 100%;
 }
-
-/* .responsive-mt {
+/* 
+.responsive-mt {
   margin-top: 0.9rem;
-} */
+}
 
-/* @media (max-width: 991px) {
+@media (max-width: 991px) {
   .responsive-mt {
     margin-top: 0.9rem;
   }
   .responsive-nav-flex {
     flex-direction: column;
-  } 
-}*/
+  }
+} */
 
 .red-asterik:after {
   content: "*";
@@ -98,3 +98,30 @@ li > div > div > img {
     display: none;
   }
 }
+.imgRorAboutUs1 {
+  width: 20em;
+  height: 20em;
+  margin: 5em;
+}
+
+.imgRorAboutUs2 {
+  width: 30em;
+  height: 15em;
+  margin: 5em;
+}
+
+.imgRorAboutUs3 {
+  width: 60em;
+  height: 15em;
+  margin: 5em;
+}
+.popup-div {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+}
+/* #editPropertiesPopup {
+  width: 100vw;
+  height: 100vh;
+} */
