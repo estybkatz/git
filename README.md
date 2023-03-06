@@ -1,8 +1,10 @@
-
-
 # Pic up
-On this site you can upload photos for sale,
-Or buy use of the images offered in the galleries
+This project is a  system of advertising images for sell and viewing them.
+It uses HTML, JS and CSS.
+In this site we use arrays of objects, and functions working on them. 
+We also defined functions using the objects and the arrays, with input from the users.
+We defined dynamical arrays of objects, and managed them, as well as managed the places while adding and deleting items.
+Also we use validations of multiple types of strings using regex.
 
 ## Table of Contents
 

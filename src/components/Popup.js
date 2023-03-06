@@ -111,7 +111,7 @@ const setInput =(val)=>{
 }
 const checkUrlInput = () => {
   let validUrl = validateUrl(editPropertiesPopupImg.value);
-  //   console.log(reg.test(inputName.value));
+   console.log(validUrl);
   if (validUrl ===true) {
     //the text is ok
     editPropertiesPopupImg.classList.remove("is-invalid");
