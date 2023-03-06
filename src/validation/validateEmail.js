@@ -1,3 +1,4 @@
+/* this function validates that the user entered a valid mail containing only 1 @ and a dot after it */
 import validate from "./validate.js";
 const validateEmail = (value) => {
   const reg = new RegExp(
@@ -8,36 +9,3 @@ const validateEmail = (value) => {
 };
 
 export default validateEmail;
-/*
-    let errorErr = validate(reg, value, 5, 10);
-    [//min
-        " to short"
-    ]
-    [//max
-        " to long"
-    ]
-    [//regex
-        " invalid"
-    ]
-    [// max and regex
-        " to long",
-        " invalid"
-    ]
-    let newErrorArr = errorErr.map((err) => `email is ${err}`);
-    return newErrorArr;
-  */
-/*
-    [//min
-        "email is to short"
-    ]
-    [//max
-        "email is to long"
-    ]
-    [//regex
-        "email is invalid"
-    ]
-    [// max and regex
-        "email is to long",
-        "email is invalid"
-    ]
-*/

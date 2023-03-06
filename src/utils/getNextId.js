@@ -1,3 +1,4 @@
+/* this function brings the nextid in local storage */
 const getNextId = () => {
   let nextId = localStorage.getItem("nextid");
   if (!nextId) {

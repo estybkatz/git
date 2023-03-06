@@ -4,7 +4,7 @@ import validateName from "../validation/validateName.js";
 import showToast from "../utils/Toast.js";
 import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
-
+/* variables of user. */
 const inputName = document.getElementById("profile-input-name");
 const inputLastName = document.getElementById("profile-input-last-name");
 const inputEmail = document.getElementById("profile-input-email");
@@ -21,7 +21,8 @@ const inputHouseNumber = document.getElementById("profile-input-house-number");
 const inputZipCode = document.getElementById("profile-input-zip");
 const isAdmin = document.getElementById("profile-business-client");
 const cancelBtn = document.getElementById("profileCancelBtn");
-
+/* set by default mandatory fields as false, and non mandatory as true
+ */
 let nameOk = false;
 let lastNameOk = false;
 let emailOk = false;
@@ -31,26 +32,7 @@ let chooseFieldOK = true;
 let phoneOk = true;
 let checkPasswordSame = false;
 
-const checkIfPasswordIsSame = () => {
-  if (inputPassword.value === inputRePassword.value) {
-    checkPasswordSame = true;
-    document
-      .getElementById("profile-none-same-password")
-      .classList.add("d-none");
-    document
-      .getElementById("profile-none-same-password")
-      .classList.remove("d-block");
-  } else {
-    document
-      .getElementById("profile-none-same-password")
-      .classList.remove("d-none");
-    document
-      .getElementById("profile-none-same-password")
-      .classList.add("d-block");
-    checkPasswordSame = false;
-  }
-};
-
+/* sets a user if exists, and if not checks the input inserted to the function according to user input to the page*/
 window.addEventListener("load", () => {
   let users = localStorage.getItem("users");
   let token = localStorage.getItem("token");
@@ -102,6 +84,7 @@ window.addEventListener("load", () => {
     checkPhoneNumber();
   }
 });
+/* checks input of users in fields */
 
 inputName.addEventListener("input", () => {
   checkNameInput();
@@ -132,10 +115,10 @@ for (var i = 0; i < inputStrings.length; i++) {
     checkStringInput();
   });
 }
-
+/*this function checks if the name is valid and sets nameOk accordingly. */
 const checkNameInput = () => {
-  let errorArr = validateName(inputName.value);
-  if (errorArr.length === 0) {
+  let validName = validateName(inputName.value);
+  if (validName.length === 0) {
     //the text is ok
     inputName.classList.remove("is-invalid");
     document.getElementById("profile-alert-name").classList.add("d-none");
@@ -150,9 +133,10 @@ const checkNameInput = () => {
   }
   checkIfCanEnableBtn();
 };
+/*this function checks if the last name is valid and sets lastNameOk accordingly. */
 const checkLastNameInput = () => {
-  let errorArr = validateName(inputLastName.value);
-  if (errorArr.length === 0) {
+  let validLastName = validateName(inputLastName.value);
+  if (validLastName.length === 0) {
     //the text is ok
     inputLastName.classList.remove("is-invalid");
     document.getElementById("profile-alert-last-name").classList.add("d-none");
@@ -169,9 +153,10 @@ const checkLastNameInput = () => {
   }
   checkIfCanEnableBtn();
 };
+/*this function checks if the mail is valid and sets mailOk accordingly */
 const checkEmailInput = () => {
-  let errorArr = validateEmail(inputEmail.value);
-  if (errorArr.length === 0) {
+  let validMail = validateEmail(inputEmail.value);
+  if (validMail.length === 0) {
     //the text is ok
     inputEmail.classList.remove("is-invalid");
     document.getElementById("profile-alert-email").classList.add("d-none");
@@ -187,9 +172,10 @@ const checkEmailInput = () => {
   checkIfCanEnableBtn();
 };
 
+/*this function checks if the  Password is valid and sets PasswordOk accordingly. */
 const checkPasswordInput = () => {
-  let errorArr = validatePassword(inputPassword.value);
-  if (errorArr.length === 0) {
+  let validPass = validatePassword(inputPassword.value);
+  if (validPass.length === 0) {
     //the text is ok
     inputPassword.classList.remove("is-invalid");
     document.getElementById("profile-alert-password1").classList.add("d-none");
@@ -206,9 +192,10 @@ const checkPasswordInput = () => {
   }
   checkIfCanEnableBtn();
 };
+/*this function checks the second time the user entered the password if it's valid and sets PasswordOk accordingly. */
 const checkRePasswordInput = () => {
-  let errorArr = validatePassword(inputRePassword.value);
-  if (errorArr.length === 0) {
+  let validRePass = validatePassword(inputRePassword.value);
+  if (validRePass.length === 0) {
     //the text is ok
     inputRePassword.classList.remove("is-invalid");
     document
@@ -227,7 +214,28 @@ const checkRePasswordInput = () => {
   }
   checkIfCanEnableBtn();
 };
+/* check if the passwords entered are the same. else alerts the user and sets checkPasswordSame to false. */
+const checkIfPasswordIsSame = () => {
+  if (inputPassword.value === inputRePassword.value) {
+    checkPasswordSame = true;
+    document
+      .getElementById("profile-none-same-password")
+      .classList.add("d-none");
+    document
+      .getElementById("profile-none-same-password")
+      .classList.remove("d-block");
+  } else {
+    document
+      .getElementById("profile-none-same-password")
+      .classList.remove("d-none");
+    document
+      .getElementById("profile-none-same-password")
+      .classList.add("d-block");
+    checkPasswordSame = false;
+  }
+};
 
+/*this function checks other string names and sets chooseFieldOk accordingly. */
 const checkStringInput = () => {
   let errorInputRules = false;
 
@@ -263,9 +271,10 @@ const checkStringInput = () => {
   }
   checkIfCanEnableBtn();
 };
+/*this function checks the phoneNumber and sets phoneOk accordingly. */
 const checkPhoneNumber = () => {
-  let errorArr = validateNumber(inputPhoneNumber.value);
-  if (errorArr.length === 0 || inputPhoneNumber.value === "") {
+  let validPhone = validateNumber(inputPhoneNumber.value);
+  if (validPhone.length === 0 || inputPhoneNumber.value === "") {
     inputPhoneNumber.classList.remove("is-invalid");
     document.getElementById("profile-alert-phone").classList.add("d-none");
     phoneOk = true;
@@ -280,6 +289,7 @@ const checkPhoneNumber = () => {
   checkIfCanEnableBtn();
 };
 
+/*this function if all fields are correct, and activates the button accordingly.. */
 const checkIfCanEnableBtn = () =>
   (btnProfile.disabled = !(
     nameOk &&
@@ -291,7 +301,7 @@ const checkIfCanEnableBtn = () =>
     phoneOk &&
     checkPasswordSame
   ));
-
+/*this function is the click of the button which  saves the changes of the user */
 btnProfile.addEventListener("click", () => {
   if (
     !(

@@ -1,3 +1,4 @@
+/* this function brings out a toast for success of something */
 const toast = document.getElementById("toast");
 let id = 1;
 const showToast = (msg, success = true) => {

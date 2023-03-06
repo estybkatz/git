@@ -9,7 +9,7 @@ import { showNewPopup } from "./pages/Homepage.js";
 import initializeNavbar from "./components/Navbar.js";
 import checkIfConnected from "./utils/checkIfConnected.js";
 import "./pages/Page404.js";
-
+/*import the navbar buttons */ 
 const navHomeLink = document.getElementById("nav-home-link");
 const navAboutusLink = document.getElementById("nav-aboutus-link");
 /* const navAddpicLink = document.getElementById("nav-addpic-link"); */
@@ -17,7 +17,7 @@ const navSignupPageLink = document.getElementById("nav-signup-page");
 const navLoginPageLink = document.getElementById("nav-login-page");
 const navEditProfilePage = document.getElementById("nav-edit-profile-page");
 const navLogout = document.getElementById("nav-logout");
-
+//open the navBar on load
 window.addEventListener("load", () => {
   initializeNavbar(showNewPopup);
   if (checkIfConnected()) {
@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
     navEditProfilePage.innerText = user.name;
   }
 });
-
+//the clicks of the navbar
 navHomeLink.addEventListener("click", function () {
   handlePageChange(PAGES.HOME);
 });

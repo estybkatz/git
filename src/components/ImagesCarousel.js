@@ -124,7 +124,7 @@ const initializeBtns = () => {
   });
 };
 /*This function creates the carousel item from a picture in the arrays, and is used to create a single picture of for the createCarousel pictures. it's output is an html code of an image which has the url of the input, and the same alt. the credit is entered as a part of it's class so as to be taken out. */
-const createItem = (imgUrl, alt, credit,id) => {
+const createItem = (imgUrl, alt, credit) => {
   //opacity-0 hide image
   return `
      <img src="${imgUrl}" alt="${alt}"  class="${credit} opacity-0"/> 
@@ -135,7 +135,7 @@ const createItem = (imgUrl, alt, credit,id) => {
 const createCarousel = () => {
   let innerStr = "";
   for (let image of imagesArr) {
-    innerStr += createItem(image.imgUrl, image.alt, image.credit,image.id);
+    innerStr += createItem(image.imgUrl, image.alt, image.credit);
   }
   carouselDiv.innerHTML = innerStr;
   //show the first img

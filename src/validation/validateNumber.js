@@ -1,3 +1,4 @@
+/* this function validates that the user entered a valid number */
 import validate from "./validate.js";
 const validateNumber = (value) => {
   const reg = new RegExp("[0-9\\/ ]");

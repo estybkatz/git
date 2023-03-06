@@ -1,3 +1,4 @@
+/* this function checks if there is a user logged in now */
 const checkIfConnected = () => {
   let token = localStorage.getItem("token");
   if (!token) {

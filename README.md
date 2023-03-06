@@ -3,33 +3,34 @@ This project is a  system of advertising images for sell and viewing them.
 It uses HTML, JS and CSS.
 In this site we use arrays of objects, and functions working on them. 
 We also defined functions using the objects and the arrays, with input from the users.
+
 We defined dynamical arrays of objects, and managed them, as well as managed the places while adding and deleting items.
 Also we use validations of multiple types of strings using regex.
+The site is also responsive
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Methods used](#methods)
+- [Structure of the site](#structure)
 - [License](#license)
 
-## Installation
+## methods
+We defined an object of users which has two different types.
+The users can sign in, and log in, and change their details.
+We also defined an object of Image, which can be be updated and managed and ordered.
+We have 3 different options to view the images.
+We used functions that received input from the users, as text input, and button click, and clicks on the page.
+We also used validation methods for all inputs using regex methods.
+We used local storage to put in it and take from it variables.
+## structure
 
-Instructions for installing the project.
-
-code example if applicable
-
-
-## Usage
-
-Instructions for how to use the project.
-
-code example if applicable
-
-
-## Contributing
-
-Instructions for how to contribute to the project, including guidelines for pull requests and code reviews.
+The site has 3 modes of display: Gallery, List and Carousel , which can be changed using a button. 
+It is possible to sort the pictures  in an ascending and descending order according to the title.
+In list mode and gallery mode pressing the pictures pops them up.
+There is a navbar, which changes according to whatever a user is connected or not.
+In the list mode, only a business user can edit pictures.
+There is a sign up area, and a user profile area, which are all validated so that the input is correct.
+There is an addpic button which allows you to add a picture, according to valid input of the pictures.
 
 ## License
 
