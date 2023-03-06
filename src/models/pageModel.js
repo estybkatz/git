@@ -1,7 +1,7 @@
+/*here we set CONST names for the pages. */
 const PAGES = {
   HOME: "home-page",
   ABOUT: "about-us",
-  // ADDPIC: "add-pic",
   SIGNUP: "signup-page",
   LOGIN: "login-page",
   PROFILE: "profile-page",

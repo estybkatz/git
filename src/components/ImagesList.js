@@ -5,9 +5,8 @@ let isAdmin;
 let deleteImage;
 let showPopup;
 let showPopupImgDetails;
-var table=document.getElementById("imagesTable");
 
-//this function will transfer data from homepage to this page
+//this function initialises the variables of this page from homepage.
 const initialImagesList = (
   imagesArrFromHomePage,
   isAdminParam,
@@ -32,7 +31,7 @@ const updateImagesList = (imagesArrFromHomePage) => {
   imagesArr = imagesArrFromHomePage;
   createList();
 };
-
+/* this function creates the objects of the list, as rows with details. also if the user is an admin, it allows him to edit and delete pictures. */
 const createItem = (imgUrl, title, credit, id, alt) => {
   const adminBtns = `<div class="col-md-1">
   <button type="button" class="btn btn btn-light w-100" id="imageListEditBtn-${id}">
@@ -67,7 +66,7 @@ const createItem = (imgUrl, title, credit, id, alt) => {
   
   `;
 };
-
+/* this function extracts an id from a click evenf, it has no id it returns the parent id. */
 const getIdFromClick = (ev) => {
   let idFromId = ev.target.id.split("-"); // split the id to array
   if (!ev.target.id) {
@@ -79,20 +78,20 @@ const getIdFromClick = (ev) => {
   }
   return idFromId[1];
 };
-
+/* this function sets the delete click to the delete function of the id. */
 const handleDeleteBtnClick = (ev) => {
   deleteImage(getIdFromClick(ev));
 };
 
+/* this function sets the edit click to the edit function of the id. */
 const handleEditBtnClick = (ev) => {
   showPopup(getIdFromClick(ev));
 };
-
+/* this function pop ups image details from a click event. */
 const handleImgDetailClick = (ev) => {
-  console.log("err");
   showPopupImgDetails(getIdFromClick(ev));
 };
-
+/*This function clears all events of a given keyword from the handFunction */
 const clearEventListeners = (idKeyword, handleFunction) => {
   //get all old btns
   let btnsBefore = document.querySelectorAll(`[id^='${idKeyword}-']`);
@@ -101,7 +100,7 @@ const clearEventListeners = (idKeyword, handleFunction) => {
     btn.removeEventListener("click", handleFunction);
   }
 };
-
+/* this function creates a list, by first clearing all events of delete, details and edit. and creating new elements, and setting them to the innerHTML */
 const createList = () => {
   let innerStr = "";
   //clear event listeners for delete btns
@@ -121,21 +120,8 @@ const createList = () => {
       image.id,
       image.alt
     )
-//     let image=document.createElement('img');
-//     image.src=image.imgUrl;
-//  row.insertCell(0).innerHTML=imagesArr.indexOf(image)+1;
-// row.insertCell(1).innerHTML=image.imgUrl;
-// row.insertCell(2).appendChild(image);
-// row.insertCell(3).innerHTML=image.credit;
-// row.insertCell(4).innerHTML=image.id;
-// row.insertCell(5).innerHTML=image.alt;    
-// if (isAdmin){
-// // row.insertCell(6).innerHTML=
-    
-
-// }
-;
-  }
+ };
+  
   listDiv.innerHTML = innerStr;
 
   // add event listeners for delete btns
@@ -156,68 +142,3 @@ const createBtnEventListener = (idKeyword, handleFunction) => {
 };
 
 export { initialImagesList, updateImagesList };
-
-//  <button type="button" class="btn btn-success w-100">
-//    <i class="bi bi-currency-dollar"></i> Buy now
-//  </button>;
-
-//  <li class="list-group-item">
-//    <div class="d-flex card-body">
-//      <div class="col-md-2">
-//        <img src="${imgUrl}" class="img-fluid" alt="${alt}" />
-//      </div>
-
-//      <h6 class="card-subtitle mb-5 text-muted">${imgUrl}</h6>
-//      <h5 class="card-title col-md-1">${title}</h5>
-
-//      <p class="card-text col-md-1">${credit}</p>
-
-//      <div class="col-md-2 d-flex">${isAdmin ? adminBtns : ""}</div>
-//    </div>
-//  </li>;
-
-// <li class="list-group-item">
-//     <div class="row card-body d-flex">
-
-//         <img src="${imgUrl}" class="img-fluid col-md-2" alt="${alt}" />
-//           <h6 class="card-subtitle mb-2 text-muted col-md-5">
-//             ${imgUrl}
-//             </h6>
-//             <h5 class="card-title col-md-1">${title}</h5>
-//             <h6 class="card-subtitle mb-1 text-muted col-md-2">
-//             ${credit}
-//             </h6>
-
-// const adminBtns = `
-//   <div class="col-md-1">
-//   <button type="button" class="btn btn btn-light w-100" id="imageListEditBtn-${id}">
-//     <i class="bi bi-pen-fill"></i>
-//   </button>
-//   </div>
-//   <div class="col-md-1">
-//   <button type="button" class="btn btn btn-light w-100" id="imageListDeleteBtn-${id}">
-//   <i class="bi bi-trash3-fill"></i>
-//   </button>
-//   </div>
-//   `;
-//   return `
-//   <li class="list-group-item">
-//     <div class="row">
-//         <div class="col-md-2">
-//         <img src="${imgUrl}" class="img-fluid" alt="${title}"style="margin: 1.5rem; width: 8rem;
-//         height: 8rem;"/>
-//         </div>
-//         <div class="col-md-6">
-//         <div>${imgUrl}</div>
-//         </div>
-//         <div class="col-md-1">
-//         <h5 class="card-title">${title}</h5>
-//         </div>
-//         <div class="col-md-1">
-//         <h5 class="card-title">${Credit}</h5>
-//         </div>
-//         ${isAdmin ? adminBtns : ""}
-//     </div>
-//     </li>
-//   `;
-// };

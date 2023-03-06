@@ -1,5 +1,5 @@
 import Image from "../models/Image.js";
-
+/*this page initializes the data for the site if no input is inserted in the beginning. */
 let id = 1;
 let nextUserId = 1;
 

@@ -7,7 +7,7 @@ import validateName from "../validation/validateName.js";
 import Image from "../models/Image.js";
 import getNextId from "../utils/getNextId.js";
 //editImagesPopupUrl;
-
+/* here we take the basic properties of the popup from the html page.  */
 let selectedImage, editImage;
 const editImagesPopupImgDisplay = document.getElementById(
   "editImagesPopupImgDisplay"
@@ -43,17 +43,17 @@ const editImagesPopupImg = document.getElementById(
 const editImagesPopup = document.getElementById("editImagesPopup");
 
 const popupSaveBtn = document.getElementById("editImagesPopupSaveBtn");
-
-let urlOk = false;
-let altOK = false;
-let titleOK = false;
-let creditOK = false;
-let priceOK = false;
-let createATOK = false;
-let descriptionOK = false;
-let subtitleOK = false;
+/* This variables are all the fields which must be fullfilled in order for the picture to be allowed. they are initialized in the setInput function, as false for new picture and true for editing an existing picture. exists is a variable which will be used to differ between editing pictures and creating new pictures. */
+let urlOk ;;
+let altOK ;
+let titleOK;
+let creditOK;
+let priceOK ;
+let createATOK;
+let descriptionOK ;
+let subtitleOK ;
 let exists=null;
-
+/* all the following functions check the input inserted in the input fields if it is correct, the checkFunctions also change the OK variable that is connected to them. */
 editImagesPopupImg.addEventListener("input", () => {
   checkUrlInput();
 });
@@ -79,7 +79,7 @@ editImagesPopupDescription.addEventListener("input", () => {
 editImagesPopupSubTitle.addEventListener("input", () => {
   checkSubTitleInput();
 });
-
+/* the function removeAlerts removes the alerts and invalid of incorrect input in the end of the popup so they won't come back the next time we open a popup to edit. */
 const removeAlerts= ()=>
 {
   document.getElementById("popup-alert-subtitle").classList.add("d-none");
@@ -99,16 +99,19 @@ const removeAlerts= ()=>
     editImagesPopupDescription.classList.remove("is-invalid");
     editImagesPopupSubTitle.classList.remove("is-invalid");
 }
-const setInput =(val)=>{
- urlOk = val;
- altOK = val;
- titleOK =val;
- creditOK = val;
- priceOK = val;
- createATOK = val;
- descriptionOK = val;
- subtitleOK = val;
+/* the setInput functions sets all of the variables to either true or false, true in case that we edit a picture, then we can change a single detail and it is valid, since we checked when we created the picture, and false for a new picture until we set all values to correct input */
+const setInput =()=>{
+ urlOk = exists;
+ altOK = exists;
+ titleOK =exists;
+ creditOK = exists;
+ priceOK = exists;
+ createATOK = exists;
+ descriptionOK = exists;
+ subtitleOK = exists;
+  popupSaveBtn.disabled =true;
 }
+/* this function checks if the entered url is valid, and if it is sets urlOk to true, afterwards it checks if we can enable the button */
 const checkUrlInput = () => {
   let validUrl = validateUrl(editImagesPopupImg.value);
 
@@ -128,9 +131,10 @@ const checkUrlInput = () => {
   checkIfCanEnableBtn();
 };
 
+/* this function checks if the entered alt is valid, and if it is sets altOk to true, afterwards it checks if we can enable the button */
 const checkAltInput = () => {
-  let errorArr = validateString(editImagesPopupAlt.value);
-  if (errorArr.length === 0) {
+  let validAlt = validateString(editImagesPopupAlt.value);
+  if (validAlt.length === 0) {
     //the text is ok
     editImagesPopupAlt.classList.remove("is-invalid");
     document.getElementById("popup-alert-alt").classList.add("d-none");
@@ -146,6 +150,7 @@ const checkAltInput = () => {
   checkIfCanEnableBtn();
 };
 
+/* this function checks if the entered title is valid, and if it is sets titleOk to true, afterwards it checks if we can enable the button */
 const checkTitleInput = () => {
   let validTitle = validateString(editImagesPopupTitle.value);
   if (validTitle.length === 0) {
@@ -164,6 +169,7 @@ const checkTitleInput = () => {
   checkIfCanEnableBtn();
 };
 
+/* this function checks if the entered credit is valid, and if it is sets creditOk to true, afterwards it checks if we can enable the button */
 const checkCreditInput = () => {
   let validCredit = validateName(editImagesPopupCredit.value);
   //   .log(reg.test(inputName.value));
@@ -176,13 +182,12 @@ const checkCreditInput = () => {
     //the text is not ok
     editImagesPopupCredit.classList.add("is-invalid");
     document.getElementById("popup-alert-credit").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
     creditOK = false;
   }
   checkIfCanEnableBtn();
 };
 
+/* this function checks if the entered Price is valid, and if it is sets priceOk to true, afterwards it checks if we can enable the button */
 const checkPriceInput = () => {
   let validPrice = validatePrice(editImagesPopupPrice.value);
   if (validPrice === true) {
@@ -201,6 +206,7 @@ const checkPriceInput = () => {
   checkIfCanEnableBtn();
 };
 
+/* this function checks if the entered date is valid, and if it is sets createATOk to true, afterwards it checks if we can enable the button */
 const checkCreatedATInput = () => {
   let validDate = validateDate(editImagesPopupCreatedAT.value);
   if (validDate === true) {
@@ -219,9 +225,10 @@ const checkCreatedATInput = () => {
   checkIfCanEnableBtn();
 };
 
+/* this function checks if the entered description is valid, and if it is sets descriptionOk to true, afterwards it checks if we can enable the button */
 const checkDescriptionInput = () => {
-  let errorArr = validateString(editImagesPopupDescription.value);
-  if (errorArr.length === 0) {
+  let validDescription = validateString(editImagesPopupDescription.value);
+  if (validDescription.length === 0) {
     //the text is ok
     editImagesPopupDescription.classList.remove("is-invalid");
     document.getElementById("popup-alert-description").classList.add("d-none");
@@ -239,9 +246,10 @@ const checkDescriptionInput = () => {
   checkIfCanEnableBtn();
 };
 
+/* this function checks if the entered subtitle is valid, and if it is sets subtitleOK to true, afterwards it checks if we can enable the button */
 const checkSubTitleInput = () => {
-  let errorArr = validateString(editImagesPopupSubTitle.value);
-  if (errorArr.length === 0) {
+  let subTitleValid = validateString(editImagesPopupSubTitle.value);
+  if (subTitleValid.length === 0) {
     //the text is ok
     editImagesPopupSubTitle.classList.remove("is-invalid");
     document.getElementById("popup-alert-subtitle").classList.add("d-none");
@@ -257,6 +265,7 @@ const checkSubTitleInput = () => {
   checkIfCanEnableBtn();
 };
 
+/* this function checks all the variables are valid, and we can activate the button or not */
 const checkIfCanEnableBtn = () => {
   popupSaveBtn.disabled =!(
     urlOk &&
@@ -268,18 +277,16 @@ const checkIfCanEnableBtn = () => {
     descriptionOK &&
     subtitleOK);
 };
-
+/* this function initialises the popup, first checking if it exists, and accordingly sets the input. after wards sets the editVariables to the input */
 const initPopup = (selectedImageFromHomePage, editImageFromHomePage) => {
   /*
     set data from selectedImage to html
     */
   if (selectedImageFromHomePage) {
     selectedImage = selectedImageFromHomePage;
-    exists=1;
-    setInput(true);
+    exists=true;
   } else {
-    setInput(false);
-    exists=2;
+    exists=false;
     selectedImage = new Image(
       getNextId(),
       "",
@@ -292,9 +299,11 @@ const initPopup = (selectedImageFromHomePage, editImageFromHomePage) => {
       "",
       ""
     );
+    
   }
+  setInput();
   editImage = editImageFromHomePage;
-  editImagesPopupImgDisplay.value = selectedImage.imgUrl;
+  editImagesPopupImgDisplay.src = selectedImage.imgUrl;
   //editImagesPopupUrl.value = selectedImage.imgUrl;
   editImagesPopupAlt.value = selectedImage.title;
   editImagesPopupCredit.value = selectedImage.credit;
@@ -304,30 +313,28 @@ const initPopup = (selectedImageFromHomePage, editImageFromHomePage) => {
   editImagesPopupTitle.value = selectedImage.title;
   editImagesPopupSubTitle.value = selectedImage.subtitle;
   editImagesPopupImg.value = selectedImage.imgUrl;
-  
-  checkIfCanEnableBtn();
   showPopup();
 };
-
+/*this function shows the popup, and gives it the correct title according to exists if it is a edit popup or a create new popup */
 const showPopup = () => {
   editImagesPopup.classList.remove("d-none");
-  if (exists==2)
-  document.getElementById("newPopup").classList.remove("d-none");
-  else if (exists==1)
-  document.getElementById("editPopup").classList.remove("d-none");  
+  if (exists==true)
+  document.getElementById("editPopup").classList.remove("d-none");
+  else
+  document.getElementById("newPopup").classList.remove("d-none");  
 };
-
+/*this function hides the popup, and also deletes the edit and new titles so it won't come back with them again */
 const hidePopup = () => {
   editImagesPopup.classList.add("d-none");
-  if (exists==2)
-  {document.getElementById("newPopup").classList.add("d-none");
-}
-else if (exists==1)
+  if (exists==true)
   {document.getElementById("editPopup").classList.add("d-none");
+}
+else if (exists==false)
+  {document.getElementById("newPopup").classList.add("d-none");
   }
   removeAlerts();
 };
-
+/*this function makes that a click outside the popup cancels it. and that input inside it changes it. */
 window.addEventListener("load", () => {
   editImagesPopup.addEventListener("click", (ev) => {
     if (

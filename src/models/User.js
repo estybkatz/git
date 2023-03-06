@@ -1,3 +1,4 @@
+/* here we define the user object and it's constructor */
 class User {
   id;
   name;
@@ -42,15 +43,6 @@ class User {
     this.password = password;
     this.isAdmin = isAdmin;
   }
-  // checkBusinessClient = () => {
-  //   debugger;
-  //   let btnBusinessClient;
-  //   if (btnBusinessClient.checked) {
-  //     return (this.btnBusinessClient = true);
-  //   } else {
-  //     return (this.btnBusinessClient = false);
-  //   }
-  // };
 }
 
 export default User;

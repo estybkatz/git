@@ -10,17 +10,7 @@ let selectedImage;
 const imgDetailsPopupImgDisplay = document.getElementById(
   "imgDetailsPopupImgDisplay"
 );
-
-// const editImagesPopupAlt = document.getElementById(
-//   "editImagesPopupAlt"
-// );
 const imgDetailsPopupTitle = document.getElementById("imgDetailsPopupTitle");
-// const editImagesPopupCredit = document.getElementById(
-//   "editImagesPopupCredit"
-// );
-// const editImagesPopupPrice = document.getElementById(
-//   "editImagesPopupPrice"
-// );
 const imgDetailsPopupCreatedAT = document.getElementById(
   "imgDetailsPopupCreatedAT"
 );
@@ -37,7 +27,7 @@ const imgDetailsPopupID = document.getElementById("imgDetailsPopupID");
 
 const imgDetailsPopup = document.getElementById("imgDetailsPopup");
 /* 
-Function name
+this function initializes the selectedImage variable from user input.
 */
 const initDetailsPopup = (selectedImageFromHomePage) => {
   /*
@@ -48,7 +38,7 @@ const initDetailsPopup = (selectedImageFromHomePage) => {
   } else {
     return;
   }
-
+/* here we set the details that we want to show in the details popup from the input clicked. */
   imgDetailsPopupImgDisplay.src = selectedImage.imgUrl;
   imgDetailsPopupTitle.innerHTML = selectedImage.title;
   imgDetailsPopupCreatedAT.innerHTML = selectedImage.createdAT;
@@ -56,26 +46,20 @@ const initDetailsPopup = (selectedImageFromHomePage) => {
   imgDetailsPopupSubTitle.innerHTML = selectedImage.subtitle;
   imgDetailsPopupID.innerHTML = selectedImage.id;
 
-  // editImagesPopupAlt.value = selectedImage.title;
-  // editImagesPopupCredit.value = selectedImage.credit;
-  // editImagesPopupPrice.value = selectedImage.price;
-  // editImagesPopupCreatedAT.value = selectedImage.createdAT;
-  // editImagesPopupDescription.value = selectedImage.description;
-  // editImagesPopupTitle.value = selectedImage.title;
-  // editImagesPopupSubTitle.value = selectedImage.subtitle;
-  // editImagesPopupImg.value = selectedImage.img;
 
   showDetailsPopup();
 };
-
+/*this function remove the d-none class of the popup, so that it will show and adds a block class. */
 const showDetailsPopup = () => {
   imgDetailsPopup.classList.remove("d-none");
   imgDetailsPopup.classList.add("d-block");
 };
-
+/* this function hides the popup */
 const hidDetailsPopup = () => {
   imgDetailsPopup.classList.add("d-none");
 };
+
+/*this function hides the pop up if the user presses outside it. */
 
 window.addEventListener("load", () => {
   imgDetailsPopup.addEventListener("click", (ev) => {

@@ -17,14 +17,14 @@ import { initDetailsPopup } from "../components/ImgDetailsPopup.js";
 let imagesArr, originalImagesArr;
 let displayNow; // display that we can see now
 
-/* btns */
+/* buttons */
 let homeDisplayList;
 let homeDisplayGallery;
-let homeDisplayCousel;
+let homeDisplayCarousel;
 /* displays */
 let imagesGallery;
 let imagesList;
-let imagesCarusel;
+let imagesCarousel;
 
 let isAdmin;
 
@@ -54,12 +54,12 @@ const initializeElements = () => {
   /* btns */
   homeDisplayList = document.getElementById("homeDisplayList");
   homeDisplayGallery = document.getElementById("homeDisplayGallery");
-  homeDisplayCousel = document.getElementById("homeDisplayCousel");
+  homeDisplayCarousel = document.getElementById("homeDisplayCarousel");
   /* divs */
   imagesGallery = document.getElementById("imagesGallery");
   imagesList = document.getElementById("imagesList");
-  imagesCarusel = document.getElementById("imagesCarusel");
-  displayNow = imagesCarusel; // choose who we want to display
+  imagesCarousel = document.getElementById("imagesCarousel");
+  displayNow = imagesCarousel; // choose who we want to display
   displayToDisplay(displayNow);
 };
 
@@ -70,8 +70,8 @@ const initializeBtns = () => {
   homeDisplayGallery.addEventListener("click", () => {
     displayToDisplay(imagesGallery);
   });
-  homeDisplayCousel.addEventListener("click", () => {
-    displayToDisplay(imagesCarusel);
+  homeDisplayCarousel.addEventListener("click", () => {
+    displayToDisplay(imagesCarousel);
   });
   document
     .getElementById("homeDisplaySortASC")

@@ -33,7 +33,7 @@ const updateImagesCarousel = (imagesArrFromHomePage) => {
 It fades out the current image, and fades in the previous or next image according to the button.
 */
 const initializeBtns = () => {
-  document.getElementById("back-carusel-btn").addEventListener("click", () => {
+  document.getElementById("back-Carousel-btn").addEventListener("click", () => {
     if (animationStarted !== 0) {
       return;
     }
@@ -77,7 +77,7 @@ const initializeBtns = () => {
   
     showIdx = prevIdx;
   });
-  document.getElementById("next-carusel-btn").addEventListener("click", () => {
+  document.getElementById("next-Carousel-btn").addEventListener("click", () => {
     if (animationStarted !== 0) {
       return;
     }

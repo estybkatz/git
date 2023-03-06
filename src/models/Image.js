@@ -1,3 +1,4 @@
+/*here we define the image class with it's properties and constructor. */
 class Image {
   id;
   imgUrl;
