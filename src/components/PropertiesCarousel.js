@@ -23,7 +23,6 @@ const updatePropertiesCarousel = (propertiesArrFromHomePage) => {
 
 const initializeBtns = () => {
   document.getElementById("back-carusel-btn").addEventListener("click", () => {
-    console.log("hello in back");
     if (animationStarted !== 0) {
       return;
     }
@@ -67,7 +66,6 @@ const initializeBtns = () => {
     showIdx = prevIdx;
   });
   document.getElementById("next-carusel-btn").addEventListener("click", () => {
-    console.log("hello in next");
     if (animationStarted !== 0) {
       return;
     }

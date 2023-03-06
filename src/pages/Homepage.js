@@ -30,7 +30,6 @@ let isAdmin;
 
 window.addEventListener("load", () => {
   propertiesArr = localStorage.getItem("props");
-  //console.log(propertiesArr);
   if (!propertiesArr) {
     return;
   }
@@ -90,7 +89,6 @@ const initializeBtns = () => {
       let regex = new RegExp("^" + ev.target.value, "i");
       propertiesArr = originalPropertiesArr.filter((item) => {
         let reg = regex.test(item.title);
-        // console.log("item.name", item.name, " reg", reg);
         return reg;
       });
       updateDisplays();
@@ -148,12 +146,10 @@ const showPopup = (id) => {
 };
 
 const showPopupImgDetails = (id) => {
-  console.log("id=", id);
   let selectedProperty = propertiesArr.find((item) => item.id === +id);
   if (!selectedProperty) {
     return;
   }
-  console.log(selectedProperty);
   initDetailsPopup(selectedProperty);
 };
 

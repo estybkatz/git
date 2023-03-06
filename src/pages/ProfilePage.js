@@ -44,16 +44,11 @@ const checkIfPasswordIsSame = () => {
     document
       .getElementById("profile-none-same-password")
       .classList.remove("d-none");
-    // console.log("inside check");
-    // console.log(inputPassword.value);
-    // console.log("after first");
-    // console.log(inputRePassword.value);
     document
       .getElementById("profile-none-same-password")
       .classList.add("d-block");
     checkPasswordSame = false;
   }
-  console.log(checkPasswordSame);
 };
 
 window.addEventListener("load", () => {
@@ -140,7 +135,6 @@ for (var i = 0; i < inputStrings.length; i++) {
 
 const checkNameInput = () => {
   let errorArr = validateName(inputName.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     inputName.classList.remove("is-invalid");
@@ -158,7 +152,6 @@ const checkNameInput = () => {
 };
 const checkLastNameInput = () => {
   let errorArr = validateName(inputLastName.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     inputLastName.classList.remove("is-invalid");
@@ -239,9 +232,7 @@ const checkStringInput = () => {
   let errorInputRules = false;
 
   for (i = 0; i < inputStrings.length; i++) {
-    /*  console.log("place", i, "string - ", inputStrings[i].value); */
     let errorArr = validateString(inputStrings[i].value);
-    //   console.log(reg.test(inputName.value));
     if (errorArr.length === 0 || inputStrings[i].value === "") {
       //the text is ok
       inputStrings[i].classList.remove("is-invalid");

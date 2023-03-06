@@ -111,7 +111,7 @@ const setInput =(val)=>{
 }
 const checkUrlInput = () => {
   let validUrl = validateUrl(editPropertiesPopupImg.value);
-   console.log(validUrl);
+
   if (validUrl ===true) {
     //the text is ok
     editPropertiesPopupImg.classList.remove("is-invalid");
@@ -130,7 +130,6 @@ const checkUrlInput = () => {
 
 const checkAltInput = () => {
   let errorArr = validateString(editPropertiesPopupAlt.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     editPropertiesPopupAlt.classList.remove("is-invalid");
@@ -149,7 +148,6 @@ const checkAltInput = () => {
 
 const checkTitleInput = () => {
   let validTitle = validateString(editPropertiesPopupTitle.value);
-  //   console.log(reg.test(inputName.value));
   if (validTitle.length === 0) {
     //the text is ok
     editPropertiesPopupTitle.classList.remove("is-invalid");
@@ -168,7 +166,7 @@ const checkTitleInput = () => {
 
 const checkCreditInput = () => {
   let validCredit = validateName(editPropertiesPopupCredit.value);
-  //   console.log(reg.test(inputName.value));
+  //   .log(reg.test(inputName.value));
   if (validCredit.length === 0) {
     //the text is ok
     editPropertiesPopupCredit.classList.remove("is-invalid");
@@ -187,7 +185,6 @@ const checkCreditInput = () => {
 
 const checkPriceInput = () => {
   let validPrice = validatePrice(editPropertiesPopupPrice.value);
-  //   console.log(reg.test(inputName.value));
   if (validPrice === true) {
     //the text is ok
     editPropertiesPopupPrice.classList.remove("is-invalid");
@@ -206,7 +203,6 @@ const checkPriceInput = () => {
 
 const checkCreatedATInput = () => {
   let validDate = validateDate(editPropertiesPopupCreatedAT.value);
-  //   console.log(reg.test(inputName.value));
   if (validDate === true) {
     //the text is ok
     editPropertiesPopupCreatedAT.classList.remove("is-invalid");
@@ -225,7 +221,6 @@ const checkCreatedATInput = () => {
 
 const checkDescriptionInput = () => {
   let errorArr = validateString(editPropertiesPopupDescription.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     editPropertiesPopupDescription.classList.remove("is-invalid");
@@ -246,7 +241,6 @@ const checkDescriptionInput = () => {
 
 const checkSubTitleInput = () => {
   let errorArr = validateString(editPropertiesPopupSubTitle.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     editPropertiesPopupSubTitle.classList.remove("is-invalid");
@@ -264,15 +258,15 @@ const checkSubTitleInput = () => {
 };
 
 const checkIfCanEnableBtn = () => {
-  popupSaveBtn.disabled =
-    !urlOk &&
-    !altOK &&
-    !titleOK &&
-    !creditOK &&
-    !priceOK &&
-    !createATOK &&
-    !descriptionOK &&
-    !subtitleOK;
+  popupSaveBtn.disabled =!(
+    urlOk &&
+    altOK &&
+    titleOK &&
+    creditOK &&
+    priceOK &&
+    createATOK &&
+    descriptionOK &&
+    subtitleOK);
 };
 
 const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {

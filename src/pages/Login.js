@@ -67,7 +67,6 @@ loginBtn.addEventListener("click", () => {
       item.password === loginPasswordInput.value
   );
   if (!user) {
-    //console.log("invalid email and/or password");
     return;
   }
   //remember who connected

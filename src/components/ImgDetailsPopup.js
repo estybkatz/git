@@ -1,7 +1,11 @@
 import Property from "../models/Property.js";
 
 //editPropertiesPopupUrl;
-
+/*
+Here we set all the variables required for the Image Details popup.
+We Take all the required variables from the html using the getELementById function.
+selectedProperty is a variable for the selected picture.
+*/
 let selectedProperty;
 const imgDetailsPopupImgDisplay = document.getElementById(
   "imgDetailsPopupImgDisplay"

@@ -45,14 +45,9 @@ const checkIfPasswordIsSame = () => {
     document.getElementById("none-same-password").classList.remove("d-block");
   } else {
     document.getElementById("none-same-password").classList.remove("d-none");
-    // console.log("inside check");
-    // console.log(inputPassword.value);
-    // console.log("after first");
-    // console.log(inputRePassword.value);
     document.getElementById("none-same-password").classList.add("d-block");
     checkPasswordSame = false;
   }
-  console.log(checkPasswordSame);
 }; /* 
 checkIfPasswordIsSame(); */
 
@@ -114,8 +109,6 @@ inputPhoneNumber.addEventListener("input", () => {
 /* 
 function checkStrings(elements) {
   for (var i = 0; i < elements.length; i++) {
-    console.log("in");
-    console.log("element", i, elements[i]);
     elements[i].addEventListener("input", () => {
       checkStringInput();
     });
@@ -139,7 +132,6 @@ for (var i = 0; i < inputStrings.length; i++) {
 
 const checkNameInput = () => {
   let errorArr = validateName(inputName.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     inputName.classList.remove("is-invalid");
@@ -158,7 +150,6 @@ const checkNameInput = () => {
 
 const checkLastNameInput = () => {
   let errorArr = validateName(inputLastName.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     inputLastName.classList.remove("is-invalid");
@@ -239,9 +230,7 @@ const checkStringInput = () => {
   let errorInputRules = false;
 
   for (i = 0; i < inputStrings.length; i++) {
-    /*  console.log("place", i, "string - ", inputStrings[i].value); */
     let errorArr = validateString(inputStrings[i].value);
-    //   console.log(reg.test(inputName.value));
     if (errorArr.length === 0 || inputStrings[i].value === "") {
       //the text is ok
       inputStrings[i].classList.remove("is-invalid");
@@ -274,8 +263,6 @@ const checkStringInput = () => {
 };
 const checkPhoneNumber = () => {
   let errorArr = validatePhone(inputPhoneNumber.value);
-  // console.log(inputPhoneNumber.value);
-  // console.log(errorArr);
   if (errorArr.length === 0 || inputPhoneNumber.value === "") {
     inputPhoneNumber.classList.remove("is-invalid");
     document.getElementById("signup-alert-phone").classList.add("d-none");
@@ -354,7 +341,6 @@ btnRegister.addEventListener("click", () => {
   } else {
     //we have users
     users = JSON.parse(users); // convert from string to array of objects
-    // console.log("users from localStorage", users);
     for (let user of users) {
       if (user.email === inputEmail.value) {
         //display msg - email already exists
