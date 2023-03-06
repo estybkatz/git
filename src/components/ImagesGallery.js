@@ -28,6 +28,7 @@ const createCard = (imgUrl, title, credit, price, id) => {
         src="${imgUrl}"
         class="card-img-top"
         alt="${title}"
+        id="imgMoreDetails-${id}-gallery"
       />
       <div class="card-body">
         <h5 class="card-title">${title}</h5>
@@ -57,6 +58,8 @@ const createGallery = () => {
   }
   galleryDiv.innerHTML = innerStr;
 };
+
+/* this function pop ups image details from a click event. */
 
 export { initialImagesGallery, updateImagesGallery };
 

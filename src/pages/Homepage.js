@@ -13,7 +13,7 @@ import {
 import { initPopup } from "../components/Popup.js";
 import checkIfAdmin from "../utils/checkIfAdmin.js";
 import { initDetailsPopup } from "../components/ImgDetailsPopup.js";
-
+/*Here we define the variables for this page */
 let imagesArr, originalImagesArr;
 let displayNow; // display that we can see now
 
@@ -27,7 +27,7 @@ let imagesList;
 let imagesCarousel;
 
 let isAdmin;
-
+/*Here we load and initialise the gallery and list and carousel and buttons according to the user status. */
 window.addEventListener("load", () => {
   imagesArr = localStorage.getItem("images");
   if (!imagesArr) {
@@ -49,7 +49,7 @@ window.addEventListener("load", () => {
   initializeElements();
   initializeBtns();
 });
-
+/* here we initialise the variables by setting chosen */
 const initializeElements = () => {
   /* btns */
   homeDisplayList = document.getElementById("homeDisplayList");
@@ -62,7 +62,7 @@ const initializeElements = () => {
   displayNow = imagesCarousel; // choose who we want to display
   displayToDisplay(displayNow);
 };
-
+/* this function sets the buttons, in the homepage, activating the displays and sorts and search according to clicks   */
 const initializeBtns = () => {
   homeDisplayList.addEventListener("click", () => {
     displayToDisplay(imagesList);
@@ -94,7 +94,7 @@ const initializeBtns = () => {
       updateDisplays();
     });
 };
-
+/* this functions hides the current display and sets the display chosen. */
 const displayToDisplay = (toDisplay) => {
   // hide what we currently showing
   displayNow.classList.remove("d-block");
@@ -105,17 +105,17 @@ const displayToDisplay = (toDisplay) => {
   //this is what we displaying now
   displayNow = toDisplay;
 };
-
+/* this function updates the displays */
 const updateDisplays = () => {
   updateImagesGallery(imagesArr); // update gallery
   updateImagesList(imagesArr); // update list
   updateImagesCarousel(imagesArr); // update carousel
 };
-
+/* this function saves to local storage a given array */
 const saveToLocalStorage = (arrToSave) => {
   localStorage.setItem("images", JSON.stringify(arrToSave));
 };
-
+/* this functions removes a given image from teh array of the images and updates the displays */
 const deleteImage = (id) => {
   id = +id; //convert string to number
   originalImagesArr = originalImagesArr.filter(
@@ -125,7 +125,7 @@ const deleteImage = (id) => {
   imagesArr = imagesArr.filter((item) => item.id !== id); //delete image by index
   updateDisplays();
 };
-
+/* this function sorts the array in an ascending or descending order  */
 const sortImages = (asc = true) => {
   if (asc) {
     // from a to z
@@ -136,7 +136,7 @@ const sortImages = (asc = true) => {
   }
   updateDisplays();
 };
-
+/* this functions shows a popup of a given id */
 const showPopup = (id) => {
   let selectedImage = imagesArr.find((item) => item.id === +id);
   if (!selectedImage) {
@@ -144,7 +144,7 @@ const showPopup = (id) => {
   }
   initPopup(selectedImage, editImage);
 };
-
+/* this function shows the details of a chosen function by id */
 const showPopupImgDetails = (id) => {
   let selectedImage = imagesArr.find((item) => item.id === +id);
   if (!selectedImage) {
@@ -152,11 +152,11 @@ const showPopupImgDetails = (id) => {
   }
   initDetailsPopup(selectedImage);
 };
-
+/* this functions pops up to create a new image */
 const showNewPopup = () => {
   initPopup(undefined, addNewImage);
 };
-
+/* this function adds a given image to the image array and saves it to local storage */
 const addNewImage = (newImage) => {
   originalImagesArr = [...originalImagesArr, newImage];
   let nextId = +newImage.id + 1;
@@ -164,7 +164,7 @@ const addNewImage = (newImage) => {
   imagesArr = [...originalImagesArr];
   editImage();
 };
-
+/* this function updates the new image */
 const editImage = () => {
   saveToLocalStorage(originalImagesArr);
   updateDisplays();

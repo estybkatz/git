@@ -48,7 +48,7 @@ const createItem = (imgUrl, title, credit, id, alt) => {
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${imgUrl}" class="img-fluid" alt="${alt}" id="imgMoreDetails-${id}"/>
+        <img src="${imgUrl}" class="img-fluid" alt="${alt}" id="imgMoreDetails-${id}-list"/>
         </div>
         <div class="col-md-6">
         <div>${imgUrl}</div>
