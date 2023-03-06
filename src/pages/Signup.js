@@ -6,7 +6,8 @@ import validateName from "../validation/validateName.js";
 import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
 import User from "../models/User.js";
-import showToast from "../utils/Toast.js";
+import showToast from "../utils/Toast.js";     
+import validatePhone from "../validation/validatePhone.js"
 
 const inputName = document.getElementById("signup-input-name");
 const inputLastName = document.getElementById("input-last-name");
@@ -272,7 +273,7 @@ const checkStringInput = () => {
   checkIfCanEnableBtn();
 };
 const checkPhoneNumber = () => {
-  let errorArr = validateNumber(inputPhoneNumber.value);
+  let errorArr = validatePhone(inputPhoneNumber.value);
   // console.log(inputPhoneNumber.value);
   // console.log(errorArr);
   if (errorArr.length === 0 || inputPhoneNumber.value === "") {

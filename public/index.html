@@ -37,11 +37,11 @@
                 <a class="nav-link" href="#" id="nav-addpic-link">Add Pic</a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-add-new-property-link">Add pic</a>
+                <a class="nav-link" href="#" id="nav-add-new-property-link">Add Pic</a>
               </li>
             </ul>
             <form class="d-flex responsive-nav-flex" role="search" id="navBeforeLogin">
-              <a class="nav-link me-3" href="#" id="nav-signup-page">Signup</a>
+              <a class="nav-link me-3" href="#" id="nav-signup-page">SignUp</a>
               <a class="nav-link responsive-mt" href="#" id="nav-login-page">Login</a>
             </form>
             <form class="d-flex responsive-nav-flex d-none" role="search" id="navAfterLogin">
@@ -57,8 +57,8 @@
       <!-- Home page -->
       <div id="home-page" class="d-block">
         <h1 class=>Pic-Up</h1>
-        <h4>The popular site for selling your photos. Simple registration to the website, and you are welcome to upload
-          photos for sale</h4>
+        <h4>Discover and sell high-quality pictures with our online marketplace for photography enthusiasts. Browse stunning images or showcase your own portfolio to a global audience. Join our community today and start buying and selling with ease!
+!</h4>
 
         <h1>Home page</h1>
         <div class="d-flex justify-content-between mb-2">
@@ -88,18 +88,27 @@
           <div class="row row-cols-1 row-cols-md-3 g-4" id="home-page-properties-gallery"></div>
         </div>
 
-
-
+<!-- 
+      <table id="propertiesTable" class="d-block table-css">
+        
+          <th class="col-md-1">no.</th>
+          <th class="col-md-2">image</th>
+          <th class="col-md-5">Pic</th>
+          <th class="col-md-1">Title</h6>
+          <th class="col-md-1">Credit</th>
+          <th class="col-md-1">Edit</th>
+          <th class="col-md-1">Delete</th>
+      </table> -->
 
         <div id="propertiesList" class="d-none">
           
            <div id="header-list" class="header-list-details" >
-          <h6 class="col-md-1">no.</h6>
-          <h6 class="col-md-2">image</h6>
+          <h6 class="col-md-1">No.</h6>
+          <h6 class="col-md-2">Image</h6>
           <h6 class="col-md-5">Pic</h6>
           <h6 class="col-md-1">Title</h6>
           <h6 class="col-md-1">Credit</h6>
-          <h6 class="col-md-1"> edit</h6>
+          <h6 class="col-md-1">Edit</h6>
           <h6 class="col-md-1">Delete</h6>
           </div>
           <ol class="list-group list-group-numbered" id="home-page-properties-list"></ol>
@@ -123,16 +132,48 @@
 
       <!-- About-->
       <div id="about-us" class="d-none">
-        <p>about us</p>
-        <h1>The popular website for selling photos and buying photos</h1>
-        <p>To upload a photo for sale you must register on the registration page as a business customer,
-click the add pic button,
+        <h1>About Us</h1>
+        <h2>Pic-Up: An Online Marketplace for Exceptional Photography</h2>
+        <p>Welcome to our online marketplace for photography enthusiasts. Our platform connects buyers and sellers of high-quality pictures from around the world, providing a secure and convenient way to discover and sell exceptional images.<br>
+
+As a buyer, you can browse our extensive selection of images, from breathtaking landscapes to captivating portraits and abstract art. Our user-friendly interface and advanced search options make it easy to find exactly what you're looking for, while our secure payment system ensures a seamless and safe purchasing experience.<br>
+
+As a seller, you can showcase your portfolio and sell your pictures to a global audience. Our platform offers a range of tools and resources to help you set prices, connect with buyers, and grow your business. We also provide competitive fees and a secure payment system, so you can focus on creating and selling your art.<br>
+
+Our online marketplace is designed to meet the needs of photography enthusiasts, whether you're a professional photographer or an amateur looking to buy or sell pictures. Join our community today and discover a world of exceptional images.
+        </p>
+        <h3> Getting Started: A Guide to Using Our Photography Marketplace</h3>
+        <h5>Upload A Photo</h5>
+        <p>
+        <p>Only users registered as business clients may upload a photo.
+          <br>
+          Once you register as a business client, you can login and add a button using the add pic button,
 and upload the photo you want to sell</p>
-<p>By clicking on the icons on the left side of the home page, you can view the images in addition to the carousel, in a gallery or list view</p>
-<img src="./assets/imgs/Cdisplay.PNG" alt="carouselDisplay" class="imgRorAboutUs1">
-<img src="./assets/imgs/CardDisplay.PNG" alt="cardDisplay" class="imgRorAboutUs2">
+<h3> The viewing options</h3>
+<p>On the left side of the screen, we have a set of icons, which can be used to navigate the website.</p>
+<h3> List view </h3>
+The first button <i class="bi bi-list"></i> brings all the available pictures as a list, with their url's and prices, and editing options.
 <img src="./assets/imgs/Ldisplay.PNG" alt="listDisplay" class="imgRorAboutUs3">
-      </div>
+<br><br><br><br>
+<h3> Gallery </h3>
+Pressing the   <i class="bi bi-grid-3x3-gap-fill"></i> button, will open the gallery mode, in which you can see all the pictures, as cards simultaneously.   
+<img src="./assets/imgs/CardDisplay.PNG" alt="cardDisplay" class="imgRorAboutUs2">
+<br><br><br><br>
+<h3>Carousel View</h3>
+pressing the <i class="bi bi-square-half"></i> button, open a carousel view of the pictures. In the Carousel mode you can toggle the pictures using the arrows.
+<img src="./assets/imgs/Cdisplay.PNG" alt="carouselDisplay" class="imgRorAboutUs1">
+<br><br>
+<h3> Sort the list </h3>
+You can use the   <i class="bi bi-sort-alpha-down"></i> and   <i class="bi bi-sort-alpha-up"></i> buttons to sort the pictures in an ascending and descending order, of the titles.
+<h3> Search a picture</h3>
+You can enter a word, and it will search for a picture starting with it.
+<h3> Additional details of a picture </h3>
+You can press any picture, when viewing as a List or as a Gallery,and additional details about it will pop up.
+<h3>Editing and deleting a picture</h3>
+Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a picture, and the <i class="bi bi-trash3-fill"></i> allows you to delete it.
+
+       
+</div>
        
       <!--Signup-->
       <div id="signup-page" class="d-none">
@@ -395,9 +436,14 @@ and upload the photo you want to sell</p>
 
         <div class="popup-div" id="editPropertiesPopupChild">
           <div class="card popup-div">
-            <h4>create pictures form and edit</h4>
-            <p>here you can add a new picture and edit</p>
-
+            <div class="d-none" id="editPopup">
+            <h4>Edit picture form </h4>
+            <p>Here you can edit your picture</p>
+            </div>
+            <div class="d-none" id="newPopup">
+            <h4>Create Picture Form </h4>
+            <p>Here you can add a new picture </p>
+            </div>
              <img src="" class="card-img-top" alt="" id="editPropertiesPopupImgDisplay" />
             <div class="card-text">
               <!-- <h5 class="card-title">
@@ -452,7 +498,7 @@ and upload the photo you want to sell</p>
                   <input type="text" class="form-control" id="editPropertiesPopupPrice" placeholder="Price"/>
                   <label for="editPropertiesPopupPrice">Price</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-price">
-           You have to put numbers only and one point
+           You need input only digits and a single point, and if you add a point you need to add at least one digit after it.
           </div>
                 </div>
               </li>
@@ -535,7 +581,7 @@ and upload the photo you want to sell</p>
       </div>
     </main>
 
-    <footer class="border-top pt-3 d-flex justify-content-center">
+    <footer class="border-top pt-3 d-flex justify-content-center footer-marg">
       <p>© Create by Ester Rosenfeld</p>
     </footer>
   </div>

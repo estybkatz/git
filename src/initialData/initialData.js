@@ -4,81 +4,41 @@ let id = 1;
 let nextUserId = 1;
 
 const createData = () => {
-  // fetch("http://127.0.0.1:5500/src/initialData/data.json")
-  //   .then(function (response) {
-  //     console.log("err");
-  //     return response.json();
-  //   })
-  //   .then(function (data) {
-  //     for (let i = 0; i < data.length; i++) {
-  //       console.log(data[i]);
-  //     }
-  //   })
-  //   .catch(function (error) {
-  //     console.log("error = " + error);
-  //   });
 
   let propertiesArr = [
     new Property(
       id++,
-      Property.img,
-      "https://images.pexels.com/photos/5986440/pexels-photo-5986440.jpeg",
-      "people",
-      "cctitle",
-      "created by cottonbro studio",
+      "https://images.pexels.com/photos/5976142/pexels-photo-5976142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Man with tallis praying",
+      "Man with tallis praying",
+      "Cottonbro Studio",
       350,
-      "createAT",
-      "description",
-      "subtitle"
+      "1/10/2020",
+      "A man in synagogue praying with a tallis and holy book",
+      "Praying man"
     ),
     new Property(
       id++,
-      Property.img,
-      "https://images.pexels.com/photos/15658380/pexels-photo-15658380.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-      "alt",
-      "bbtitle",
-      "credit",
+      "https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Mountain Covered Snow Under Star",
+      "Mountain Covered Snow Under Star",
+      "Eberhard Grossgasteiger",
       600,
-      "createdat",
-      "description",
-      "subtitle"
+      "23/02/2014",
+      "Snow on the mountains, covering them",
+      "Snow"
     ),
     new Property(
       id++,
-      Property.img,
-      "https://images.pexels.com/photos/2718416/pexels-photo-2718416.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-      "alt",
-      "aatitle",
-      "credit",
+      "https://images.pexels.com/photos/15695990/pexels-photo-15695990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Beautiful Landscape",
+      "Beautiful Landscape",
+      "Valentinos Loucaides",
       "700",
-      "createdAT",
-      "description",
-      "subtitle"
-    ),
-    // new Property(
-    //   id++,
-    //   "John's raft",
-    //   9.9,
-    //   `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-    //     Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-    //   "./assets/imgs/4.jpg"
-    // ),
-    // new Property(
-    //   id++,
-    //   "John's pie",
-    //   3.14,
-    //   `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-    //     Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-    //   "./assets/imgs/5.jpg"
-    // ),
-    // new Property(
-    //   id++,
-    //   "Kart's dream house",
-    //   2.5,
-    //   `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-    //     Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-    //   "./assets/imgs/6.jpg"
-    // ),
+      "22/8/21",
+      "Rivers going down from mountains, on a cloudy day",
+      "Rivers and mountains"
+    )
   ];
   return propertiesArr;
 };

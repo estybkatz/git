@@ -5,6 +5,8 @@ let isAdmin;
 let deleteProperty;
 let showPopup;
 let showPopupImgDetails;
+var table=document.getElementById("propertiesTable");
+
 //this function will transfer data from homepage to this page
 const initialPropertiesList = (
   propertiesArrFromHomePage,
@@ -110,6 +112,7 @@ const createList = () => {
 
   //create new elements and remove old ones
   for (let property of propertiesArr) {
+  //  let row=table.insertRow();
     innerStr += createItem(
       property.imgUrl,
       //property.imgUrl,
@@ -117,7 +120,21 @@ const createList = () => {
       property.credit,
       property.id,
       property.alt
-    );
+    )
+//     let image=document.createElement('img');
+//     image.src=property.imgUrl;
+//  row.insertCell(0).innerHTML=propertiesArr.indexOf(property)+1;
+// row.insertCell(1).innerHTML=property.imgUrl;
+// row.insertCell(2).appendChild(image);
+// row.insertCell(3).innerHTML=property.credit;
+// row.insertCell(4).innerHTML=property.id;
+// row.insertCell(5).innerHTML=property.alt;    
+// if (isAdmin){
+// // row.insertCell(6).innerHTML=
+    
+
+// }
+;
   }
   listDiv.innerHTML = innerStr;
 

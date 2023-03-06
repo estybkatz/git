@@ -52,6 +52,7 @@ let priceOK = false;
 let createATOK = false;
 let descriptionOK = false;
 let subtitleOK = false;
+let exists=null;
 
 editPropertiesPopupImg.addEventListener("input", () => {
   checkUrlInput();
@@ -79,10 +80,39 @@ editPropertiesPopupSubTitle.addEventListener("input", () => {
   checkSubTitleInput();
 });
 
+const removeAlerts= ()=>
+{
+  document.getElementById("popup-alert-subtitle").classList.add("d-none");
+  document.getElementById("popup-alert-url").classList.add("d-none");
+  document.getElementById("popup-alert-alt").classList.add("d-none");
+  document.getElementById("popup-alert-title").classList.add("d-none"); 
+  document.getElementById("popup-alert-credit").classList.add("d-none");
+  document.getElementById("popup-alert-price").classList.add("d-none"); 
+  document.getElementById("popup-alert-createdAT").classList.add("d-none");
+  document.getElementById("popup-alert-description").classList.add("d-none");
+    editPropertiesPopupImg.classList.remove("is-invalid");
+    editPropertiesPopupAlt.classList.remove("is-invalid");
+    editPropertiesPopupTitle.classList.remove("is-invalid");
+    editPropertiesPopupCredit.classList.remove("is-invalid");
+    editPropertiesPopupPrice.classList.remove("is-invalid");
+    editPropertiesPopupCreatedAT.classList.remove("is-invalid");
+    editPropertiesPopupDescription.classList.remove("is-invalid");
+    editPropertiesPopupSubTitle.classList.remove("is-invalid");
+}
+const setInput =(val)=>{
+ urlOk = val;
+ altOK = val;
+ titleOK =val;
+ creditOK = val;
+ priceOK = val;
+ createATOK = val;
+ descriptionOK = val;
+ subtitleOK = val;
+}
 const checkUrlInput = () => {
-  let errorArr = validateUrl(editPropertiesPopupImg.value);
+  let validUrl = validateUrl(editPropertiesPopupImg.value);
   //   console.log(reg.test(inputName.value));
-  if (errorArr.length === 0) {
+  if (validUrl ===true) {
     //the text is ok
     editPropertiesPopupImg.classList.remove("is-invalid");
     document.getElementById("popup-alert-url").classList.add("d-none");
@@ -118,9 +148,9 @@ const checkAltInput = () => {
 };
 
 const checkTitleInput = () => {
-  let errorArr = validateString(editPropertiesPopupTitle.value);
+  let validTitle = validateString(editPropertiesPopupTitle.value);
   //   console.log(reg.test(inputName.value));
-  if (errorArr.length === 0) {
+  if (validTitle.length === 0) {
     //the text is ok
     editPropertiesPopupTitle.classList.remove("is-invalid");
     document.getElementById("popup-alert-title").classList.add("d-none");
@@ -137,9 +167,9 @@ const checkTitleInput = () => {
 };
 
 const checkCreditInput = () => {
-  let errorArr = validateName(editPropertiesPopupCredit.value);
+  let validCredit = validateName(editPropertiesPopupCredit.value);
   //   console.log(reg.test(inputName.value));
-  if (errorArr.length === 0) {
+  if (validCredit.length === 0) {
     //the text is ok
     editPropertiesPopupCredit.classList.remove("is-invalid");
     document.getElementById("popup-alert-credit").classList.add("d-none");
@@ -156,9 +186,9 @@ const checkCreditInput = () => {
 };
 
 const checkPriceInput = () => {
-  let errorArr = validatePrice(editPropertiesPopupPrice.value);
+  let validPrice = validatePrice(editPropertiesPopupPrice.value);
   //   console.log(reg.test(inputName.value));
-  if (errorArr.length === 0) {
+  if (validPrice === true) {
     //the text is ok
     editPropertiesPopupPrice.classList.remove("is-invalid");
     document.getElementById("popup-alert-price").classList.add("d-none");
@@ -175,9 +205,9 @@ const checkPriceInput = () => {
 };
 
 const checkCreatedATInput = () => {
-  let errorArr = validateDate(editPropertiesPopupCreatedAT.value);
+  let validDate = validateDate(editPropertiesPopupCreatedAT.value);
   //   console.log(reg.test(inputName.value));
-  if (errorArr.length === 0) {
+  if (validDate === true) {
     //the text is ok
     editPropertiesPopupCreatedAT.classList.remove("is-invalid");
     document.getElementById("popup-alert-createdAT").classList.add("d-none");
@@ -251,7 +281,11 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
     */
   if (selectedPropertyFromHomePage) {
     selectedProperty = selectedPropertyFromHomePage;
+    exists=1;
+    setInput(true);
   } else {
+    setInput(false);
+    exists=2;
     selectedProperty = new Property(
       getNextId(),
       "",
@@ -266,7 +300,7 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
     );
   }
   editProperty = editPropertyFromHomePage;
-  editPropertiesPopupImgDisplay.src = selectedProperty.imgUrl;
+  editPropertiesPopupImgDisplay.value = selectedProperty.imgUrl;
   //editPropertiesPopupUrl.value = selectedProperty.imgUrl;
   editPropertiesPopupAlt.value = selectedProperty.title;
   editPropertiesPopupCredit.value = selectedProperty.credit;
@@ -275,17 +309,29 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   editPropertiesPopupDescription.value = selectedProperty.description;
   editPropertiesPopupTitle.value = selectedProperty.title;
   editPropertiesPopupSubTitle.value = selectedProperty.subtitle;
-  editPropertiesPopupImg.value = selectedProperty.img;
-
+  editPropertiesPopupImg.value = selectedProperty.imgUrl;
+  
+  checkIfCanEnableBtn();
   showPopup();
 };
 
 const showPopup = () => {
   editPropertiesPopup.classList.remove("d-none");
+  if (exists==2)
+  document.getElementById("newPopup").classList.remove("d-none");
+  else if (exists==1)
+  document.getElementById("editPopup").classList.remove("d-none");  
 };
 
 const hidePopup = () => {
   editPropertiesPopup.classList.add("d-none");
+  if (exists==2)
+  {document.getElementById("newPopup").classList.add("d-none");
+}
+else if (exists==1)
+  {document.getElementById("editPopup").classList.add("d-none");
+  }
+  removeAlerts();
 };
 
 window.addEventListener("load", () => {
@@ -306,7 +352,7 @@ window.addEventListener("load", () => {
       selectedProperty.title = editPropertiesPopupAlt.value;
       selectedProperty.price = editPropertiesPopupPrice.value;
       selectedProperty.credit = editPropertiesPopupCredit.value;
-      selectedProperty.img = editPropertiesPopupImg.value;
+      selectedProperty.imgUrl = editPropertiesPopupImg.value;
       selectedProperty.createAT = editPropertiesPopupCreatedAT.value;
       selectedProperty.description = editPropertiesPopupDescription.value;
       selectedProperty.title = editPropertiesPopupTitle.value;

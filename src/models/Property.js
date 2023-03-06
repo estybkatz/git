@@ -1,6 +1,5 @@
 class Property {
   id;
-  img;
   imgUrl;
   alt;
   title;
@@ -11,7 +10,6 @@ class Property {
   subtitle;
   constructor(
     id,
-    img,
     imgUrl,
     alt,
     title,
@@ -22,7 +20,6 @@ class Property {
     subtitle
   ) {
     this.id = id;
-    this.img = img;
     this.imgUrl = imgUrl;
     this.alt = alt;
     this.title = title;

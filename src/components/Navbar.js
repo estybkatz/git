@@ -16,14 +16,14 @@ const initializeNavbar = (showPopupFromApp) => {
   nextId = getNextId();
   isAdmin = checkIfAdmin();
   isConnected = checkIfConnected();
-  if (isConnected) {
+  if (isAdmin) {
     navBeforeLogin.classList.add("d-none");
     navAfterLogin.classList.remove("d-none");
   }
   showPopup = showPopupFromApp;
   /* nav */
   navAddNewPropertyLink = document.getElementById("nav-add-new-property-link");
-  if (!isConnected) {
+  if (!isAdmin) {
     navAddNewPropertyLink.classList.add("d-none");
   }
   navAddNewPropertyLink.addEventListener("click", () => {
