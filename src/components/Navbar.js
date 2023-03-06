@@ -8,7 +8,7 @@ let isAdmin;
 let isConnected;
 let showPopup;
 
-let navAddNewPropertyLink;
+let navAddNewImageLink;
 const navBeforeLogin = document.getElementById("navBeforeLogin");
 const navAfterLogin = document.getElementById("navAfterLogin");
 
@@ -22,11 +22,11 @@ const initializeNavbar = (showPopupFromApp) => {
   }
   showPopup = showPopupFromApp;
   /* nav */
-  navAddNewPropertyLink = document.getElementById("nav-add-new-property-link");
+  navAddNewImageLink = document.getElementById("nav-add-new-image-link");
   if (!isAdmin) {
-    navAddNewPropertyLink.classList.add("d-none");
+    navAddNewImageLink.classList.add("d-none");
   }
-  navAddNewPropertyLink.addEventListener("click", () => {
+  navAddNewImageLink.addEventListener("click", () => {
     showPopup();
   });
 };

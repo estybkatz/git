@@ -1,20 +1,20 @@
 import {
-  initialPropertiesGallery,
-  updatePropertiesGallery,
-} from "../components/PropertiesGallery.js";
+  initialImagesGallery,
+  updateImagesGallery,
+} from "../components/ImagesGallery.js";
 import {
-  initialPropertiesList,
-  updatePropertiesList,
-} from "../components/PropertiesList.js";
+  initialImagesList,
+  updateImagesList,
+} from "../components/ImagesList.js";
 import {
-  initialPropertiesCarousel,
-  updatePropertiesCarousel,
-} from "../components/PropertiesCarousel.js";
+  initialImagesCarousel,
+  updateImagesCarousel,
+} from "../components/ImagesCarousel.js";
 import { initPopup } from "../components/Popup.js";
 import checkIfAdmin from "../utils/checkIfAdmin.js";
 import { initDetailsPopup } from "../components/ImgDetailsPopup.js";
 
-let propertiesArr, originalPropertiesArr;
+let imagesArr, originalImagesArr;
 let displayNow; // display that we can see now
 
 /* btns */
@@ -22,30 +22,30 @@ let homeDisplayList;
 let homeDisplayGallery;
 let homeDisplayCousel;
 /* displays */
-let propertiesGallery;
-let propertiesList;
-let propertiesCarusel;
+let imagesGallery;
+let imagesList;
+let imagesCarusel;
 
 let isAdmin;
 
 window.addEventListener("load", () => {
-  propertiesArr = localStorage.getItem("props");
-  if (!propertiesArr) {
+  imagesArr = localStorage.getItem("images");
+  if (!imagesArr) {
     return;
   }
-  propertiesArr = JSON.parse(propertiesArr);
-  originalPropertiesArr = [...propertiesArr];
+  imagesArr = JSON.parse(imagesArr);
+  originalImagesArr = [...imagesArr];
   isAdmin = checkIfAdmin();
-  //passing propertiesArr to PropertiesGallery.js
-  initialPropertiesGallery(propertiesArr);
-  initialPropertiesList(
-    propertiesArr,
+  //passing imagesArr to ImagesGallery.js
+  initialImagesGallery(imagesArr);
+  initialImagesList(
+    imagesArr,
     isAdmin,
-    deleteProperty,
+    deleteImage,
     showPopup,
     showPopupImgDetails
   );
-  initialPropertiesCarousel(propertiesArr);
+  initialImagesCarousel(imagesArr);
   initializeElements();
   initializeBtns();
 });
@@ -56,38 +56,38 @@ const initializeElements = () => {
   homeDisplayGallery = document.getElementById("homeDisplayGallery");
   homeDisplayCousel = document.getElementById("homeDisplayCousel");
   /* divs */
-  propertiesGallery = document.getElementById("propertiesGallery");
-  propertiesList = document.getElementById("propertiesList");
-  propertiesCarusel = document.getElementById("propertiesCarusel");
-  displayNow = propertiesCarusel; // choose who we want to display
+  imagesGallery = document.getElementById("imagesGallery");
+  imagesList = document.getElementById("imagesList");
+  imagesCarusel = document.getElementById("imagesCarusel");
+  displayNow = imagesCarusel; // choose who we want to display
   displayToDisplay(displayNow);
 };
 
 const initializeBtns = () => {
   homeDisplayList.addEventListener("click", () => {
-    displayToDisplay(propertiesList);
+    displayToDisplay(imagesList);
   });
   homeDisplayGallery.addEventListener("click", () => {
-    displayToDisplay(propertiesGallery);
+    displayToDisplay(imagesGallery);
   });
   homeDisplayCousel.addEventListener("click", () => {
-    displayToDisplay(propertiesCarusel);
+    displayToDisplay(imagesCarusel);
   });
   document
     .getElementById("homeDisplaySortASC")
     .addEventListener("click", () => {
-      sortPropertys();
+      sortImages();
     });
   document
     .getElementById("homeDisplaySortDESC")
     .addEventListener("click", () => {
-      sortPropertys(false);
+      sortImages(false);
     });
   document
     .getElementById("homeDisplaySearch")
     .addEventListener("input", (ev) => {
       let regex = new RegExp("^" + ev.target.value, "i");
-      propertiesArr = originalPropertiesArr.filter((item) => {
+      imagesArr = originalImagesArr.filter((item) => {
         let reg = regex.test(item.title);
         return reg;
       });
@@ -107,66 +107,66 @@ const displayToDisplay = (toDisplay) => {
 };
 
 const updateDisplays = () => {
-  updatePropertiesGallery(propertiesArr); // update gallery
-  updatePropertiesList(propertiesArr); // update list
-  updatePropertiesCarousel(propertiesArr); // update carousel
+  updateImagesGallery(imagesArr); // update gallery
+  updateImagesList(imagesArr); // update list
+  updateImagesCarousel(imagesArr); // update carousel
 };
 
 const saveToLocalStorage = (arrToSave) => {
-  localStorage.setItem("props", JSON.stringify(arrToSave));
+  localStorage.setItem("images", JSON.stringify(arrToSave));
 };
 
-const deleteProperty = (id) => {
+const deleteImage = (id) => {
   id = +id; //convert string to number
-  originalPropertiesArr = originalPropertiesArr.filter(
+  originalImagesArr = originalImagesArr.filter(
     (item) => item.id !== id
   );
-  saveToLocalStorage(originalPropertiesArr);
-  propertiesArr = propertiesArr.filter((item) => item.id !== id); //delete property by index
+  saveToLocalStorage(originalImagesArr);
+  imagesArr = imagesArr.filter((item) => item.id !== id); //delete image by index
   updateDisplays();
 };
 
-const sortPropertys = (asc = true) => {
+const sortImages = (asc = true) => {
   if (asc) {
     // from a to z
-    propertiesArr.sort((a, b) => a.title.localeCompare(b.title));
+    imagesArr.sort((a, b) => a.title.localeCompare(b.title));
   } else {
     // from z to a
-    propertiesArr.sort((a, b) => b.title.localeCompare(a.title));
+    imagesArr.sort((a, b) => b.title.localeCompare(a.title));
   }
   updateDisplays();
 };
 
 const showPopup = (id) => {
-  let selectedProperty = propertiesArr.find((item) => item.id === +id);
-  if (!selectedProperty) {
+  let selectedImage = imagesArr.find((item) => item.id === +id);
+  if (!selectedImage) {
     return;
   }
-  initPopup(selectedProperty, editProperty);
+  initPopup(selectedImage, editImage);
 };
 
 const showPopupImgDetails = (id) => {
-  let selectedProperty = propertiesArr.find((item) => item.id === +id);
-  if (!selectedProperty) {
+  let selectedImage = imagesArr.find((item) => item.id === +id);
+  if (!selectedImage) {
     return;
   }
-  initDetailsPopup(selectedProperty);
+  initDetailsPopup(selectedImage);
 };
 
 const showNewPopup = () => {
-  initPopup(undefined, addNewProperty);
+  initPopup(undefined, addNewImage);
 };
 
-const addNewProperty = (newProperty) => {
-  originalPropertiesArr = [...originalPropertiesArr, newProperty];
-  let nextId = +newProperty.id + 1;
+const addNewImage = (newImage) => {
+  originalImagesArr = [...originalImagesArr, newImage];
+  let nextId = +newImage.id + 1;
   localStorage.setItem("nextid", nextId + "");
-  propertiesArr = [...originalPropertiesArr];
-  editProperty();
+  imagesArr = [...originalImagesArr];
+  editImage();
 };
 
-const editProperty = () => {
-  saveToLocalStorage(originalPropertiesArr);
+const editImage = () => {
+  saveToLocalStorage(originalImagesArr);
   updateDisplays();
 };
 

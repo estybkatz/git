@@ -1,46 +1,46 @@
 import checkIfConnected from "../utils/checkIfConnected.js";
-let propertiesArr;
+let imagesArr;
 let listDiv;
 let isAdmin;
-let deleteProperty;
+let deleteImage;
 let showPopup;
 let showPopupImgDetails;
-var table=document.getElementById("propertiesTable");
+var table=document.getElementById("imagesTable");
 
 //this function will transfer data from homepage to this page
-const initialPropertiesList = (
-  propertiesArrFromHomePage,
+const initialImagesList = (
+  imagesArrFromHomePage,
   isAdminParam,
-  deletePropertyFromHomePage,
+  deleteImageFromHomePage,
   showPopupFromHomePage,
   showPopupimgDetailsFromHomePage
 ) => {
-  listDiv = document.getElementById("home-page-properties-list");
+  listDiv = document.getElementById("home-page-images-list");
   isAdmin = isAdminParam;
-  deleteProperty = deletePropertyFromHomePage;
+  deleteImage = deleteImageFromHomePage;
   showPopup = showPopupFromHomePage;
   showPopupImgDetails = showPopupimgDetailsFromHomePage;
-  updatePropertiesList(propertiesArrFromHomePage);
+  updateImagesList(imagesArrFromHomePage);
 };
 
-const updatePropertiesList = (propertiesArrFromHomePage) => {
+const updateImagesList = (imagesArrFromHomePage) => {
   /*
     this function will get data from homepage and create new list.
     if the list already exists it will remove the old one and
     create new one
   */
-  propertiesArr = propertiesArrFromHomePage;
+  imagesArr = imagesArrFromHomePage;
   createList();
 };
 
 const createItem = (imgUrl, title, credit, id, alt) => {
   const adminBtns = `<div class="col-md-1">
-  <button type="button" class="btn btn btn-light w-100" id="propertyListEditBtn-${id}">
+  <button type="button" class="btn btn btn-light w-100" id="imageListEditBtn-${id}">
     <i class="bi bi-pencil-square col-md-1"></i>
   </button>
   </div>
   <div class="col-md-1">
-  <button type="button" class="btn btn btn-light w-100" id="propertyListDeleteBtn-${id}">
+  <button type="button" class="btn btn btn-light w-100" id="imageListDeleteBtn-${id}">
    <i class="bi bi-trash3-fill col-md-1"></i>
   </button>
   </div>
@@ -81,7 +81,7 @@ const getIdFromClick = (ev) => {
 };
 
 const handleDeleteBtnClick = (ev) => {
-  deleteProperty(getIdFromClick(ev));
+  deleteImage(getIdFromClick(ev));
 };
 
 const handleEditBtnClick = (ev) => {
@@ -105,30 +105,30 @@ const clearEventListeners = (idKeyword, handleFunction) => {
 const createList = () => {
   let innerStr = "";
   //clear event listeners for delete btns
-  clearEventListeners("propertyListDeleteBtn", handleDeleteBtnClick);
+  clearEventListeners("imageListDeleteBtn", handleDeleteBtnClick);
   //clear event listeners for edit btns
-  clearEventListeners("propertyListEditBtn", handleEditBtnClick);
+  clearEventListeners("imageListEditBtn", handleEditBtnClick);
   clearEventListeners("imgMoreDetails", handleImgDetailClick);
 
   //create new elements and remove old ones
-  for (let property of propertiesArr) {
+  for (let image of imagesArr) {
   //  let row=table.insertRow();
     innerStr += createItem(
-      property.imgUrl,
-      //property.imgUrl,
-      property.title,
-      property.credit,
-      property.id,
-      property.alt
+      image.imgUrl,
+      //image.imgUrl,
+      image.title,
+      image.credit,
+      image.id,
+      image.alt
     )
 //     let image=document.createElement('img');
-//     image.src=property.imgUrl;
-//  row.insertCell(0).innerHTML=propertiesArr.indexOf(property)+1;
-// row.insertCell(1).innerHTML=property.imgUrl;
+//     image.src=image.imgUrl;
+//  row.insertCell(0).innerHTML=imagesArr.indexOf(image)+1;
+// row.insertCell(1).innerHTML=image.imgUrl;
 // row.insertCell(2).appendChild(image);
-// row.insertCell(3).innerHTML=property.credit;
-// row.insertCell(4).innerHTML=property.id;
-// row.insertCell(5).innerHTML=property.alt;    
+// row.insertCell(3).innerHTML=image.credit;
+// row.insertCell(4).innerHTML=image.id;
+// row.insertCell(5).innerHTML=image.alt;    
 // if (isAdmin){
 // // row.insertCell(6).innerHTML=
     
@@ -139,9 +139,9 @@ const createList = () => {
   listDiv.innerHTML = innerStr;
 
   // add event listeners for delete btns
-  createBtnEventListener("propertyListDeleteBtn", handleDeleteBtnClick);
+  createBtnEventListener("imageListDeleteBtn", handleDeleteBtnClick);
   // add event listeners for edit btns
-  createBtnEventListener("propertyListEditBtn", handleEditBtnClick);
+  createBtnEventListener("imageListEditBtn", handleEditBtnClick);
 
   createBtnEventListener("imgMoreDetails", handleImgDetailClick);
 };
@@ -155,7 +155,7 @@ const createBtnEventListener = (idKeyword, handleFunction) => {
   }
 };
 
-export { initialPropertiesList, updatePropertiesList };
+export { initialImagesList, updateImagesList };
 
 //  <button type="button" class="btn btn-success w-100">
 //    <i class="bi bi-currency-dollar"></i> Buy now
@@ -190,12 +190,12 @@ export { initialPropertiesList, updatePropertiesList };
 
 // const adminBtns = `
 //   <div class="col-md-1">
-//   <button type="button" class="btn btn btn-light w-100" id="propertyListEditBtn-${id}">
+//   <button type="button" class="btn btn btn-light w-100" id="imageListEditBtn-${id}">
 //     <i class="bi bi-pen-fill"></i>
 //   </button>
 //   </div>
 //   <div class="col-md-1">
-//   <button type="button" class="btn btn btn-light w-100" id="propertyListDeleteBtn-${id}">
+//   <button type="button" class="btn btn btn-light w-100" id="imageListDeleteBtn-${id}">
 //   <i class="bi bi-trash3-fill"></i>
 //   </button>
 //   </div>

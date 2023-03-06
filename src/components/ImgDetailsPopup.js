@@ -1,25 +1,25 @@
-import Property from "../models/Property.js";
+import Image from "../models/Image.js";
 
-//editPropertiesPopupUrl;
+//editImagesPopupUrl;
 /*
 Here we set all the variables required for the Image Details popup.
 We Take all the required variables from the html using the getELementById function.
-selectedProperty is a variable for the selected picture.
+selectedImage is a variable for the selected picture.
 */
-let selectedProperty;
+let selectedImage;
 const imgDetailsPopupImgDisplay = document.getElementById(
   "imgDetailsPopupImgDisplay"
 );
 
-// const editPropertiesPopupAlt = document.getElementById(
-//   "editPropertiesPopupAlt"
+// const editImagesPopupAlt = document.getElementById(
+//   "editImagesPopupAlt"
 // );
 const imgDetailsPopupTitle = document.getElementById("imgDetailsPopupTitle");
-// const editPropertiesPopupCredit = document.getElementById(
-//   "editPropertiesPopupCredit"
+// const editImagesPopupCredit = document.getElementById(
+//   "editImagesPopupCredit"
 // );
-// const editPropertiesPopupPrice = document.getElementById(
-//   "editPropertiesPopupPrice"
+// const editImagesPopupPrice = document.getElementById(
+//   "editImagesPopupPrice"
 // );
 const imgDetailsPopupCreatedAT = document.getElementById(
   "imgDetailsPopupCreatedAT"
@@ -30,38 +30,40 @@ const imgDetailsPopupDescription = document.getElementById(
 const imgDetailsPopupSubTitle = document.getElementById(
   "imgDetailsPopupSubTitle"
 );
-// const editPropertiesPopupImg = document.getElementById(
-//   "editPropertiesPopupImg"
+// const editImagesPopupImg = document.getElementById(
+//   "editImagesPopupImg"
 // );
 const imgDetailsPopupID = document.getElementById("imgDetailsPopupID");
 
 const imgDetailsPopup = document.getElementById("imgDetailsPopup");
-
-const initDetailsPopup = (selectedPropertyFromHomePage) => {
+/* 
+Function name
+*/
+const initDetailsPopup = (selectedImageFromHomePage) => {
   /*
-    set data from selectedProperty to html
+    set data from selectedImage to html
     */
-  if (selectedPropertyFromHomePage) {
-    selectedProperty = selectedPropertyFromHomePage;
+  if (selectedImageFromHomePage) {
+    selectedImage = selectedImageFromHomePage;
   } else {
     return;
   }
 
-  imgDetailsPopupImgDisplay.src = selectedProperty.imgUrl;
-  imgDetailsPopupTitle.innerHTML = selectedProperty.title;
-  imgDetailsPopupCreatedAT.innerHTML = selectedProperty.createdAT;
-  imgDetailsPopupDescription.innerHTML = selectedProperty.description;
-  imgDetailsPopupSubTitle.innerHTML = selectedProperty.subtitle;
-  imgDetailsPopupID.innerHTML = selectedProperty.id;
+  imgDetailsPopupImgDisplay.src = selectedImage.imgUrl;
+  imgDetailsPopupTitle.innerHTML = selectedImage.title;
+  imgDetailsPopupCreatedAT.innerHTML = selectedImage.createdAT;
+  imgDetailsPopupDescription.innerHTML = selectedImage.description;
+  imgDetailsPopupSubTitle.innerHTML = selectedImage.subtitle;
+  imgDetailsPopupID.innerHTML = selectedImage.id;
 
-  // editPropertiesPopupAlt.value = selectedProperty.title;
-  // editPropertiesPopupCredit.value = selectedProperty.credit;
-  // editPropertiesPopupPrice.value = selectedProperty.price;
-  // editPropertiesPopupCreatedAT.value = selectedProperty.createdAT;
-  // editPropertiesPopupDescription.value = selectedProperty.description;
-  // editPropertiesPopupTitle.value = selectedProperty.title;
-  // editPropertiesPopupSubTitle.value = selectedProperty.subtitle;
-  // editPropertiesPopupImg.value = selectedProperty.img;
+  // editImagesPopupAlt.value = selectedImage.title;
+  // editImagesPopupCredit.value = selectedImage.credit;
+  // editImagesPopupPrice.value = selectedImage.price;
+  // editImagesPopupCreatedAT.value = selectedImage.createdAT;
+  // editImagesPopupDescription.value = selectedImage.description;
+  // editImagesPopupTitle.value = selectedImage.title;
+  // editImagesPopupSubTitle.value = selectedImage.subtitle;
+  // editImagesPopupImg.value = selectedImage.img;
 
   showDetailsPopup();
 };
@@ -79,8 +81,8 @@ window.addEventListener("load", () => {
   imgDetailsPopup.addEventListener("click", (ev) => {
     if (
       ev.target.id !== "imgDetailsPopup"
-      // ev.target.id !== "editPropertiesPopupCancelBtn" &&
-      // ev.target.id !== "editPropertiesPopupCancelBtnIcon"
+      // ev.target.id !== "editImagesPopupCancelBtn" &&
+      // ev.target.id !== "editImagesPopupCancelBtnIcon"
     ) {
       return;
     }

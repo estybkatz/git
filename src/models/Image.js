@@ -1,4 +1,4 @@
-class Property {
+class Image {
   id;
   imgUrl;
   alt;
@@ -30,4 +30,4 @@ class Property {
     this.subtitle = subtitle;
   }
 }
-export default Property;
+export default Image;

@@ -432,9 +432,9 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
         <!-- <div id="toast"></div> -->
       </div>
       <!-- popup  -->
-      <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="editPropertiesPopup">
+      <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="editImagesPopup">
 
-        <div class="popup-div" id="editPropertiesPopupChild">
+        <div class="popup-div" id="editImagesPopupChild">
           <div class="card popup-div">
             <div class="d-none" id="editPopup">
             <h4>Edit picture form </h4>
@@ -444,20 +444,20 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <h4>Create Picture Form </h4>
             <p>Here you can add a new picture </p>
             </div>
-             <img src="" class="card-img-top" alt="" id="editPropertiesPopupImgDisplay" />
+             <img src="" class="card-img-top" alt="" id="editImagesPopupImgDisplay" />
             <div class="card-text">
               <!-- <h5 class="card-title">
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="editPropertiesPopupUrl" placeholder="Url" />
-                  <label for="editPropertiesPopupUrl">img</label>
+                  <input type="text" class="form-control" id="editImagesPopupUrl" placeholder="Url" />
+                  <label for="editImagesPopupUrl">img</label>
                 </div>
               </h5> -->
  <ul class="list-group list-group-flush"></ul>
              <li class="list-group-item">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="editPropertiesPopupImg"
+                  <input type="text" class="form-control" id="editImagesPopupImg"
                         placeholder="Img" />
-                  <label for="editPropertiesPopupImg">url</label>
+                  <label for="editImagesPopupImg">url</label>
                     </div>
                   </li> 
            <div class="alert alert-danger d-none" role="alert" id="popup-alert-url">
@@ -465,8 +465,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
           </div>
               <div class="card-text">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="alt" id="editPropertiesPopupAlt"></textarea>
-                  <label for="editPropertiesAlt">alt</label>
+                  <textarea class="form-control" placeholder="alt" id="editImagesPopupAlt"></textarea>
+                  <label for="editImagesAlt">alt</label>
                 </div>
               </div>
                <div class="alert alert-danger d-none" role="alert" id="popup-alert-alt">
@@ -476,8 +476,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
            
                 <li class="list-group-item">
                 <div class="form-floating ">
-                  <input type="text" class="form-control" id="editPropertiesPopupTitle" placeholder="Title" />
-                  <label for="editPropertiesPopupTitle">Title</label>
+                  <input type="text" class="form-control" id="editImagesPopupTitle" placeholder="Title" />
+                  <label for="editImagesPopupTitle">Title</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-title">
             you have to put only letters and numbers
           </div>
@@ -485,8 +485,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
               </li>
               <li class="list-group-item">
                 <div class="form-floating ">
-                  <input type="text" class="form-control" id="editPropertiesPopupCredit" placeholder="Credit"/>
-                  <label for="editPropertiesPopupCredit">Credit</label>
+                  <input type="text" class="form-control" id="editImagesPopupCredit" placeholder="Credit"/>
+                  <label for="editImagesPopupCredit">Credit</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-credit">
             The name must start with a capital letter
             This field can only be used with letters and numbers
@@ -495,8 +495,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
               </li>
               <li class="list-group-item">
                 <div class="form-floating ">
-                  <input type="text" class="form-control" id="editPropertiesPopupPrice" placeholder="Price"/>
-                  <label for="editPropertiesPopupPrice">Price</label>
+                  <input type="text" class="form-control" id="editImagesPopupPrice" placeholder="Price"/>
+                  <label for="editImagesPopupPrice">Price</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-price">
            You need input only digits and a single point, and if you add a point you need to add at least one digit after it.
           </div>
@@ -505,8 +505,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
 
               <li class="list-group-item">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="editPropertiesPopupCreatedAT" placeholder="CreatedAT"/>
-                  <label for="editPropertiesPopupCreatedAT">CreatedAT</label>
+                  <input type="text" class="form-control" id="editImagesPopupCreatedAT" placeholder="CreatedAT"/>
+                  <label for="editImagesPopupCreatedAT">CreatedAT</label>
                    <div class="alert alert-danger d-none" role="alert" id="popup-alert-createdAT">
             you have to put only Date
           </div>
@@ -515,9 +515,9 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
              
                   <li class=" list-group-item">
                     <div class="form-floating">
-                      <input type="text" class="form-control" id="editPropertiesPopupDescription"
+                      <input type="text" class="form-control" id="editImagesPopupDescription"
                         placeholder="Description" />
-                      <label for="editPropertiesPopupDescription">Description</label>
+                      <label for="editImagesPopupDescription">Description</label>
                       <div class="alert alert-danger d-none" role="alert" id="popup-alert-description">
             you have to put only letters and numbers
           </div>
@@ -526,8 +526,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
              
               <li class="list-group-item">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="editPropertiesPopupSubTitle" placeholder="SubTitle" />
-                  <label for="editPropertiesSubTitle">SubTitle</label>
+                  <input type="text" class="form-control" id="editImagesPopupSubTitle" placeholder="SubTitle" />
+                  <label for="editImagesSubTitle">SubTitle</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-subtitle">
             you have to put only letters and numbers
           </div>
@@ -535,11 +535,11 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
               </li>
             </ul>
             <div class="card-body">
-              <button type="submit" class="btn btn-success" id="editPropertiesPopupSaveBtn" disabled="true">
+              <button type="submit" class="btn btn-success" id="editImagesPopupSaveBtn" disabled="true">
                 <i class="bi bi-check-circle-fill"></i> Save
               </button>
-              <button type="button" class="btn btn-danger" id="editPropertiesPopupCancelBtn">
-                <i class="bi bi-x-circle-fill" id="editPropertiesPopupCancelBtnIcon"></i>
+              <button type="button" class="btn btn-danger" id="editImagesPopupCancelBtn">
+                <i class="bi bi-x-circle-fill" id="editImagesPopupCancelBtnIcon"></i>
                 Cancel
               </button>
             </div>

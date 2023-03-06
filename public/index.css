@@ -70,7 +70,7 @@
 /* li :after {
   content: counter-increment;
 } */
-#editPropertiesPopupImgDisplay {
+#editImagesPopupImgDisplay {
   width: 10rem;
   height: 10rem;
   margin: auto;
@@ -131,7 +131,7 @@ li > div > div > img {
   position: absolute;
   left: 90%;
 }
-/* #editPropertiesPopup {
+/* #editImagesPopup {
   width: 100vw;
   height: 100vh;
 } */

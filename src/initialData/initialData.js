@@ -1,12 +1,12 @@
-import Property from "../models/Property.js";
+import Image from "../models/Image.js";
 
 let id = 1;
 let nextUserId = 1;
 
 const createData = () => {
 
-  let propertiesArr = [
-    new Property(
+  let imagesArr = [
+    new Image(
       id++,
       "https://images.pexels.com/photos/5976142/pexels-photo-5976142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "Man with tallis praying",
@@ -17,7 +17,7 @@ const createData = () => {
       "A man in synagogue praying with a tallis and holy book",
       "Praying man"
     ),
-    new Property(
+    new Image(
       id++,
       "https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "Mountain Covered Snow Under Star",
@@ -28,7 +28,7 @@ const createData = () => {
       "Snow on the mountains, covering them",
       "Snow"
     ),
-    new Property(
+    new Image(
       id++,
       "https://images.pexels.com/photos/15695990/pexels-photo-15695990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "Beautiful Landscape",
@@ -40,15 +40,15 @@ const createData = () => {
       "Rivers and mountains"
     )
   ];
-  return propertiesArr;
+  return imagesArr;
 };
 
 const setInitialData = () => {
-  let properties = localStorage.getItem("props");
-  if (properties) {
+  let images = localStorage.getItem("images");
+  if (images) {
     return;
   }
-  localStorage.setItem("props", JSON.stringify(createData()));
+  localStorage.setItem("images", JSON.stringify(createData()));
   localStorage.setItem("nextid", id + "");
   localStorage.setItem("nextUserId", nextUserId + "");
 };
