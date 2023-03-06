@@ -334,7 +334,7 @@ else if (exists==false)
   }
   removeAlerts();
 };
-/*this function makes that a click outside the popup cancels it. and that input inside it changes it. */
+/*this function makes that a click outside the popup cancels it. and that input inside it changes it.*/
 window.addEventListener("load", () => {
   editImagesPopup.addEventListener("click", (ev) => {
     if (
