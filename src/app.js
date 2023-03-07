@@ -3,7 +3,6 @@ import handlePageChange from "./routes/router.js";
 import "./initialData/initialData.js";
 import "./pages/Signup.js";
 import "./pages/Login.js";
-// import "./pages/LoginPage.js";
 import "./pages/ProfilePage.js";
 import { showNewPopup } from "./pages/Homepage.js";
 import initializeNavbar from "./components/Navbar.js";
@@ -12,7 +11,6 @@ import "./pages/Page404.js";
 /*import the navbar buttons */ 
 const navHomeLink = document.getElementById("nav-home-link");
 const navAboutusLink = document.getElementById("nav-aboutus-link");
-/* const navAddpicLink = document.getElementById("nav-addpic-link"); */
 const navSignupPageLink = document.getElementById("nav-signup-page");
 const navLoginPageLink = document.getElementById("nav-login-page");
 const navEditProfilePage = document.getElementById("nav-edit-profile-page");
@@ -33,9 +31,6 @@ navHomeLink.addEventListener("click", function () {
 navAboutusLink.addEventListener("click", function () {
   handlePageChange(PAGES.ABOUT);
 });
-/* navAddpicLink.addEventListener("click", function () {
-  handlePageChange(PAGES.ADDPIC);
-}); */
 navSignupPageLink.addEventListener("click", function () {
   handlePageChange(PAGES.SIGNUP);
 });

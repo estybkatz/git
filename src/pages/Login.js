@@ -27,9 +27,7 @@ loginEmailInput.addEventListener("input", () => {
     loginEmailInput.classList.add("is-invalid");
     document.getElementById("login-alert-email").classList.remove("d-none");
     emailOk=false;
-    // document.getElementById("login-alert-email").innerHTML +=
-    // errorArr.join("<br>");
-    //emailOk = false;
+
   }
 });
 /*check if the password is valid */
@@ -46,7 +44,6 @@ loginPasswordInput.addEventListener("input", () => {
     loginPasswordInput.classList.add("is-invalid");
     document.getElementById("login-alert-password").classList.remove("d-none");
   }
-  //checkIfCanEnableBtn();
 });
 /*this function chcecks if the user name and password exists in the storage, and if they exist log them in  */
 loginBtn.addEventListener("click", () => {
@@ -79,6 +76,5 @@ loginBtn.addEventListener("click", () => {
       isAdmin: user.isAdmin,
     })
   );
-  // handlePageChange(PAGES.HOME);
   location.reload(); // refresh the page
 });

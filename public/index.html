@@ -11,7 +11,9 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="./assets/imgs/camera.PNG" alt="logo camera" />
+  <link rel="stylesheet" href="./carousel.css">
   <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet"  href="./popup.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   <title>pic-Up</title>
 </head>
@@ -41,7 +43,7 @@
               </li>
             </ul>
             <form class="d-flex responsive-nav-flex" role="search" id="navBeforeLogin">
-              <a class="nav-link me-3" href="#" id="nav-signup-page">SignUp</a>
+              <a class="nav-link me-3" href="#" id="nav-signup-page">Sign Up</a>
               <a class="nav-link responsive-mt" href="#" id="nav-login-page">Login</a>
             </form>
             <form class="d-flex responsive-nav-flex d-none" role="search" id="navAfterLogin">
@@ -56,11 +58,11 @@
     <main>
       <!-- Home page -->
       <div id="home-page" class="d-block">
-        <h1 class=>Pic-Up</h1>
+        <h1 >Pic-Up</h1>
+        <h2> The site to Buy pictures</h2>
         <h4>Discover and sell high-quality pictures with our online marketplace for photography enthusiasts. Browse stunning images or showcase your own portfolio to a global audience. Join our community today and start buying and selling with ease!
 !</h4>
 
-        <h1>Home page</h1>
         <div class="d-flex justify-content-between mb-2">
           <div>
             <button type="button" class="btn btn-secondary" id="homeDisplayList">
@@ -88,18 +90,6 @@
           <div class="row row-cols-1 row-cols-md-3 g-4" id="home-page-images-gallery"></div>
         </div>
 
-<!-- 
-      <table id="imagesTable" class="d-block table-css">
-        
-          <th class="col-md-1">no.</th>
-          <th class="col-md-2">image</th>
-          <th class="col-md-5">Pic</th>
-          <th class="col-md-1">Title</h6>
-          <th class="col-md-1">Credit</th>
-          <th class="col-md-1">Edit</th>
-          <th class="col-md-1">Delete</th>
-      </table> -->
-
         <div id="imagesList" class="d-none">
           
            <div id="header-list" class="header-list-details" >
@@ -122,8 +112,6 @@
           <div class="d-flex justify-content-around">
             <button type="button" class="btn btn-secondary" id="back-carousel-btn">
               <i class="bi bi-arrow-left"></i>
-            </button>
-            <button type="button" class="btn btn-secondary" id="set-interval">Press to set Interval
             </button>
             <button type="button" class="btn btn-secondary" id="next-carousel-btn">
             
@@ -183,52 +171,53 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
         <h3 style="text-align: center;">Sign up</h3>
 
         <form class="row g-3" onsubmit="event.preventDefault()">
-          <h6>name</h6>
+          
           <div class="col-md-6">
-            <label for="form-label" class="form-label red-asterik">Name</label>
+            <label for="form-label" class="form-label red-asterik">First Name</label>
             <input type="text" class="form-control" id="signup-input-name">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-name">
-            The name must start with a capital letter
+            The First Name must start with a capital letter
             This field can only be used with letters and numbers,
           </div>
           <div class="col-md-6">
             <label for="input-last-name" class="form-label red-asterik">Last Name</label>
-            <input type="text" class="form-control" id="input-last-name">
+            <input type="text" class="form-control" id="signup-input-last-name">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-last-name">
-            The name must start with a capital letter
+            The Last Name must start with a capital letter
             This field can only be used with letters and numbers,
-          </div>can
+          </div>
           <h6>Address</h6>
           <div class="col-md-4">
             <label for="input-state" class="form-label">State</label>
-            <input type="text" class="form-control inp-string" id="signup-input-state">
+            <input type="text" class="form-control signup-inp-string" id="signup-input-state">
           </div>
           <div class="col-md-4">
             <label for="input-country" class="form-label">Country</label>
-            <input type="text" class="form-control inp-string" id="signup-input-country">
+            <input type="text" class="form-control signup-inp-string" id="signup-input-country">
 
           </div>
 
           <div class="col-md-4">
             <label for="input-city" class="form-label">City</label>
-            <input type="text" class="form-control inp-string" id="signup-input-city">
+            <input type="text" class="form-control signup-inp-string" id="signup-input-city">
           </div>
           <div class="col-md-4">
             <label for="input-street" class="form-label">Street</label>
-            <input type="text" class="form-control inp-string" id="signup-input-street">
+            <input type="text" class="form-control signup-inp-string" id="signup-input-street">
           </div>
           <div class="col-md-4">
             <label for="input-house-number" class="form-label">House Number</label>
-            <input type="text" class="form-control inp-string" id="signup-input-house-number">
+            <input type="text" class="form-control" id="signup-input-house-number">
           </div>
           <div class="col-md-4">
             <label for="input-zip-code" class="form-label ">Zip Code</label>
-            <input type="text" class="form-control inp-string" id="signup-input-zip">
+            <input type="text" class="form-control" id="signup-input-zip">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="input-rules">Address details should contain at least 2
             characters, letters and numbers only</div>
+          <div class="alert alert-danger d-none" role="alert" id="input-rules-number-alert">House number and Zip Code, must contain only digits</div>
           <h6>Means of contact</h6>
           <div class="col-md-6">
             <label for="input-email" class="form-label red-asterik">Email</label>
@@ -278,8 +267,9 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <button type="submit" class="btn btn-danger" id="signupCancelBtn">Cancel</button>
           </div>
         </form>
-        <div id="toast"></div>
+        <div id="signup-toast"></div>
       </div>
+      
       <!-- login page -->
       <div id="login-page" class="d-none">
         <h1>Login page</h1>
@@ -304,35 +294,6 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
           <button class="btn btn-primary" id="login-btn">Submit</button>
         </form>
       </div>
-      <!-- Profile Page -->
-      
-        <!-- <form onsubmit="event.preventDefault()">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="profile-input-name" placeholder="Your name" />
-            <label for="profile-input-name">Name</label>
-          </div>
-          <div class="alert alert-danger d-none" role="alert" id="profile-alert-name">
-            Name rules
-          </div>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="profile-input-email" placeholder="name@example.com" />
-            <label for="profile-input-email">Email address</label>
-          </div>
-          <div class="alert alert-danger d-none" role="alert" id="profile-alert-email">
-            Email rules
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="profile-input-password" placeholder="Password" />
-            <label for="profile-input-password">Password</label>
-          </div>
-          <div class="alert alert-danger d-none" role="alert" id="profile-alert-password">
-            Name rules
-          </div>
-          <button class="btn btn-danger" disabled="true" id="profile-btn">
-            Update
-          </button>
-        </form>
-      </div> -->
        <div id="profile-page" class="d-none">
         <h3 style="text-align: center;">Profile Page</h3>
 
@@ -357,30 +318,31 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
           <h6>Address</h6>
           <div class="col-md-4">
             <label for="input-state" class="form-label">State</label>
-            <input type="text" class="form-control inp-string" id="profile-input-state">
+            <input type="text" class="form-control profile-inp-string" id="profile-input-state">
           </div>
           <div class="col-md-4">
             <label for="input-country" class="form-label">Country</label>
-            <input type="text" class="form-control inp-string" id="profile-input-country">
+            <input type="text" class="form-control profile-inp-string" id="profile-input-country">
 
           </div>
 
           <div class="col-md-4">
             <label for="input-city" class="form-label">City</label>
-            <input type="text" class="form-control inp-string" id="profile-input-city">
+            <input type="text" class="form-control profile-inp-string" id="profile-input-city">
           </div>
           <div class="col-md-4">
             <label for="input-street" class="form-label">Street</label>
-            <input type="text" class="form-control inp-string" id="profile-input-street">
+            <input type="text" class="form-control profile-inp-string" id="profile-input-street">
           </div>
           <div class="col-md-4">
             <label for="input-house-number" class="form-label">House Number</label>
-            <input type="text" class="form-control inp-string" id="profile-input-house-number">
+            <input type="text" class="form-control" id="profile-input-house-number">
           </div>
           <div class="col-md-4">
             <label for="input-zip-code" class="form-label ">Zip Code</label>
-            <input type="text" class="form-control inp-string" id="profile-input-zip">
+            <input type="text" class="form-control" id="profile-input-zip">
           </div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-rules-number-alert">House number and Zip Code, must contain only digits</div>
           <div class="alert alert-danger d-none" role="alert" id="profile-input-rules">Address details should contain at least 2
             characters, letters and numbers only</div>
           <h6>Means of contact</h6>
@@ -426,13 +388,12 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             </div>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary" disabled="true" id="profile-btn">Sign in</button>
+            <button type="submit" class="btn btn-primary" disabled="true" id="profile-btn">Save Changes</button>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-danger" id="profileCancelBtn">Cancel</button>
           </div>
-        </form>
-        <!-- <div id="toast"></div> -->
+        </form><div id="profile-toast"></div>
       </div>
       <!-- popup  -->
       <div class="popup-wrapper d-flex justify-content-center align-items-center d-none" id="editImagesPopup">
@@ -449,12 +410,6 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             </div>
              <img src="" class="card-img-top" alt="" id="editImagesPopupImgDisplay" />
             <div class="card-text">
-              <!-- <h5 class="card-title">
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="editImagesPopupUrl" placeholder="Url" />
-                  <label for="editImagesPopupUrl">img</label>
-                </div>
-              </h5> -->
  <ul class="list-group list-group-flush"></ul>
              <li class="list-group-item">
                 <div class="form-floating">
@@ -491,7 +446,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                   <input type="text" class="form-control" id="editImagesPopupCredit" placeholder="Credit"/>
                   <label for="editImagesPopupCredit">Credit</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-credit">
-            The name must start with a capital letter
+            The credit must start with a capital letter, and must have a capital letter at the beginning of a word.
             This field can only be used with letters and numbers
           </div>
                 </div>
@@ -501,7 +456,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                   <input type="text" class="form-control" id="editImagesPopupPrice" placeholder="Price"/>
                   <label for="editImagesPopupPrice">Price</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-price">
-           You need input only digits and a single point, and if you add a point you need to add at least one digit after it.
+           You need to nput only digits and a single point, and if you add a point you need to add at least one digit after it.
           </div>
                 </div>
               </li>

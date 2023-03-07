@@ -1,6 +1,5 @@
 import Image from "../models/Image.js";
 
-//editImagesPopupUrl;
 /*
 Here we set all the variables required for the Image Details popup.
 We Take all the required variables from the html using the getELementById function.
@@ -20,9 +19,6 @@ const imgDetailsPopupDescription = document.getElementById(
 const imgDetailsPopupSubTitle = document.getElementById(
   "imgDetailsPopupSubTitle"
 );
-// const editImagesPopupImg = document.getElementById(
-//   "editImagesPopupImg"
-// );
 const imgDetailsPopupID = document.getElementById("imgDetailsPopupID");
 
 const imgDetailsPopup = document.getElementById("imgDetailsPopup");
@@ -65,8 +61,6 @@ window.addEventListener("load", () => {
   imgDetailsPopup.addEventListener("click", (ev) => {
     if (
       ev.target.id !== "imgDetailsPopup"
-      // ev.target.id !== "editImagesPopupCancelBtn" &&
-      // ev.target.id !== "editImagesPopupCancelBtnIcon"
     ) {
       return;
     }

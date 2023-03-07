@@ -5,7 +5,6 @@ const HOMEPAGELINK = document.getElementById(PAGES.HOME);
 const ABOUTUSPAGELINK = document.getElementById(PAGES.ABOUT);
 const LOGINTUSPAGELINK = document.getElementById(PAGES.LOGIN);
 const SIGNUPPAGELINK = document.getElementById(PAGES.SIGNUP);
-//const ADDPICPAGELINK = document.getElementById(PAGES.ADDPIC);
 const PROFILEPAGELINK = document.getElementById(PAGES.PROFILE);
 const PAGE404PAGELINK = document.getElementById(PAGES.PAGE404);
 /* sets in default all the pages as hidden */

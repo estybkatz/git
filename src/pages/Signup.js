@@ -3,18 +3,18 @@ import handlePageChange from "../routes/router.js";
 import validateEmail from "../validation/validateEmail.js";
 import validatePassword from "../validation/validatePassword.js";
 import validateName from "../validation/validateName.js";
-import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
 import User from "../models/User.js";
 import showToast from "../utils/Toast.js";     
-import validatePhone from "../validation/validatePhone.js"
+import validatePhone from "../validation/validatePhone.js";
+import validateNumber from "../validation/validateNumber.js";
 
 const inputName = document.getElementById("signup-input-name");
-const inputLastName = document.getElementById("input-last-name");
+const inputLastName = document.getElementById("signup-input-last-name");
 const inputEmail = document.getElementById("signup-input-email");
 const inputPassword = document.getElementById("signup-input-password1");
 const inputRePassword = document.getElementById("signup-input-password2");
-const inputStrings = document.getElementsByClassName("inp-string");
+const inputStrings = document.getElementsByClassName("signup-inp-string");
 const inputPhoneNumber = document.getElementById("input-phone");
 const btnRegister = document.querySelector("#signup-btn-signup");
 const inputState = document.getElementById("signup-input-state");
@@ -35,18 +35,26 @@ let passwordOk = false;
 let rePasswordOk = false;
 let chooseFieldOK = true;
 let phoneOk = true;
+let zipCodeOk=true;
 let checkPasswordSame = false;
+let houseNumOk=true;
 
 window.addEventListener("load", () => {
   //when page loaded
   if (inputName.value !== "") {
     checkNameInput();
   }
+  if (inputZipCode.value !== "") {
+    checkZipCode();
+  }
   if (inputLastName.value !== "") {
     checkLastNameInput();
   }
   if (inputEmail.value !== "") {
     checkEmailInput();
+  }
+  if (inputHouseNumber.value!==""){
+    checkHouseNumber();
   }
   if (inputPassword.value !== "") {
     checkPasswordInput();
@@ -92,6 +100,7 @@ inputRePassword.addEventListener("input", () => {
 inputPhoneNumber.addEventListener("input", () => {
   checkPhoneNumber();
 });
+inputHouseNumber.addEventListener("input",()=>{checkHouseNumber();});
 /* 
 function checkStrings(elements) {
   for (var i = 0; i < elements.length; i++) {
@@ -105,21 +114,19 @@ for (var i = 0; i < inputStrings.length; i++) {
     checkStringInput();
   });
 }
-
+inputZipCode.addEventListener("input",()=>{checkZipCode();});
 /*this function checks if the name is valid and sets nameOk accordingly. */
 const checkNameInput = () => {
   let validName = validateName(inputName.value);
-  if (validName.length === 0) {
+  if (validName=== true) {
     //the text is ok
     inputName.classList.remove("is-invalid");
-    document.getElementById("profile-alert-name").classList.add("d-none");
+    document.getElementById("signup-alert-name").classList.add("d-none");
     nameOk = true;
   } else {
     //the text is not ok
     inputName.classList.add("is-invalid");
-    document.getElementById("profile-alert-name").classList.remove("d-none");
-    // document.getElementById("profile-alert-name").innerHTML =
-    //   errorArr.join("<br>");
+    document.getElementById("signup-alert-name").classList.remove("d-none");
     nameOk = false;
   }
   checkIfCanEnableBtn();
@@ -128,19 +135,17 @@ const checkNameInput = () => {
 /*this function checks if the last name is valid and sets lastNameOk accordingly. */
 const checkLastNameInput = () => {
   let validLastName = validateName(inputLastName.value);
-  if (validLastName.length === 0) {
+  if (validLastName  === true) {
     //the text is ok
     inputLastName.classList.remove("is-invalid");
-    document.getElementById("profile-alert-last-name").classList.add("d-none");
+    document.getElementById("signup-alert-last-name").classList.add("d-none");
     lastNameOk = true;
   } else {
     //the text is not ok
     inputLastName.classList.add("is-invalid");
     document
-      .getElementById("profile-alert-last-name")
+      .getElementById("signup-alert-last-name")
       .classList.remove("d-none");
-    // document.getElementById("signup-alert-last-name").innerHTML +=
-    // errorArr.join("<br>");
     lastNameOk = false;
   }
   checkIfCanEnableBtn();
@@ -152,14 +157,12 @@ const checkEmailInput = () => {
   if (validMail.length === 0) {
     //the text is ok
     inputEmail.classList.remove("is-invalid");
-    document.getElementById("profile-alert-email").classList.add("d-none");
+    document.getElementById("signup-alert-email").classList.add("d-none");
     emailOk = true;
   } else {
     //the text is not ok
     inputEmail.classList.add("is-invalid");
-    document.getElementById("profile-alert-email").classList.remove("d-none");
-    // document.getElementById("profile-alert-email").innerHTML =
-    //   errorArr.join("<br>");
+    document.getElementById("signup-alert-email").classList.remove("d-none");
     emailOk = false;
   }
   checkIfCanEnableBtn();
@@ -170,16 +173,14 @@ const checkPasswordInput = () => {
   if (validPass.length === 0) {
     //the text is ok
     inputPassword.classList.remove("is-invalid");
-    document.getElementById("profile-alert-password1").classList.add("d-none");
+    document.getElementById("signup-alert-password1").classList.add("d-none");
     passwordOk = true;
   } else {
     //the text is not ok
     inputPassword.classList.add("is-invalid");
     document
-      .getElementById("profile-alert-password1")
+      .getElementById("signup-alert-password1")
       .classList.remove("d-none");
-    // document.getElementById("profile-alert-password1").innerHTML =
-    //   errorArr.join("<br>");
     passwordOk = false;
   }
   checkIfCanEnableBtn();
@@ -191,17 +192,15 @@ const checkRePasswordInput = () => {
     //the text is ok
     inputRePassword.classList.remove("is-invalid");
     document
-      .getElementById("profile-alert-repassword2")
+      .getElementById("signup-alert-repassword2")
       .classList.add("d-none");
     rePasswordOk = true;
   } else {
     //the text is not ok
     inputRePassword.classList.add("is-invalid");
     document
-      .getElementById("profile-alert-repassword2")
+      .getElementById("signup-alert-repassword2")
       .classList.remove("d-none");
-    //document.getElementById("signup-alert-repassword2").innerHTML +=
-    //errorArr.join("<br>");
     rePasswordOk = false;
   }
   checkIfCanEnableBtn();
@@ -228,19 +227,10 @@ const checkStringInput = () => {
     if (errorArr.length === 0 || inputStrings[i].value === "") {
       //the text is ok
       inputStrings[i].classList.remove("is-invalid");
-      /*  document.getElementsByClassName("sign-alert-str").classList.add("d-none"); */
-      //choosefieldOK = true;
     } else {
       errorInputRules = true;
       //the text is not ok
       inputStrings[i].classList.add("is-invalid");
-      /* 
-      document
-        .getElementsByClassName("sign-alert-str")
-        .classList.remove("d-none"); */
-      // document.querySelector(".sign-alert-str").innerHTML +=
-      // errorArr.join("<br>");
-      //lastNameOk = false;
     }
   }
   if (errorInputRules === true) {
@@ -257,26 +247,58 @@ const checkStringInput = () => {
 };
 /*this function checks the phoneNumber and sets phoneOk accordingly. */
 const checkPhoneNumber = () => {
-  let validPhone = validateNumber(inputPhoneNumber.value);
+  let validPhone = validatePhone(inputPhoneNumber.value);
   if (validPhone.length === 0 || inputPhoneNumber.value === "") {
     inputPhoneNumber.classList.remove("is-invalid");
-    document.getElementById("profile-alert-phone").classList.add("d-none");
+    document.getElementById("signup-alert-phone").classList.add("d-none");
     phoneOk = true;
   } else {
     //the text is not ok
     inputPhoneNumber.classList.add("is-invalid");
-    document.getElementById("profile-alert-phone").classList.remove("d-none");
-    // document.getElementById("signup-alert-email").innerHTML +=
-    // errorArr.join("<br>");
+    document.getElementById("signup-alert-phone").classList.remove("d-none");
     phoneOk = false;
   }
   checkIfCanEnableBtn();
 };
 
 
+/*this function checks the houseNumber and sets HouseNumOk accordingly. */
+const checkHouseNumber = () => {
+  let validHouse = validateNumber(inputHouseNumber.value);
+  if (validHouse=== true || inputHouseNumber.value === "") {
+    inputHouseNumber.classList.remove("is-invalid");
+    if (zipCodeOk===true)
+    document.getElementById("input-rules-number-alert").classList.add("d-none");
+    houseNumOk = true;
+  } else {
+    //the text is not ok
+    inputHouseNumber.classList.add("is-invalid");
+    document.getElementById("input-rules-number-alert").classList.remove("d-none");
+    
+    houseNumOk = false;
+  }
+  checkIfCanEnableBtn();
+};
+/*this function checks the Zip Number and sets zipCodeOk accordingly. */
+const checkZipCode = () => {
+  let validZip = validateNumber(inputZipCode.value);
+  if (validZip === true || inputZipCode.value === "") {
+    inputZipCode.classList.remove("is-invalid");
+    if (houseNumOk===true)
+    document.getElementById("input-rules-number-alert").classList.add("d-none");
+    zipCodeOk = true;
+  } else {
+    //the text is not ok
+    inputZipCode.classList.add("is-invalid");
+    document.getElementById("input-rules-number-alert").classList.remove("d-none");
+    zipCodeOk = false;
+  }
+  checkIfCanEnableBtn();
+};
+
 /*this function if all fields are correct, and activates the button accordingly.. */
 const checkIfCanEnableBtn = () =>
-  (btnProfile.disabled = !(
+  (btnRegister.disabled = !(
     nameOk &&
     emailOk &&
     passwordOk &&
@@ -284,7 +306,9 @@ const checkIfCanEnableBtn = () =>
     rePasswordOk &&
     chooseFieldOK &&
     phoneOk &&
-    checkPasswordSame
+    houseNumOk&&
+    checkPasswordSame&&
+    zipCodeOk
   ));
   
 /*this function is the click of the button which  saves the new  user */
@@ -298,7 +322,9 @@ btnRegister.addEventListener("click", () => {
       rePasswordOk &&
       phoneOk &&
       chooseFieldOK &&
-      checkPasswordSame
+    houseNumOk&&
+      checkPasswordSame&&
+      zipCodeOk
     )
   ) {
     //if someone changed the html from dev tools
@@ -326,8 +352,6 @@ btnRegister.addEventListener("click", () => {
   if (!users) {
     //the first user
     users = [newUser];
-    // let user = new User(inputName.value, inputEmail.value, inputPassword.value);
-    // users = [user]
     localStorage.setItem("users", JSON.stringify(users));
     /*
       JSON.stringify(users) - convert array of objects to string
@@ -341,7 +365,7 @@ btnRegister.addEventListener("click", () => {
     for (let user of users) {
       if (user.email === inputEmail.value) {
         //display msg - email already exists
-        showToast("Email already exists", false);
+        showToast("Email already exists", false,1);
         return;
       }
     }

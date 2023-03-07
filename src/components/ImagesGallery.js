@@ -62,13 +62,3 @@ const createGallery = () => {
 /* this function pop ups image details from a click event. */
 
 export { initialImagesGallery, updateImagesGallery };
-
-/* <div class="card-body">
-      <button type="button" class="btn btn-success">
-          Success
-       </button>
-        <button type="button" class="btn btn-warning">
-          edit
-        </button>
-        <button type="button" class="btn btn-danger">delete</button>
-      </div>*/

@@ -6,15 +6,11 @@ import validateName from "../validation/validateName.js";
 
 import Image from "../models/Image.js";
 import getNextId from "../utils/getNextId.js";
-//editImagesPopupUrl;
 /* here we take the basic properties of the popup from the html page.  */
 let selectedImage, editImage;
 const editImagesPopupImgDisplay = document.getElementById(
   "editImagesPopupImgDisplay"
 );
-// const editImagesPopupUrl = document.getElementById(
-//   "editImagesPopupUrl"
-// );
 const editImagesPopupAlt = document.getElementById(
   "editImagesPopupAlt"
 );
@@ -124,8 +120,6 @@ const checkUrlInput = () => {
     //the text is not ok
     editImagesPopupImg.classList.add("is-invalid");
     document.getElementById("popup-alert-url").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
     urlOk = false;
   }
   checkIfCanEnableBtn();
@@ -143,8 +137,6 @@ const checkAltInput = () => {
     //the text is not ok
     editImagesPopupAlt.classList.add("is-invalid");
     document.getElementById("popup-alert-alt").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
     altOK = false;
   }
   checkIfCanEnableBtn();
@@ -162,8 +154,7 @@ const checkTitleInput = () => {
     //the text is not ok
     editImagesPopupTitle.classList.add("is-invalid");
     document.getElementById("popup-alert-title").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
+
     titleOK = false;
   }
   checkIfCanEnableBtn();
@@ -172,8 +163,8 @@ const checkTitleInput = () => {
 /* this function checks if the entered credit is valid, and if it is sets creditOk to true, afterwards it checks if we can enable the button */
 const checkCreditInput = () => {
   let validCredit = validateName(editImagesPopupCredit.value);
-  //   .log(reg.test(inputName.value));
-  if (validCredit.length === 0) {
+
+  if (validCredit=== true) {
     //the text is ok
     editImagesPopupCredit.classList.remove("is-invalid");
     document.getElementById("popup-alert-credit").classList.add("d-none");
@@ -199,8 +190,7 @@ const checkPriceInput = () => {
     //the text is not ok
     editImagesPopupPrice.classList.add("is-invalid");
     document.getElementById("popup-alert-price").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
+
     priceOK = false;
   }
   checkIfCanEnableBtn();
@@ -218,8 +208,7 @@ const checkCreatedATInput = () => {
     //the text is not ok
     editImagesPopupCreatedAT.classList.add("is-invalid");
     document.getElementById("popup-alert-createdAT").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
+
     createATOK = false;
   }
   checkIfCanEnableBtn();
@@ -239,8 +228,6 @@ const checkDescriptionInput = () => {
     document
       .getElementById("popup-alert-description")
       .classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
     descriptionOK = false;
   }
   checkIfCanEnableBtn();
@@ -258,8 +245,6 @@ const checkSubTitleInput = () => {
     //the text is not ok
     editImagesPopupSubTitle.classList.add("is-invalid");
     document.getElementById("popup-alert-subtitle").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
     subtitleOK = false;
   }
   checkIfCanEnableBtn();
@@ -304,8 +289,7 @@ const initPopup = (selectedImageFromHomePage, editImageFromHomePage) => {
   setInput();
   editImage = editImageFromHomePage;
   editImagesPopupImgDisplay.src = selectedImage.imgUrl;
-  //editImagesPopupUrl.value = selectedImage.imgUrl;
-  editImagesPopupAlt.value = selectedImage.title;
+  editImagesPopupAlt.value = selectedImage.alt;
   editImagesPopupCredit.value = selectedImage.credit;
   editImagesPopupPrice.value = selectedImage.price;
   editImagesPopupCreatedAT.value = selectedImage.createdAT;
@@ -349,8 +333,7 @@ window.addEventListener("load", () => {
   document
     .getElementById("editImagesPopupSaveBtn")
     .addEventListener("click", () => {
-      //selectedImage.imgUrl = editImagesPopupUrl.value;
-      selectedImage.title = editImagesPopupAlt.value;
+
       selectedImage.price = editImagesPopupPrice.value;
       selectedImage.credit = editImagesPopupCredit.value;
       selectedImage.imgUrl = editImagesPopupImg.value;
@@ -358,7 +341,7 @@ window.addEventListener("load", () => {
       selectedImage.description = editImagesPopupDescription.value;
       selectedImage.title = editImagesPopupTitle.value;
       selectedImage.subtitle = editImagesPopupSubTitle.value;
-
+      selectedImage.alt=editImagesPopupAlt.value;
       editImage(selectedImage);
       hidePopup();
     });

@@ -5,12 +5,10 @@ CarouselDiv is the innerHTML for the carousel.
 showIdx is the index of the current picture displayed.
 animationStarted is a variable for the movement of the pictures.
 */
-
 let imagesArr;
 let carouselDiv;
 let showIdx; //index(array) of the image that we display now
 let animationStarted;
-
 //this function will transfer data from homepage to this page and initialises the buttons.
 const initialImagesCarousel = (imagesArrFromHomePage) => {
   carouselDiv = document.getElementById("home-page-images-carousel");
@@ -33,7 +31,7 @@ const updateImagesCarousel = (imagesArrFromHomePage) => {
 It fades out the current image, and fades in the previous or next image according to the button.
 */
 const initializeBtns = () => {
-  document.getElementById("back-Carousel-btn").addEventListener("click", () => {
+  document.getElementById("back-carousel-btn").addEventListener("click", () => {
     if (animationStarted !== 0) {
       return;
     }
@@ -62,7 +60,6 @@ const initializeBtns = () => {
     imgToShow.addEventListener(
       "animationend",
       () => {
-        // imgToShow.classList.remove("opacity-0");
         imgToShow.classList.remove("fade-in");
           let carouselCredit= document.getElementById("carousel-credit")
     carouselCredit.innerHTML=imgToShow.classList.toString();
@@ -70,21 +67,14 @@ const initializeBtns = () => {
       },
       { once: true }
     );
-    // showIdx++;
-    // if (showIdx >= imagesArr.length) {
-    //   showIdx = 0;
-    // }
-  
     showIdx = prevIdx;
   });
-  document.getElementById("next-Carousel-btn").addEventListener("click", () => {
+  document.getElementById("next-carousel-btn").addEventListener("click", () => {
     if (animationStarted !== 0) {
       return;
     }
     animationStarted = 2;
     let nextIdx = showIdx + 1;
-    //showIdx = index of image to hide
-    //nextIdx = index of image to display
     if (nextIdx >= imagesArr.length) {
       nextIdx = 0;
     }
@@ -107,7 +97,6 @@ const initializeBtns = () => {
     imgToShow.addEventListener(
       "animationend",
       () => {
-        // imgToShow.classList.remove("opacity-0");
         imgToShow.classList.remove("fade-in");
          let carouselCredit= document.getElementById("carousel-credit")
     carouselCredit.innerHTML= imgToShow.classList.toString();
@@ -115,10 +104,6 @@ const initializeBtns = () => {
       },
       { once: true }
     );
-    // showIdx++;
-    // if (showIdx >= imagesArr.length) {
-    //   showIdx = 0;
-    // }
    
     showIdx = nextIdx;
   });
@@ -143,9 +128,5 @@ const createCarousel = () => {
    firstImg.classList.remove("opacity-0");
      let carouselCredit= document.getElementById("carousel-credit");
     carouselCredit.innerHTML= firstImg.classList.toString();
-  // document
-  //   .querySelector(".img-container > p:nth-child(1)")
-  //   .classList.remove("opacity-0");
 };
-
 export { initialImagesCarousel, updateImagesCarousel };

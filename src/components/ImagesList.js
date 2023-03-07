@@ -111,10 +111,8 @@ const createList = () => {
 
   //create new elements and remove old ones
   for (let image of imagesArr) {
-  //  let row=table.insertRow();
     innerStr += createItem(
       image.imgUrl,
-      //image.imgUrl,
       image.title,
       image.credit,
       image.id,
