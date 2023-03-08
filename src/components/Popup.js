@@ -127,8 +127,8 @@ const checkUrlInput = () => {
 
 /* this function checks if the entered alt is valid, and if it is sets altOk to true, afterwards it checks if we can enable the button */
 const checkAltInput = () => {
-  let validAlt = validateString(editImagesPopupAlt.value);
-  if (validAlt.length === 0) {
+  let validAlt = validateName(editImagesPopupAlt.value);
+  if (validAlt === true ) {
     //the text is ok
     editImagesPopupAlt.classList.remove("is-invalid");
     document.getElementById("popup-alert-alt").classList.add("d-none");
@@ -144,8 +144,8 @@ const checkAltInput = () => {
 
 /* this function checks if the entered title is valid, and if it is sets titleOk to true, afterwards it checks if we can enable the button */
 const checkTitleInput = () => {
-  let validTitle = validateString(editImagesPopupTitle.value);
-  if (validTitle.length === 0) {
+  let validTitle = validateName(editImagesPopupTitle.value);
+  if (validTitle===true) {
     //the text is ok
     editImagesPopupTitle.classList.remove("is-invalid");
     document.getElementById("popup-alert-title").classList.add("d-none");
@@ -235,8 +235,8 @@ const checkDescriptionInput = () => {
 
 /* this function checks if the entered subtitle is valid, and if it is sets subtitleOK to true, afterwards it checks if we can enable the button */
 const checkSubTitleInput = () => {
-  let subTitleValid = validateString(editImagesPopupSubTitle.value);
-  if (subTitleValid.length === 0) {
+  let subTitleValid = validateName(editImagesPopupSubTitle.value);
+  if (subTitleValid===true) {
     //the text is ok
     editImagesPopupSubTitle.classList.remove("is-invalid");
     document.getElementById("popup-alert-subtitle").classList.add("d-none");

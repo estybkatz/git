@@ -177,15 +177,16 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <input type="text" class="form-control" id="signup-input-name">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-name">
-            The First Name must start with a capital letter
-            This field can only be used with letters and numbers,
+            The First Name must start with a capital letter, and can have only a single capital letter in every word.
+            This field can only be used with letters and numbers.
+            
           </div>
           <div class="col-md-6">
             <label for="input-last-name" class="form-label red-asterik">Last Name</label>
             <input type="text" class="form-control" id="signup-input-last-name">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-last-name">
-            The Last Name must start with a capital letter
+            The Last Name must start with a capital letter  and can have only a single capital letter in every word.
             This field can only be used with letters and numbers,
           </div>
           <h6>Address</h6>
@@ -215,8 +216,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <label for="input-zip-code" class="form-label ">Zip Code</label>
             <input type="text" class="form-control" id="signup-input-zip">
           </div>
-          <div class="alert alert-danger d-none" role="alert" id="input-rules">Address details should contain at least 2
-            characters, letters and numbers only</div>
+          <div class="alert alert-danger d-none" role="alert" id="input-rules">Address details should contain letters and numbers only</div>
           <div class="alert alert-danger d-none" role="alert" id="input-rules-number-alert">House number and Zip Code, must contain only digits</div>
           <h6>Means of contact</h6>
           <div class="col-md-6">
@@ -224,7 +224,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <input type="email" class="form-control" id="signup-input-email">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-email">
-            You have to put your email
+            Enter a valid email address
           </div>
           <div class="col-md-6">
             <label for="input-phone" class="form-label">Phone</label>
@@ -239,17 +239,17 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <input type="text" class="form-control" id="signup-input-password1">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-password1">
-            You must use uppercase letter, lowercase letter, numbers, special sign
+            Your password must contain an uppercase letter,a lowercase letter, numbers and a special sign
           </div>
           <div class="col-md-6">
             <label for="inputPassword2" class="form-label red-asterik">Re-Enter Password</label>
             <input type="text" class="form-control" id="signup-input-password2">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="signup-alert-repassword2">
-            You must use uppercase letter, lowercase letter, numbers, special sign
+            Your password must contain an uppercase letter,a lowercase letter, numbers and a special sign
           </div>
           <div class="alert alert-danger d-none" role="alert" id="none-same-password">
-            Your password is not same
+            Your passwords are not the same
           </div>
 
           <div class="col-12">
@@ -279,14 +279,14 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <label for="login-input-email">Email address</label>
           </div>
           <div class="alert alert-danger d-none" role="alert" id="login-alert-email">
-            You have to put your email
+             Enter a valid email address
           </div>
           <div class="form-floating">
             <input type="password" class="form-control" id="login-input-password" placeholder="Password" />
             <label for="login-input-password">Password</label>
           </div>
           <div class="alert alert-danger d-none" role="alert" id="login-alert-password">
-            You must use uppercase letter, lowercase letter, numbers, special sign
+            Your password must contain an uppercase letter,a lowercase letter, numbers and a special sign
           </div>
           <div>Not registered yet?</div>
           <div id="click-here-login"><a href="#">
@@ -303,16 +303,15 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <label for="form-label" class="form-label red-asterik">Name</label>
             <input type="text" class="form-control" id="profile-input-name">
           </div>
-          <div class="alert alert-danger d-none" role="alert" id="profile-alert-name">
-            The name must start with a capital letter
-            This field can only be used with letters and numbers,
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-name">The First Name must start with a capital letter, and can have only a single capital letter in every word.
+            This field can only be used with letters and numbers.
+            
           </div>
           <div class="col-md-6">
             <label for="input-last-name" class="form-label red-asterik">Last Name</label>
             <input type="text" class="form-control" id="profile-input-last-name">
           </div>
-          <div class="alert alert-danger d-none" role="alert" id="profile-alert-last-name">
-            The name must start with a capital letter
+          <div class="alert alert-danger d-none" role="alert" id="profile-alert-last-name"> The Last Name must start with a capital letter  and can have only a single capital letter in every word.
             This field can only be used with letters and numbers,
           </div>
           <h6>Address</h6>
@@ -343,8 +342,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
             <input type="text" class="form-control" id="profile-input-zip">
           </div>
           <div class="alert alert-danger d-none" role="alert" id="profile-rules-number-alert">House number and Zip Code, must contain only digits</div>
-          <div class="alert alert-danger d-none" role="alert" id="profile-input-rules">Address details should contain at least 2
-            characters, letters and numbers only</div>
+          <div class="alert alert-danger d-none" role="alert" id="profile-input-rules">Address details can contain letters and numbers only</div>
           <h6>Means of contact</h6>
           <div class="col-md-6">
             <label for="input-email" class="form-label red-asterik">Email</label>
@@ -428,7 +426,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                 </div>
               </div>
                <div class="alert alert-danger d-none" role="alert" id="popup-alert-alt">
-            you have to put only letters and numbers
+            The Alt must start with a capital letter, and must have a capital letter at the beginning of a word.
+            This field can only be used with letters and numbers
           </div>
             </div>
            
@@ -437,7 +436,8 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                   <input type="text" class="form-control" id="editImagesPopupTitle" placeholder="Title" />
                   <label for="editImagesPopupTitle">Title</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-title">
-            you have to put only letters and numbers
+            The Title must start with a capital letter, and must have a capital letter at the beginning of a word.
+            This field can only be used with letters and numbers
           </div>
                 </div>
               </li>
@@ -446,7 +446,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                   <input type="text" class="form-control" id="editImagesPopupCredit" placeholder="Credit"/>
                   <label for="editImagesPopupCredit">Credit</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-credit">
-            The credit must start with a capital letter, and must have a capital letter at the beginning of a word.
+            The Credit must start with a capital letter, and must have a capital letter at the beginning of a word.
             This field can only be used with letters and numbers
           </div>
                 </div>
@@ -456,7 +456,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                   <input type="text" class="form-control" id="editImagesPopupPrice" placeholder="Price"/>
                   <label for="editImagesPopupPrice">Price</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-price">
-           You need to nput only digits and a single point, and if you add a point you need to add at least one digit after it.
+           You need to input only digits and a single point, and if you add a point you need to add at least one digit after it.
           </div>
                 </div>
               </li>
@@ -466,7 +466,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                   <input type="text" class="form-control" id="editImagesPopupCreatedAT" placeholder="CreatedAT"/>
                   <label for="editImagesPopupCreatedAT">CreatedAT</label>
                    <div class="alert alert-danger d-none" role="alert" id="popup-alert-createdAT">
-            you have to put only Date
+            Enter the date, in a regular format.
           </div>
                 </div>
               </li>
@@ -477,7 +477,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                         placeholder="Description" />
                       <label for="editImagesPopupDescription">Description</label>
                       <div class="alert alert-danger d-none" role="alert" id="popup-alert-description">
-            you have to put only letters and numbers
+            Enter only letters and numbers
           </div>
                     </div>
               </li>
@@ -487,7 +487,9 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
                   <input type="text" class="form-control" id="editImagesPopupSubTitle" placeholder="SubTitle" />
                   <label for="editImagesSubTitle">SubTitle</label>
                   <div class="alert alert-danger d-none" role="alert" id="popup-alert-subtitle">
-            you have to put only letters and numbers
+            
+            The Subtitle must start with a capital letter, and must have a capital letter at the beginning of a word.
+            This field can contain letters and numbers.
           </div>
                 </div>
               </li>
@@ -516,7 +518,7 @@ Pressing the <i class="bi bi-pencil-square"></i> button allows you to edit a pic
 
         <div class="popup-div" id="imgDetailsPopupChild">
           <div class="card">
-            <h4>more information</h4>
+            <h4>More Information</h4>
              <img src="" class="card-img-top ing-details" alt="" id="imgDetailsPopupImgDisplay" />
              
              <label for="">Picture ID:</label>
