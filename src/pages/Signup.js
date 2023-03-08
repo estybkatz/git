@@ -375,6 +375,58 @@ btnRegister.addEventListener("click", () => {
   }
   handlePageChange(PAGES.LOGIN);
 });
+const removeAlerts=()=>{
+
+  document.getElementById("signup-alert-name").classList.add("d-none");
+  document.getElementById("signup-alert-last-name").classList.add("d-none");
+  document.getElementById("signup-alert-email").classList.add("d-none");
+  document.getElementById("signup-alert-password1").classList.add("d-none"); 
+  document.getElementById("signup-alert-repassword2").classList.add("d-none");
+  document.getElementById("none-same-password").classList.add("d-none"); 
+  document.getElementById("signup-alert-phone").classList.add("d-none");
+  document.getElementById("input-rules-number-alert").classList.add("d-none");
+
+  document.getElementById("input-rules").classList.add("d-none");
+    inputName.classList.remove("is-invalid");
+    inputLastName.classList.remove("is-invalid");
+    inputEmail.classList.remove("is-invalid");
+    inputPassword.classList.remove("is-invalid");
+    inputRePassword.classList.remove("is-invalid");
+    inputPhoneNumber.classList.remove("is-invalid");
+    inputHouseNumber.classList.remove("is-invalid");
+    inputZipCode.classList.remove("is-invalid");
+  for (i = 0; i < inputStrings.length; i++)
+  {
+    inputStrings[i].classList.remove("is-invalid");
+  }
+}
 cancelBtn.addEventListener("click", () => {
+   
+    inputName.value="";
+    inputLastName.value="";
+    inputState.value="";
+    inputCountry.value="";
+    inputCity.value="";
+    inputStreet.value="";
+    inputHouseNumber.value="";
+    inputZipCode.value="";
+    inputPhoneNumber.value="";
+    inputEmail.value="";
+    inputPassword.value="";
+    inputRePassword.value="";
+    isAdmin.checked=false;
   handlePageChange(PAGES.HOME);
+  removeAlerts();
+  
+// set all the check variables to default for the next sign up.
+ nameOk = false;
+ lastNameOk = false;
+ emailOk = false;
+ passwordOk = false;
+ rePasswordOk = false;
+ chooseFieldOK = true;
+ phoneOk = true;
+ zipCodeOk=true;
+ checkPasswordSame = false;
+ houseNumOk=true;
 });

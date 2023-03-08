@@ -278,8 +278,8 @@ const initPopup = (selectedImageFromHomePage, editImageFromHomePage) => {
       "",
       "",
       "",
-      "",
       0,
+      "",
       "",
       "",
       ""
@@ -337,7 +337,7 @@ window.addEventListener("load", () => {
       selectedImage.price = editImagesPopupPrice.value;
       selectedImage.credit = editImagesPopupCredit.value;
       selectedImage.imgUrl = editImagesPopupImg.value;
-      selectedImage.createAT = editImagesPopupCreatedAT.value;
+      selectedImage.createdAT = editImagesPopupCreatedAT.value;
       selectedImage.description = editImagesPopupDescription.value;
       selectedImage.title = editImagesPopupTitle.value;
       selectedImage.subtitle = editImagesPopupSubTitle.value;

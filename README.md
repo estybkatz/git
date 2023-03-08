@@ -1,4 +1,4 @@
-# Pic up
+# Pic Up
 This project is a  system of advertising images for sell and viewing them.
 It uses HTML, JS and CSS.
 In this site we use arrays of objects, and functions working on them. 

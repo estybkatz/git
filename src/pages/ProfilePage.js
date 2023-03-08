@@ -6,6 +6,7 @@ import validateName from "../validation/validateName.js";
 import showToast from "../utils/Toast.js";  
 import validateString from "../validation/validateString.js";
 import handlePageChange from "../routes/router.js";
+import validatePhone from "../validation/validatePhone.js";
 /* variables of user. */
 const inputName = document.getElementById("profile-input-name");
 const inputLastName = document.getElementById("profile-input-last-name");
@@ -379,14 +380,75 @@ btnProfile.addEventListener("click", () => {
 
       localStorage.setItem("users", JSON.stringify(users));
       localStorage.setItem("token", JSON.stringify(token));
-      showToast("Saved");
+      showToast("Saved",true,2);
     }
   }
   setTimeout(() => {
     location.reload();
   }, 3000);
 });
+/* This Function is activated by the cancel button, and it cancels all the changes, on the html. and returns the profile page to it's original status. */
+const removeAlerts=()=>{
+
+  document.getElementById("profile-alert-name").classList.add("d-none");
+  document.getElementById("profile-alert-last-name").classList.add("d-none");
+  document.getElementById("profile-alert-email").classList.add("d-none");
+  document.getElementById("profile-alert-password1").classList.add("d-none"); 
+  document.getElementById("profile-alert-repassword2").classList.add("d-none");
+  document.getElementById("profile-none-same-password").classList.add("d-none"); 
+  document.getElementById("profile-alert-phone").classList.add("d-none");
+  document.getElementById("profile-rules-number-alert").classList.add("d-none");
+  document.getElementById("profile-input-rules").classList.add("d-none");
+
+    inputName.classList.remove("is-invalid");
+    inputLastName.classList.remove("is-invalid");
+    inputEmail.classList.remove("is-invalid");
+    inputPassword.classList.remove("is-invalid");
+    inputRePassword.classList.remove("is-invalid");
+    inputPhoneNumber.classList.remove("is-invalid");
+    inputHouseNumber.classList.remove("is-invalid");
+    inputZipCode.classList.remove("is-invalid");
+  for (i = 0; i < inputStrings.length; i++)
+  {
+    inputStrings[i].classList.remove("is-invalid");
+  }
+}
 
 cancelBtn.addEventListener("click", () => {
-  handlePageChange(PAGES.HOME);
+  let users = localStorage.getItem("users");
+  let token = localStorage.getItem("token");
+  if (users && token) {
+    //we have users
+    users = JSON.parse(users); // convert from string to array of objects
+    token = JSON.parse(token);
+    let user = users.find((item) => item.id === token.id);
+    if (user) {
+      inputName.value = user.name;
+      inputLastName.value = user.lastName;
+      inputEmail.value = user.email;
+      inputState.value = user.state;
+      inputCountry.value = user.country;
+      inputCity.value = user.city;
+      inputStreet.value = user.street;
+      inputHouseNumber.value = user.houseNumber;
+      inputZipCode.value = user.zipCode;
+      inputPhoneNumber.value = user.phone;
+      inputRePassword.value = user.password;
+      inputPassword.value = user.password;
+      isAdmin.checked = user.isAdmin;
+    }
+  }
+    handlePageChange(PAGES.HOME);
+    // assuming no changes are done - all check variables are set to true , since we are inside edit, and they where checked on sign up
+  nameOk = true;
+  lastNameOk = true;
+  emailOk = true;
+  passwordOk = true;
+  rePasswordOk = true;
+  chooseFieldOK = true;
+  phoneOk = true;
+  zipCodeOk=true;
+  checkPasswordSame = true;
+  houseNumOk=true;
+  removeAlerts();
 });

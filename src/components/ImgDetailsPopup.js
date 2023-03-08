@@ -1,4 +1,4 @@
-import Image from "../models/Image.js";
+
 
 /*
 Here we set all the variables required for the Image Details popup.
@@ -35,6 +35,7 @@ const initDetailsPopup = (selectedImageFromHomePage) => {
     return;
   }
 /* here we set the details that we want to show in the details popup from the input clicked. */
+imgDetailsPopupImgDisplay.alt=selectedImage.alt;
   imgDetailsPopupImgDisplay.src = selectedImage.imgUrl;
   imgDetailsPopupTitle.innerHTML = selectedImage.title;
   imgDetailsPopupCreatedAT.innerHTML = selectedImage.createdAT;
