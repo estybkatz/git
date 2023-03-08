@@ -192,14 +192,14 @@ const checkRePasswordInput = () => {
     //the text is ok
     inputRePassword.classList.remove("is-invalid");
     document
-      .getElementById("signup-alert-repassword2")
+      .getElementById("signup-alert-rePassword2")
       .classList.add("d-none");
     rePasswordOk = true;
   } else {
     //the text is not ok
     inputRePassword.classList.add("is-invalid");
     document
-      .getElementById("signup-alert-repassword2")
+      .getElementById("signup-alert-rePassword2")
       .classList.remove("d-none");
     rePasswordOk = false;
   }
@@ -381,7 +381,7 @@ const removeAlerts=()=>{
   document.getElementById("signup-alert-last-name").classList.add("d-none");
   document.getElementById("signup-alert-email").classList.add("d-none");
   document.getElementById("signup-alert-password1").classList.add("d-none"); 
-  document.getElementById("signup-alert-repassword2").classList.add("d-none");
+  document.getElementById("signup-alert-rePassword2").classList.add("d-none");
   document.getElementById("none-same-password").classList.add("d-none"); 
   document.getElementById("signup-alert-phone").classList.add("d-none");
   document.getElementById("input-rules-number-alert").classList.add("d-none");

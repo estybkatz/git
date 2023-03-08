@@ -205,14 +205,14 @@ const checkRePasswordInput = () => {
     //the text is ok
     inputRePassword.classList.remove("is-invalid");
     document
-      .getElementById("profile-alert-repassword2")
+      .getElementById("profile-alert-rePassword2")
       .classList.add("d-none");
     rePasswordOk = true;
   } else {
     //the text is not ok
     inputRePassword.classList.add("is-invalid");
     document
-      .getElementById("profile-alert-repassword2")
+      .getElementById("profile-alert-rePassword2")
       .classList.remove("d-none");
     rePasswordOk = false;
   }
@@ -394,7 +394,7 @@ const removeAlerts=()=>{
   document.getElementById("profile-alert-last-name").classList.add("d-none");
   document.getElementById("profile-alert-email").classList.add("d-none");
   document.getElementById("profile-alert-password1").classList.add("d-none"); 
-  document.getElementById("profile-alert-repassword2").classList.add("d-none");
+  document.getElementById("profile-alert-rePassword2").classList.add("d-none");
   document.getElementById("profile-none-same-password").classList.add("d-none"); 
   document.getElementById("profile-alert-phone").classList.add("d-none");
   document.getElementById("profile-rules-number-alert").classList.add("d-none");
